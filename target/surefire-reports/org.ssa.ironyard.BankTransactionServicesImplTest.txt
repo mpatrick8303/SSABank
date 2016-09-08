@@ -1,19 +1,19 @@
 -------------------------------------------------------------------------------
 Test set: org.ssa.ironyard.BankTransactionServicesImplTest
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 0, Errors: 3, Skipped: 0, Time elapsed: 0.249 sec <<< FAILURE! - in org.ssa.ironyard.BankTransactionServicesImplTest
-testDeposit(org.ssa.ironyard.BankTransactionServicesImplTest)  Time elapsed: 0.041 sec  <<< ERROR!
+Tests run: 3, Failures: 0, Errors: 3, Skipped: 0, Time elapsed: 0.507 sec <<< FAILURE! - in org.ssa.ironyard.BankTransactionServicesImplTest
+testDeposit(org.ssa.ironyard.BankTransactionServicesImplTest)  Time elapsed: 0.083 sec  <<< ERROR!
 java.lang.RuntimeException: null
 	at org.ssa.ironyard.dao.AccountDAOImpl.insert(AccountDAOImpl.java:64)
-	at org.ssa.ironyard.BankTransactionServicesImplTest.setup(BankTransactionServicesImplTest.java:67)
+	at org.ssa.ironyard.BankTransactionServicesImplTest.setup(BankTransactionServicesImplTest.java:68)
 
-testWithdrawl(org.ssa.ironyard.BankTransactionServicesImplTest)  Time elapsed: 0.105 sec  <<< ERROR!
+testWithdrawl(org.ssa.ironyard.BankTransactionServicesImplTest)  Time elapsed: 0.107 sec  <<< ERROR!
 java.lang.RuntimeException: null
 	at org.ssa.ironyard.dao.AccountDAOImpl.insert(AccountDAOImpl.java:64)
-	at org.ssa.ironyard.BankTransactionServicesImplTest.setup(BankTransactionServicesImplTest.java:67)
+	at org.ssa.ironyard.BankTransactionServicesImplTest.setup(BankTransactionServicesImplTest.java:68)
 
-testTransfer(org.ssa.ironyard.BankTransactionServicesImplTest)  Time elapsed: 0.101 sec  <<< ERROR!
+testTransfer(org.ssa.ironyard.BankTransactionServicesImplTest)  Time elapsed: 0.317 sec  <<< ERROR!
 java.lang.RuntimeException: null
 	at org.ssa.ironyard.dao.AccountDAOImpl.insert(AccountDAOImpl.java:64)
-	at org.ssa.ironyard.BankTransactionServicesImplTest.setup(BankTransactionServicesImplTest.java:67)
+	at org.ssa.ironyard.BankTransactionServicesImplTest.setup(BankTransactionServicesImplTest.java:68)
 

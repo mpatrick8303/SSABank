@@ -1,28 +1,28 @@
 -------------------------------------------------------------------------------
 Test set: org.ssa.ironyard.AccountDAOImplEagerTest
 -------------------------------------------------------------------------------
-Tests run: 5, Failures: 0, Errors: 5, Skipped: 0, Time elapsed: 1.735 sec <<< FAILURE! - in org.ssa.ironyard.AccountDAOImplEagerTest
-testReadEagerUnderwater(org.ssa.ironyard.AccountDAOImplEagerTest)  Time elapsed: 0.779 sec  <<< ERROR!
+Tests run: 5, Failures: 0, Errors: 5, Skipped: 0, Time elapsed: 1.888 sec <<< FAILURE! - in org.ssa.ironyard.AccountDAOImplEagerTest
+testReadEagerUnderwater(org.ssa.ironyard.AccountDAOImplEagerTest)  Time elapsed: 0.786 sec  <<< ERROR!
 java.lang.RuntimeException: null
 	at org.ssa.ironyard.dao.AccountDAOImpl.insert(AccountDAOImpl.java:64)
 	at org.ssa.ironyard.AccountDAOImplEagerTest.testReadEagerUnderwater(AccountDAOImplEagerTest.java:139)
 
-testEagerReadUser(org.ssa.ironyard.AccountDAOImplEagerTest)  Time elapsed: 0.244 sec  <<< ERROR!
+testEagerReadUser(org.ssa.ironyard.AccountDAOImplEagerTest)  Time elapsed: 0.268 sec  <<< ERROR!
 java.lang.RuntimeException: null
 	at org.ssa.ironyard.dao.AccountDAOImpl.insert(AccountDAOImpl.java:64)
 	at org.ssa.ironyard.AccountDAOImplEagerTest.testEagerReadUser(AccountDAOImplEagerTest.java:96)
 
-testReadEagerType(org.ssa.ironyard.AccountDAOImplEagerTest)  Time elapsed: 0.193 sec  <<< ERROR!
+testReadEagerType(org.ssa.ironyard.AccountDAOImplEagerTest)  Time elapsed: 0.218 sec  <<< ERROR!
 java.lang.RuntimeException: null
 	at org.ssa.ironyard.dao.AccountDAOImpl.insert(AccountDAOImpl.java:64)
 	at org.ssa.ironyard.AccountDAOImplEagerTest.testReadEagerType(AccountDAOImplEagerTest.java:118)
 
-testEagerRead(org.ssa.ironyard.AccountDAOImplEagerTest)  Time elapsed: 0.191 sec  <<< ERROR!
+testEagerRead(org.ssa.ironyard.AccountDAOImplEagerTest)  Time elapsed: 0.221 sec  <<< ERROR!
 java.lang.RuntimeException: null
 	at org.ssa.ironyard.dao.AccountDAOImpl.insert(AccountDAOImpl.java:64)
 	at org.ssa.ironyard.AccountDAOImplEagerTest.testEagerRead(AccountDAOImplEagerTest.java:79)
 
-testIsLoaded(org.ssa.ironyard.AccountDAOImplEagerTest)  Time elapsed: 0.196 sec  <<< ERROR!
+testIsLoaded(org.ssa.ironyard.AccountDAOImplEagerTest)  Time elapsed: 0.357 sec  <<< ERROR!
 java.lang.RuntimeException: null
 	at org.ssa.ironyard.dao.AccountDAOImpl.insert(AccountDAOImpl.java:64)
 	at org.ssa.ironyard.AccountDAOImplEagerTest.testIsLoaded(AccountDAOImplEagerTest.java:63)

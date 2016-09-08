@@ -141,7 +141,7 @@ public class Account implements DomainObject
         if (getClass() != obj.getClass())
             return false;
         Account other = (Account) obj;
-        return this.id == other.id;
+        return this.id.equals(other.getId());
     }
     
   

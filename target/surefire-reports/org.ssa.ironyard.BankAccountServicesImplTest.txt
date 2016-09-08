@@ -1,6 +1,7 @@
 -------------------------------------------------------------------------------
 Test set: org.ssa.ironyard.BankAccountServicesImplTest
 -------------------------------------------------------------------------------
+<<<<<<< HEAD
 Tests run: 6, Failures: 0, Errors: 4, Skipped: 0, Time elapsed: 0.644 sec <<< FAILURE! - in org.ssa.ironyard.BankAccountServicesImplTest
 testUpdateAccount(org.ssa.ironyard.BankAccountServicesImplTest)  Time elapsed: 0.071 sec  <<< ERROR!
 java.lang.RuntimeException: null
@@ -26,3 +27,6 @@ java.lang.RuntimeException: null
 	at org.ssa.ironyard.service.BankAccountServicesImpl.insertAccount(BankAccountServicesImpl.java:40)
 	at org.ssa.ironyard.BankAccountServicesImplTest.testDeleteCustomer(BankAccountServicesImplTest.java:86)
 
+=======
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.877 sec - in org.ssa.ironyard.BankAccountServicesImplTest
+>>>>>>> dfc25fa45b49b92f9d009c4b5af6f3edce13344a

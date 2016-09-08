@@ -9,28 +9,16 @@
           <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-4level %logger{10} - %msg%n"/>
         </File>
     </Appenders>
-    <Loggers>
-    <Logger name="org.ssa.ironyard.web" level="warn" additivity ="false">
-            <AppenderRef ref = "log-file"/>
-    </Logger>
-        <Root level="warn">
-            <AppenderRef ref="Console"/>
-
-        <Console name="Console" target="SYSTEM_OUT">
-            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{2} - %msg%n" />
-        </Console>
-        <File name="log-file" fileName="my-app.log">
-        <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-4level %logger{2} - %msg%n" />
-        </File>
-   		</Root>
+ 
+    	
     <Loggers>
         <Logger name="org.ssa.ironyard" level="debug">
         <AppenderRef ref ="log-file"/>
         <!-- takes precedence over root level -->
           </Logger> 
-        <Root level="debug">
+        <Root level="info">
             <AppenderRef ref="Console" />
         </Root>
     </Loggers>
-</Loggers>
+
 </Configuration>

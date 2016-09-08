@@ -22,13 +22,13 @@ public class CustomerDAOImpl  extends AbstractDAO<Customer> implements CustomerD
 
     
   
-    @Autowired
+    
     protected CustomerDAOImpl(DataSource datasource, ORM<Customer> orm)
     {
         super(datasource, orm);
         // TODO Auto-generated constructor stub
     }
-    
+    @Autowired
     public CustomerDAOImpl(DataSource datasource){
         this(datasource, new CustomerORM(){});
 
