@@ -18,10 +18,11 @@ import com.mysql.cj.jdbc.MysqlDataSource;
 
 public class BankAccountServicesImplTest
 {
-    BankAccountServicesImpl bAS = new BankAccountServicesImpl();
-    BankTransactionServicesImplTest bTest = new BankTransactionServicesImplTest();
+    
+    
     AccountDAOImpl accounts;
     CustomerDAOImpl cus;
+    BankAccountServicesImpl bAS;
     
     Customer cO;
     
@@ -34,8 +35,10 @@ public class BankAccountServicesImplTest
         mysqlDataSource.setURL(URL);
         accounts = new AccountDAOImpl(mysqlDataSource);
         cus = new CustomerDAOImpl(mysqlDataSource);
+        bAS = new BankAccountServicesImpl(accounts,cus);
         
-        bTest.testDeleteAll();
+        
+        //bTest.testDeleteAll();
         
         cO = bAS.insertCustomer("Travis", "Adams");
     }

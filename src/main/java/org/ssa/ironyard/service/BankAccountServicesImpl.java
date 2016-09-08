@@ -14,17 +14,15 @@ import com.mysql.cj.jdbc.MysqlDataSource;
 
 public class BankAccountServicesImpl implements BankAccountServices
 {
-    static String URL = "jdbc:mysql://localhost/ssa_bank?" + "user=root&password=root&" + "useServerPrepStmts=true";
+    
     AccountDAOImpl accounts;
     CustomerDAOImpl customers;
     
-    public BankAccountServicesImpl()
+    public BankAccountServicesImpl(AccountDAOImpl accounts,CustomerDAOImpl customers)
     {
         
-        MysqlDataSource mysqlDataSource = new MysqlDataSource();
-        mysqlDataSource.setURL(URL);
-        accounts = new AccountDAOImpl(mysqlDataSource);
-        customers = new CustomerDAOImpl(mysqlDataSource);
+        this.accounts = accounts;
+        this.customers = customers;
         
     }
     
