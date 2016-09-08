@@ -42,7 +42,7 @@ public class BankTransactionServicesImplTest
     
     static String URL = "jdbc:mysql://localhost/ssa_bank?" + "user=root&password=root&" + "useServerPrepStmts=true";
     
-    @Before
+    //@Before
     public void setup()
     {
         MysqlDataSource mysqlDataSource = new MysqlDataSource();
@@ -71,7 +71,7 @@ public class BankTransactionServicesImplTest
         
     }
     
-    @Test
+    //@Test
     public void testWithdrawl()
     {
         BigDecimal amount = BigDecimal.valueOf(200);
@@ -85,7 +85,7 @@ public class BankTransactionServicesImplTest
         //assertTrue(aN.equals(bankS.Withdrawl(1, BigDecimal.valueOf(200))));
     }
     
-    @Test
+    //@Test
     public void testDeposit()
     {
         BigDecimal amount = BigDecimal.valueOf(200);
@@ -100,7 +100,7 @@ public class BankTransactionServicesImplTest
         //assertTrue(aN.equals(bankS.Deposit(1, BigDecimal.valueOf(200))));
     }
     
-    @Test
+    //@Test
     public void testTransfer()
     {
         BigDecimal amount = BigDecimal.valueOf(200.00);

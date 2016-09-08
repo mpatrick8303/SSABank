@@ -20,3 +20,90 @@
 16:43:18.519 [main] INFO org.ssa.ironyard.BankStarter - Starting BankStarter on PC11 with PID 2960 (C:\Users\admin\workspace\SSABank\target\classes started by admin in C:\Users\admin\workspace\SSABank)
 16:43:18.521 [main] DEBUG org.ssa.ironyard.BankStarter - Running with Spring Boot v1.4.0.RELEASE, Spring v4.3.2.RELEASE
 16:43:18.525 [main] INFO org.ssa.ironyard.BankStarter - No active profile set, falling back to default profiles: default
+18:09:11.819 [main] INFO org.ssa.ironyard.BankStarter - Starting application ssa-bank
+18:09:12.315 [main] INFO org.ssa.ironyard.BankStarter - Starting BankStarter on PC11 with PID 728 (C:\Users\admin\workspace\SSABank\target\classes started by admin in C:\Users\admin\workspace\SSABank)
+18:09:12.316 [main] DEBUG org.ssa.ironyard.BankStarter - Running with Spring Boot v1.4.0.RELEASE, Spring v4.3.2.RELEASE
+18:09:12.320 [main] INFO org.ssa.ironyard.BankStarter - No active profile set, falling back to default profiles: default
+18:10:18.778 [main] INFO org.ssa.ironyard.BankStarter - Starting application ssa-bank
+18:10:19.253 [main] INFO org.ssa.ironyard.BankStarter - Starting BankStarter on PC11 with PID 1376 (C:\Users\admin\workspace\SSABank\target\classes started by admin in C:\Users\admin\workspace\SSABank)
+18:10:19.255 [main] DEBUG org.ssa.ironyard.BankStarter - Running with Spring Boot v1.4.0.RELEASE, Spring v4.3.2.RELEASE
+18:10:19.259 [main] INFO org.ssa.ironyard.BankStarter - No active profile set, falling back to default profiles: default
+18:11:10.384 [main] INFO org.ssa.ironyard.BankStarter - Starting application ssa-bank
+18:11:10.898 [main] INFO org.ssa.ironyard.BankStarter - Starting BankStarter on PC11 with PID 3280 (C:\Users\admin\workspace\SSABank\target\classes started by admin in C:\Users\admin\workspace\SSABank)
+18:11:10.900 [main] DEBUG org.ssa.ironyard.BankStarter - Running with Spring Boot v1.4.0.RELEASE, Spring v4.3.2.RELEASE
+18:11:10.904 [main] INFO org.ssa.ironyard.BankStarter - No active profile set, falling back to default profiles: default
+18:19:19.043 [main] INFO org.ssa.ironyard.BankStarter - Starting application ssa-bank
+18:19:19.576 [main] INFO org.ssa.ironyard.BankStarter - Starting BankStarter on PC11 with PID 6952 (C:\Users\admin\workspace\SSABank\target\classes started by admin in C:\Users\admin\workspace\SSABank)
+18:19:19.578 [main] DEBUG org.ssa.ironyard.BankStarter - Running with Spring Boot v1.4.0.RELEASE, Spring v4.3.2.RELEASE
+18:19:19.582 [main] INFO org.ssa.ironyard.BankStarter - No active profile set, falling back to default profiles: default
+18:20:42.058 [main] INFO org.ssa.ironyard.BankStarter - Starting application ssa-bank
+18:20:42.604 [main] INFO org.ssa.ironyard.BankStarter - Starting BankStarter on PC11 with PID 3348 (C:\Users\admin\workspace\SSABank\target\classes started by admin in C:\Users\admin\workspace\SSABank)
+18:20:42.605 [main] DEBUG org.ssa.ironyard.BankStarter - Running with Spring Boot v1.4.0.RELEASE, Spring v4.3.2.RELEASE
+18:20:42.610 [main] INFO org.ssa.ironyard.BankStarter - No active profile set, falling back to default profiles: default
+18:20:44.514 [main] DEBUG org.ssa.ironyard.config.DataSourceConfiguration - YEAH ANnotation based processing is working
+18:20:45.409 [main] INFO org.ssa.ironyard.BankStarter - Started BankStarter in 3.212 seconds (JVM running for 7.453)
+18:22:10.391 [main] INFO org.ssa.ironyard.BankStarter - Starting application ssa-bank
+18:22:10.883 [main] INFO org.ssa.ironyard.BankStarter - Starting BankStarter on PC11 with PID 8472 (C:\Users\admin\workspace\SSABank\target\classes started by admin in C:\Users\admin\workspace\SSABank)
+18:22:10.885 [main] DEBUG org.ssa.ironyard.BankStarter - Running with Spring Boot v1.4.0.RELEASE, Spring v4.3.2.RELEASE
+18:22:10.888 [main] INFO org.ssa.ironyard.BankStarter - No active profile set, falling back to default profiles: default
+18:22:12.739 [main] DEBUG org.ssa.ironyard.config.DataSourceConfiguration - YEAH ANnotation based processing is working
+18:22:13.583 [main] INFO org.ssa.ironyard.BankStarter - Started BankStarter in 3.075 seconds (JVM running for 6.918)
+18:27:13.925 [main] INFO org.ssa.ironyard.BankStarter - Starting application ssa-bank
+18:27:14.422 [main] INFO org.ssa.ironyard.BankStarter - Starting BankStarter on PC11 with PID 8184 (C:\Users\admin\workspace\SSABank\target\classes started by admin in C:\Users\admin\workspace\SSABank)
+18:27:14.424 [main] DEBUG org.ssa.ironyard.BankStarter - Running with Spring Boot v1.4.0.RELEASE, Spring v4.3.2.RELEASE
+18:27:14.429 [main] INFO org.ssa.ironyard.BankStarter - No active profile set, falling back to default profiles: default
+18:27:16.459 [main] DEBUG org.ssa.ironyard.config.DataSourceConfiguration - YEAH ANnotation based processing is working
+18:27:17.315 [main] INFO org.ssa.ironyard.BankStarter - Started BankStarter in 3.283 seconds (JVM running for 7.363)
+18:41:51.226 [main] INFO org.ssa.ironyard.BankStarter - Starting application ssa-bank
+18:41:51.691 [main] INFO org.ssa.ironyard.BankStarter - Starting BankStarter on PC11 with PID 7316 (C:\Users\admin\workspace\SSABank\target\classes started by admin in C:\Users\admin\workspace\SSABank)
+18:41:51.693 [main] DEBUG org.ssa.ironyard.BankStarter - Running with Spring Boot v1.4.0.RELEASE, Spring v4.3.2.RELEASE
+18:41:51.695 [main] INFO org.ssa.ironyard.BankStarter - No active profile set, falling back to default profiles: default
+18:41:53.525 [main] DEBUG org.ssa.ironyard.config.DataSourceConfiguration - YEAH ANnotation based processing is working
+18:41:54.337 [main] INFO org.ssa.ironyard.BankStarter - Started BankStarter in 3.001 seconds (JVM running for 6.803)
+18:42:55.745 [main] INFO org.ssa.ironyard.BankStarter - Starting application ssa-bank
+18:42:56.216 [main] INFO org.ssa.ironyard.BankStarter - Starting BankStarter on PC11 with PID 6784 (C:\Users\admin\workspace\SSABank\target\classes started by admin in C:\Users\admin\workspace\SSABank)
+18:42:56.218 [main] DEBUG org.ssa.ironyard.BankStarter - Running with Spring Boot v1.4.0.RELEASE, Spring v4.3.2.RELEASE
+18:42:56.221 [main] INFO org.ssa.ironyard.BankStarter - No active profile set, falling back to default profiles: default
+18:42:58.000 [main] DEBUG org.ssa.ironyard.config.DataSourceConfiguration - YEAH ANnotation based processing is working
+18:42:58.763 [main] INFO org.ssa.ironyard.BankStarter - Started BankStarter in 2.916 seconds (JVM running for 6.646)
+18:43:36.663 [main] INFO org.ssa.ironyard.BankStarter - Starting application ssa-bank
+18:43:37.255 [main] INFO org.ssa.ironyard.BankStarter - Starting BankStarter on PC11 with PID 7248 (C:\Users\admin\workspace\SSABank\target\classes started by admin in C:\Users\admin\workspace\SSABank)
+18:43:37.257 [main] DEBUG org.ssa.ironyard.BankStarter - Running with Spring Boot v1.4.0.RELEASE, Spring v4.3.2.RELEASE
+18:43:37.259 [main] INFO org.ssa.ironyard.BankStarter - No active profile set, falling back to default profiles: default
+18:43:39.015 [main] DEBUG org.ssa.ironyard.config.DataSourceConfiguration - YEAH ANnotation based processing is working
+18:43:39.773 [main] INFO org.ssa.ironyard.BankStarter - Started BankStarter in 2.985 seconds (JVM running for 6.803)
+18:47:16.608 [main] INFO org.ssa.ironyard.BankStarter - Starting application ssa-bank
+18:47:17.126 [main] INFO org.ssa.ironyard.BankStarter - Starting BankStarter on PC11 with PID 7008 (C:\Users\admin\workspace\SSABank\target\classes started by admin in C:\Users\admin\workspace\SSABank)
+18:47:17.128 [main] DEBUG org.ssa.ironyard.BankStarter - Running with Spring Boot v1.4.0.RELEASE, Spring v4.3.2.RELEASE
+18:47:17.132 [main] INFO org.ssa.ironyard.BankStarter - No active profile set, falling back to default profiles: default
+18:47:19.025 [main] DEBUG org.ssa.ironyard.config.DataSourceConfiguration - YEAH ANnotation based processing is working
+18:47:19.877 [main] INFO org.ssa.ironyard.BankStarter - Started BankStarter in 3.171 seconds (JVM running for 6.918)
+18:51:18.002 [main] INFO org.ssa.ironyard.BankStarter - Starting application ssa-bank
+18:51:18.476 [main] INFO org.ssa.ironyard.BankStarter - Starting BankStarter on PC11 with PID 7256 (C:\Users\admin\workspace\SSABank\target\classes started by admin in C:\Users\admin\workspace\SSABank)
+18:51:18.478 [main] DEBUG org.ssa.ironyard.BankStarter - Running with Spring Boot v1.4.0.RELEASE, Spring v4.3.2.RELEASE
+18:51:18.481 [main] INFO org.ssa.ironyard.BankStarter - No active profile set, falling back to default profiles: default
+18:51:20.219 [main] DEBUG org.ssa.ironyard.config.DataSourceConfiguration - YEAH ANnotation based processing is working
+18:51:21.000 [main] INFO org.ssa.ironyard.BankStarter - Started BankStarter in 2.883 seconds (JVM running for 6.713)
+19:03:09.758 [main] INFO org.ssa.ironyard.BankStarter - Starting application ssa-bank
+19:03:10.228 [main] INFO org.ssa.ironyard.BankStarter - Starting BankStarter on PC11 with PID 7388 (C:\Users\admin\workspace\SSABank\target\classes started by admin in C:\Users\admin\workspace\SSABank)
+19:03:10.229 [main] DEBUG org.ssa.ironyard.BankStarter - Running with Spring Boot v1.4.0.RELEASE, Spring v4.3.2.RELEASE
+19:03:10.232 [main] INFO org.ssa.ironyard.BankStarter - No active profile set, falling back to default profiles: default
+19:03:11.985 [main] DEBUG org.ssa.ironyard.config.DataSourceConfiguration - YEAH ANnotation based processing is working
+19:03:12.788 [main] INFO org.ssa.ironyard.BankStarter - Started BankStarter in 2.906 seconds (JVM running for 6.742)
+19:10:48.571 [main] INFO org.ssa.ironyard.BankStarter - Starting application ssa-bank
+19:10:49.097 [main] INFO org.ssa.ironyard.BankStarter - Starting BankStarter on PC11 with PID 4600 (C:\Users\admin\workspace\SSABank\target\classes started by admin in C:\Users\admin\workspace\SSABank)
+19:10:49.099 [main] DEBUG org.ssa.ironyard.BankStarter - Running with Spring Boot v1.4.0.RELEASE, Spring v4.3.2.RELEASE
+19:10:49.102 [main] INFO org.ssa.ironyard.BankStarter - No active profile set, falling back to default profiles: default
+19:10:50.896 [main] DEBUG org.ssa.ironyard.config.DataSourceConfiguration - YEAH ANnotation based processing is working
+19:11:18.384 [main] INFO org.ssa.ironyard.BankStarter - Starting application ssa-bank
+19:11:18.860 [main] INFO org.ssa.ironyard.BankStarter - Starting BankStarter on PC11 with PID 6196 (C:\Users\admin\workspace\SSABank\target\classes started by admin in C:\Users\admin\workspace\SSABank)
+19:11:18.862 [main] DEBUG org.ssa.ironyard.BankStarter - Running with Spring Boot v1.4.0.RELEASE, Spring v4.3.2.RELEASE
+19:11:18.865 [main] INFO org.ssa.ironyard.BankStarter - No active profile set, falling back to default profiles: default
+19:11:20.707 [main] DEBUG org.ssa.ironyard.config.DataSourceConfiguration - YEAH ANnotation based processing is working
+19:11:21.518 [main] INFO org.ssa.ironyard.BankStarter - Started BankStarter in 3.011 seconds (JVM running for 6.763)
+19:25:04.096 [main] INFO org.ssa.ironyard.BankStarter - Starting application ssa-bank
+19:25:04.580 [main] INFO org.ssa.ironyard.BankStarter - Starting BankStarter on PC11 with PID 6120 (C:\Users\admin\workspace\SSABank\target\classes started by admin in C:\Users\admin\workspace\SSABank)
+19:25:04.582 [main] DEBUG org.ssa.ironyard.BankStarter - Running with Spring Boot v1.4.0.RELEASE, Spring v4.3.2.RELEASE
+19:25:04.584 [main] INFO org.ssa.ironyard.BankStarter - No active profile set, falling back to default profiles: default
+19:25:06.336 [main] DEBUG org.ssa.ironyard.config.DataSourceConfiguration - YEAH ANnotation based processing is working
+19:25:07.130 [main] INFO org.ssa.ironyard.BankStarter - Started BankStarter in 2.917 seconds (JVM running for 6.935)

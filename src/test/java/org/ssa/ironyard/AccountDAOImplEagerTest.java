@@ -32,7 +32,7 @@ public class AccountDAOImplEagerTest
     CustomerDAO cus;
     MysqlDataSource mysqlDataSource = new MysqlDataSource();
     
-    @Before
+    //@Before
     public void setup()
     {
         
@@ -57,7 +57,7 @@ public class AccountDAOImplEagerTest
         
     }
     
-    @Test
+   // @Test
     public void testIsLoaded()
     {
         Account dbMikeCH = accounts.insert(mikePatrickCH);
@@ -73,7 +73,7 @@ public class AccountDAOImplEagerTest
         assertFalse(readMS.getCustomer().isLoaded());
     }
     
-    @Test
+   // @Test
     public void testEagerRead()
     {
         Account dbMikeCH = accounts.insert(mikePatrickCH);
@@ -90,7 +90,7 @@ public class AccountDAOImplEagerTest
         
     }
     
-    @Test
+    //@Test
     public void testEagerReadUser()
     {
         Account dbMikeCH = accounts.insert(mikePatrickCH);
@@ -112,7 +112,7 @@ public class AccountDAOImplEagerTest
          
     }
     
-    @Test
+    //@Test
     public void testReadEagerType()
     {
         Account dbMikeCH = accounts.insert(mikePatrickCH);
@@ -133,7 +133,7 @@ public class AccountDAOImplEagerTest
 
     }
     
-    @Test
+    //@Test
     public void testReadEagerUnderwater()
     {
         Account dbMikeCH = accounts.insert(mikePatrickCH);

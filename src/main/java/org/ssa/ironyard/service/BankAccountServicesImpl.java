@@ -17,7 +17,7 @@ public class BankAccountServicesImpl implements BankAccountServices
     AccountDAOImpl accounts;
     CustomerDAOImpl customers;
     
-    @Autowired
+    
     public BankAccountServicesImpl(AccountDAOImpl accounts,CustomerDAOImpl customers)
     {
         

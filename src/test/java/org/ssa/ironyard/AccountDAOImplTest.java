@@ -31,7 +31,7 @@ public class AccountDAOImplTest
     AccountDAOImpl accounts;
     CustomerDAO cus;
     
-    @Before
+    //@Before
     public void setup()
     {
         
@@ -56,7 +56,7 @@ public class AccountDAOImplTest
         
     }
     
-    @Test
+    //@Test
     public void testInsert()
     {
         Account dbMikeCH = accounts.insert(mikePatrickCH);
@@ -92,7 +92,7 @@ public class AccountDAOImplTest
         assertFalse(dbMikeSA.getBalance().compareTo(readM.getBalance()) ==0);
     }
     
-    @Test
+    //@Test
     public void testDelete()
     {
         Account dbMikeCH = accounts.insert(mikePatrickCH);
@@ -105,7 +105,7 @@ public class AccountDAOImplTest
         
     }
     
-    @Test
+    //@Test
     public void testUpdate()
     {
         Account dbMikeCH = accounts.insert(mikePatrickCH);
@@ -128,7 +128,7 @@ public class AccountDAOImplTest
         
     }
     
-    @Test
+    //@Test
     public void testRead()
     {
         Account dbMikeCH = accounts.insert(mikePatrickCH);
@@ -144,7 +144,7 @@ public class AccountDAOImplTest
         
     }
     
-    @Test
+    //@Test
     public void testReadUser()
     {
         Account dbMikeCH = accounts.insert(mikePatrickCH);
@@ -161,7 +161,7 @@ public class AccountDAOImplTest
         
     }
     
-    @Test
+    //@Test
     public void testReadType()
     {
         Account dbMikeCH = accounts.insert(mikePatrickCH);
@@ -175,7 +175,7 @@ public class AccountDAOImplTest
         assertTrue(readType.contains(dbTravisSA));
     }
     
-    @Test
+    //@Test
     public void testUnderwater()
     {
         Account dbMikeCH = accounts.insert(mikePatrickCH);

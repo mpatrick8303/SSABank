@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: org.ssa.ironyard.CustomerDAOImplTest
 -------------------------------------------------------------------------------
-Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.763 sec - in org.ssa.ironyard.CustomerDAOImplTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.354 sec - in org.ssa.ironyard.CustomerDAOImplTest
