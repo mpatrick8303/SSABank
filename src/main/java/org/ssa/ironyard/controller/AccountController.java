@@ -15,7 +15,7 @@ import org.ssa.ironyard.model.Account;
 import org.ssa.ironyard.model.Account.Type;
 import org.ssa.ironyard.service.BankTransactionServicesImpl;
 
-@RestController
+//@RestController
 @RequestMapping("/ssa-bank/customers{id}/")
 public class AccountController {
 

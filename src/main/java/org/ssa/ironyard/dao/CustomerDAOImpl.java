@@ -20,17 +20,9 @@ import org.ssa.ironyard.model.ORM;
 public class CustomerDAOImpl  extends AbstractDAO<Customer> implements CustomerDAO
 {
 
-    
-  
-    
-    protected CustomerDAOImpl(DataSource datasource, ORM<Customer> orm)
-    {
-        super(datasource, orm);
-        // TODO Auto-generated constructor stub
-    }
     @Autowired
     public CustomerDAOImpl(DataSource datasource){
-        this(datasource, new CustomerORM(){});
+        super(datasource, new CustomerORM(){});
 
     }
     

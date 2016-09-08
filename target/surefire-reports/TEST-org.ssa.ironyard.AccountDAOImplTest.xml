@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.ssa.ironyard.AccountDAOImplTest" time="1.55" tests="7" errors="0" skipped="0" failures="0">
+<testsuite name="org.ssa.ironyard.AccountDAOImplTest" time="1.415" tests="7" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_92\jre\bin"/>
@@ -62,11 +62,11 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase name="testRead" classname="org.ssa.ironyard.AccountDAOImplTest" time="0.277"/>
-  <testcase name="testReadType" classname="org.ssa.ironyard.AccountDAOImplTest" time="0.136"/>
-  <testcase name="testReadUser" classname="org.ssa.ironyard.AccountDAOImplTest" time="0.17"/>
-  <testcase name="testDelete" classname="org.ssa.ironyard.AccountDAOImplTest" time="0.166"/>
-  <testcase name="testInsert" classname="org.ssa.ironyard.AccountDAOImplTest" time="0.267"/>
-  <testcase name="testUpdate" classname="org.ssa.ironyard.AccountDAOImplTest" time="0.136"/>
-  <testcase name="testUnderwater" classname="org.ssa.ironyard.AccountDAOImplTest" time="0.398"/>
+  <testcase name="testRead" classname="org.ssa.ironyard.AccountDAOImplTest" time="0.162"/>
+  <testcase name="testReadType" classname="org.ssa.ironyard.AccountDAOImplTest" time="0.215"/>
+  <testcase name="testReadUser" classname="org.ssa.ironyard.AccountDAOImplTest" time="0.267"/>
+  <testcase name="testDelete" classname="org.ssa.ironyard.AccountDAOImplTest" time="0.223"/>
+  <testcase name="testInsert" classname="org.ssa.ironyard.AccountDAOImplTest" time="0.154"/>
+  <testcase name="testUpdate" classname="org.ssa.ironyard.AccountDAOImplTest" time="0.198"/>
+  <testcase name="testUnderwater" classname="org.ssa.ironyard.AccountDAOImplTest" time="0.196"/>
 </testsuite>

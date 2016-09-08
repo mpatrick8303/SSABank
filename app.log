@@ -8,3 +8,15 @@
 16:35:15.854 [main] INFO org.ssa.ironyard.BankStarter - Starting BankStarter on PC11 with PID 7816 (C:\Users\admin\workspace\SSABank\target\classes started by admin in C:\Users\admin\workspace\SSABank)
 16:35:15.855 [main] DEBUG org.ssa.ironyard.BankStarter - Running with Spring Boot v1.4.0.RELEASE, Spring v4.3.2.RELEASE
 16:35:15.858 [main] INFO org.ssa.ironyard.BankStarter - No active profile set, falling back to default profiles: default
+16:36:54.452 [main] INFO org.ssa.ironyard.BankStarter - Starting application ssa-bank
+16:36:54.828 [main] INFO org.ssa.ironyard.BankStarter - Starting BankStarter on PC11 with PID 8188 (C:\Users\admin\workspace\SSABank\target\classes started by admin in C:\Users\admin\workspace\SSABank)
+16:36:54.830 [main] DEBUG org.ssa.ironyard.BankStarter - Running with Spring Boot v1.4.0.RELEASE, Spring v4.3.2.RELEASE
+16:36:54.832 [main] INFO org.ssa.ironyard.BankStarter - No active profile set, falling back to default profiles: default
+16:39:47.071 [main] INFO org.ssa.ironyard.BankStarter - Starting application ssa-bank
+16:39:47.437 [main] INFO org.ssa.ironyard.BankStarter - Starting BankStarter on PC11 with PID 6280 (C:\Users\admin\workspace\SSABank\target\classes started by admin in C:\Users\admin\workspace\SSABank)
+16:39:47.438 [main] DEBUG org.ssa.ironyard.BankStarter - Running with Spring Boot v1.4.0.RELEASE, Spring v4.3.2.RELEASE
+16:39:47.441 [main] INFO org.ssa.ironyard.BankStarter - No active profile set, falling back to default profiles: default
+16:43:18.064 [main] INFO org.ssa.ironyard.BankStarter - Starting application ssa-bank
+16:43:18.519 [main] INFO org.ssa.ironyard.BankStarter - Starting BankStarter on PC11 with PID 2960 (C:\Users\admin\workspace\SSABank\target\classes started by admin in C:\Users\admin\workspace\SSABank)
+16:43:18.521 [main] DEBUG org.ssa.ironyard.BankStarter - Running with Spring Boot v1.4.0.RELEASE, Spring v4.3.2.RELEASE
+16:43:18.525 [main] INFO org.ssa.ironyard.BankStarter - No active profile set, falling back to default profiles: default

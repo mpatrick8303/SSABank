@@ -16,6 +16,7 @@ import org.ssa.ironyard.service.BankTransactionServicesImpl;
 @RequestMapping("/ssa-bank")
 public class customerController
 {
+    
     @Autowired
     BankTransactionServicesImpl service;
     

@@ -4,13 +4,12 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.ssa.ironyard.dao.AccountDAOImpl;
 import org.ssa.ironyard.dao.CustomerDAOImpl;
 import org.ssa.ironyard.model.Account;
 import org.ssa.ironyard.model.Account.Type;
 import org.ssa.ironyard.model.Customer;
-
-import com.mysql.cj.jdbc.MysqlDataSource;
 
 public class BankAccountServicesImpl implements BankAccountServices
 {
@@ -18,6 +17,7 @@ public class BankAccountServicesImpl implements BankAccountServices
     AccountDAOImpl accounts;
     CustomerDAOImpl customers;
     
+    @Autowired
     public BankAccountServicesImpl(AccountDAOImpl accounts,CustomerDAOImpl customers)
     {
         
