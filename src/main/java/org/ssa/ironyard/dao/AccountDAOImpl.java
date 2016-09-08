@@ -11,14 +11,16 @@ import java.util.List;
 
 import javax.sql.DataSource;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.ssa.ironyard.model.Account;
 import org.ssa.ironyard.model.Account.Type;
 
 
-
+@Component
 public class AccountDAOImpl extends AbstractDAO<Account> implements AccountDAO
 {
-
+    @Autowired
     public AccountDAOImpl(DataSource datasource)
     {
         super(datasource, new AccountORM()

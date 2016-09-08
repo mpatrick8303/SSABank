@@ -1,0 +1,4 @@
+14:28:14.728 [main] INFO ironyard.SpringStarter - Starting web app
+14:28:15.244 [main] INFO ironyard.SpringStarter - Starting SpringStarter on PC11 with PID 8032 (C:\Users\admin\workspace\SSABank\target\classes started by admin in C:\Users\admin\workspace\SSABank)
+14:28:15.244 [main] DEBUG ironyard.SpringStarter - Running with Spring Boot v1.4.0.RELEASE, Spring v4.3.2.RELEASE
+14:28:15.260 [main] INFO ironyard.SpringStarter - No active profile set, falling back to default profiles: default

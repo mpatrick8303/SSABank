@@ -36,7 +36,7 @@ public class BankAccountServicesImpl implements BankAccountServices
     }
     
     @Override
-    public Account insterAccount(Customer customer, Type type, BigDecimal balance)
+    public Account insertAccount(Customer customer, Type type, BigDecimal balance)
     {
         Account a = new Account(customer, type, balance);
         return accounts.insert(a);

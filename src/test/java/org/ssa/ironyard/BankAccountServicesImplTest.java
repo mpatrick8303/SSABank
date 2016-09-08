@@ -55,7 +55,7 @@ public class BankAccountServicesImplTest
     public void testAccountInsert()
     {
         
-        Account a1 = bAS.insterAccount(cO, Type.CHECKING,BigDecimal.valueOf(200));
+        Account a1 = bAS.insertAccount(cO, Type.CHECKING,BigDecimal.valueOf(200));
         
         Account a2 = accounts.read(a1.getId());
         
@@ -68,8 +68,8 @@ public class BankAccountServicesImplTest
     @Test
     public void testDeleteAccount()
     {
-        Account a1 = bAS.insterAccount(cO, Type.CHECKING,BigDecimal.valueOf(200));
-        Account a2 = bAS.insterAccount(cO, Type.SAVINGS,BigDecimal.valueOf(500));
+        Account a1 = bAS.insertAccount(cO, Type.CHECKING,BigDecimal.valueOf(200));
+        Account a2 = bAS.insertAccount(cO, Type.SAVINGS,BigDecimal.valueOf(500));
         
         assertTrue(bAS.deleteAccount(a1.getId()));
         assertTrue(accounts.read(a1.getId()) == null);
@@ -80,9 +80,9 @@ public class BankAccountServicesImplTest
     public void testDeleteCustomer()
     {
         Customer c1 = bAS.insertCustomer("Mike", "Patrick");
-        Account a1 = bAS.insterAccount(c1, Type.CHECKING,BigDecimal.valueOf(200));
-        Account a2 = bAS.insterAccount(c1, Type.SAVINGS,BigDecimal.valueOf(500));
-        Account a3 = bAS.insterAccount(cO, Type.SAVINGS,BigDecimal.valueOf(1400));
+        Account a1 = bAS.insertAccount(c1, Type.CHECKING,BigDecimal.valueOf(200));
+        Account a2 = bAS.insertAccount(c1, Type.SAVINGS,BigDecimal.valueOf(500));
+        Account a3 = bAS.insertAccount(cO, Type.SAVINGS,BigDecimal.valueOf(1400));
         
         
         bAS.deleteCustomer(c1.getId());
@@ -111,9 +111,9 @@ public class BankAccountServicesImplTest
     public void testUpdateAccount()
     {
         Customer c1 = bAS.insertCustomer("Mike", "Patrick");
-        Account a1 = bAS.insterAccount(c1, Type.CHECKING,BigDecimal.valueOf(200));
-        Account a2 = bAS.insterAccount(c1, Type.SAVINGS,BigDecimal.valueOf(500));
-        Account a3 = bAS.insterAccount(cO, Type.SAVINGS,BigDecimal.valueOf(1400));
+        Account a1 = bAS.insertAccount(c1, Type.CHECKING,BigDecimal.valueOf(200));
+        Account a2 = bAS.insertAccount(c1, Type.SAVINGS,BigDecimal.valueOf(500));
+        Account a3 = bAS.insertAccount(cO, Type.SAVINGS,BigDecimal.valueOf(1400));
         
         Account a1U = new Account(a1.getId(),a1.getCustomer(),a1.getType(),BigDecimal.valueOf(900));
         bAS.updateAccount(a1U);

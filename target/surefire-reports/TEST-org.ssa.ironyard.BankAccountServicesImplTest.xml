@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <testsuite name="org.ssa.ironyard.BankAccountServicesImplTest" time="1.122" tests="6" errors="4" skipped="0" failures="0">
+=======
+<testsuite name="org.ssa.ironyard.BankAccountServicesImplTest" time="0" tests="6" errors="6" skipped="0" failures="0">
+>>>>>>> 637ac3bbe6c4fcb5c5ca7dc546ff3aeee32fe358
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_92\jre\bin"/>
     <property name="java.vm.version" value="25.92-b14"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
+<<<<<<< HEAD
     <property name="maven.multiModuleProjectDirectory" value="C:\Users\admin\SSABank"/>
+=======
+    <property name="maven.multiModuleProjectDirectory" value="C:\Users\admin\workspace\SSABank"/>
+>>>>>>> 637ac3bbe6c4fcb5c5ca7dc546ff3aeee32fe358
     <property name="java.vendor.url" value="http://java.oracle.com/"/>
     <property name="path.separator" value=";"/>
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
@@ -16,7 +24,11 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.os.patch.level" value="Service Pack 1"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+<<<<<<< HEAD
     <property name="user.dir" value="C:\Users\admin\SSABank"/>
+=======
+    <property name="user.dir" value="C:\Users\admin\workspace\SSABank"/>
+>>>>>>> 637ac3bbe6c4fcb5c5ca7dc546ff3aeee32fe358
     <property name="java.runtime.version" value="1.8.0_92-b14"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
     <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.8.0_92\jre\lib\endorsed"/>
@@ -28,7 +40,11 @@
     <property name="os.name" value="Windows 7"/>
     <property name="classworlds.conf" value="C:\tools\maven\apache-maven-3.3.9-bin\apache-maven-3.3.9\bin\..\bin\m2.conf"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
+<<<<<<< HEAD
     <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_92\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Haskell\bin;C:\Program Files\Haskell Platform\8.0.1\lib\extralibs\bin;C:\Program Files\Haskell Platform\8.0.1\bin;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Skype\Phone\;C:\Program Files\Java\jdk1.8.0_92\bin;C:\tools\tomcat\apache-tomcat-7.0.70-windows-x64\apache-tomcat-7.0.70\bin;C:\tools\maven\apache-maven-3.3.9-bin\apache-maven-3.3.9\bin;C:\Program Files\Git\cmd;C:\Program Files\TortoiseGit\bin;C:\Program Files\Haskell Platform\8.0.1\mingw\bin;C:\Users\admin\AppData\Roaming\cabal\bin;C:\Users\admin\AppData\Roaming\local\bin;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;."/>
+=======
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_92\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Skype\Phone\;C:\Program Files\Java\jdk1.8.0_92\bin\;C:\tools\tomcat\apache-tomcat-7.0.70-windows-x64\apache-tomcat-7.0.70\bin\;C:\tools\maven\apache-maven-3.3.9-bin\apache-maven-3.3.9\bin\;C:\Program Files\Git\cmd;C:\Program Files\TortoiseGit\bin;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;."/>
+>>>>>>> 637ac3bbe6c4fcb5c5ca7dc546ff3aeee32fe358
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.class.version" value="52.0"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
@@ -62,6 +78,7 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
+<<<<<<< HEAD
   <testcase name="testUpdateAccount" classname="org.ssa.ironyard.BankAccountServicesImplTest" time="0.117">
     <error type="java.lang.RuntimeException:">java.lang.RuntimeException: null
 	at org.ssa.ironyard.dao.AccountDAOImpl.insert(AccountDAOImpl.java:62)
@@ -90,6 +107,42 @@
 	at org.ssa.ironyard.dao.AccountDAOImpl.insert(AccountDAOImpl.java:62)
 	at org.ssa.ironyard.service.BankAccountServicesImpl.insterAccount(BankAccountServicesImpl.java:42)
 	at org.ssa.ironyard.BankAccountServicesImplTest.testDeleteCustomer(BankAccountServicesImplTest.java:83)
+=======
+  <testcase name="testUpdateAccount" classname="org.ssa.ironyard.BankAccountServicesImplTest" time="0">
+    <error type="java.lang.NullPointerException:">java.lang.NullPointerException: null
+	at org.ssa.ironyard.BankTransactionServicesImplTest.testDeleteAll(BankTransactionServicesImplTest.java:127)
+	at org.ssa.ironyard.BankAccountServicesImplTest.setup(BankAccountServicesImplTest.java:38)
+</error>
+  </testcase>
+  <testcase name="testUpdateCustomer" classname="org.ssa.ironyard.BankAccountServicesImplTest" time="0">
+    <error type="java.lang.NullPointerException:">java.lang.NullPointerException: null
+	at org.ssa.ironyard.BankTransactionServicesImplTest.testDeleteAll(BankTransactionServicesImplTest.java:127)
+	at org.ssa.ironyard.BankAccountServicesImplTest.setup(BankAccountServicesImplTest.java:38)
+</error>
+  </testcase>
+  <testcase name="testCustomerInsert" classname="org.ssa.ironyard.BankAccountServicesImplTest" time="0">
+    <error type="java.lang.NullPointerException:">java.lang.NullPointerException: null
+	at org.ssa.ironyard.BankTransactionServicesImplTest.testDeleteAll(BankTransactionServicesImplTest.java:127)
+	at org.ssa.ironyard.BankAccountServicesImplTest.setup(BankAccountServicesImplTest.java:38)
+</error>
+  </testcase>
+  <testcase name="testDeleteAccount" classname="org.ssa.ironyard.BankAccountServicesImplTest" time="0">
+    <error type="java.lang.NullPointerException:">java.lang.NullPointerException: null
+	at org.ssa.ironyard.BankTransactionServicesImplTest.testDeleteAll(BankTransactionServicesImplTest.java:127)
+	at org.ssa.ironyard.BankAccountServicesImplTest.setup(BankAccountServicesImplTest.java:38)
+</error>
+  </testcase>
+  <testcase name="testAccountInsert" classname="org.ssa.ironyard.BankAccountServicesImplTest" time="0">
+    <error type="java.lang.NullPointerException:">java.lang.NullPointerException: null
+	at org.ssa.ironyard.BankTransactionServicesImplTest.testDeleteAll(BankTransactionServicesImplTest.java:127)
+	at org.ssa.ironyard.BankAccountServicesImplTest.setup(BankAccountServicesImplTest.java:38)
+</error>
+  </testcase>
+  <testcase name="testDeleteCustomer" classname="org.ssa.ironyard.BankAccountServicesImplTest" time="0">
+    <error type="java.lang.NullPointerException:">java.lang.NullPointerException: null
+	at org.ssa.ironyard.BankTransactionServicesImplTest.testDeleteAll(BankTransactionServicesImplTest.java:127)
+	at org.ssa.ironyard.BankAccountServicesImplTest.setup(BankAccountServicesImplTest.java:38)
+>>>>>>> 637ac3bbe6c4fcb5c5ca7dc546ff3aeee32fe358
 </error>
   </testcase>
 </testsuite>

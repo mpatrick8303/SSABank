@@ -10,17 +10,19 @@ import java.util.List;
 
 import javax.sql.DataSource;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.ssa.ironyard.model.Customer;
 import org.ssa.ironyard.model.ORM;
 
 
-
+@Component
 public class CustomerDAOImpl  extends AbstractDAO<Customer> implements CustomerDAO
 {
 
     
   
-
+    @Autowired
     protected CustomerDAOImpl(DataSource datasource, ORM<Customer> orm)
     {
         super(datasource, orm);

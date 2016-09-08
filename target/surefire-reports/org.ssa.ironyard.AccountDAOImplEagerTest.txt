@@ -1,6 +1,7 @@
 -------------------------------------------------------------------------------
 Test set: org.ssa.ironyard.AccountDAOImplEagerTest
 -------------------------------------------------------------------------------
+<<<<<<< HEAD
 Tests run: 5, Failures: 0, Errors: 5, Skipped: 0, Time elapsed: 3.721 sec <<< FAILURE! - in org.ssa.ironyard.AccountDAOImplEagerTest
 testReadEagerUnderwater(org.ssa.ironyard.AccountDAOImplEagerTest)  Time elapsed: 2.354 sec  <<< ERROR!
 java.lang.RuntimeException: null
@@ -26,4 +27,27 @@ testIsLoaded(org.ssa.ironyard.AccountDAOImplEagerTest)  Time elapsed: 0.371 sec 
 java.lang.RuntimeException: null
 	at org.ssa.ironyard.dao.AccountDAOImpl.insert(AccountDAOImpl.java:62)
 	at org.ssa.ironyard.AccountDAOImplEagerTest.testIsLoaded(AccountDAOImplEagerTest.java:62)
+=======
+Tests run: 5, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 1.426 sec <<< FAILURE! - in org.ssa.ironyard.AccountDAOImplEagerTest
+testReadEagerUnderwater(org.ssa.ironyard.AccountDAOImplEagerTest)  Time elapsed: 0.44 sec  <<< FAILURE!
+java.lang.AssertionError: null
+	at org.junit.Assert.fail(Assert.java:86)
+	at org.junit.Assert.assertTrue(Assert.java:41)
+	at org.junit.Assert.assertTrue(Assert.java:52)
+	at org.ssa.ironyard.AccountDAOImplEagerTest.testReadEagerUnderwater(AccountDAOImplEagerTest.java:144)
+
+testEagerReadUser(org.ssa.ironyard.AccountDAOImplEagerTest)  Time elapsed: 0.496 sec  <<< FAILURE!
+java.lang.AssertionError: null
+	at org.junit.Assert.fail(Assert.java:86)
+	at org.junit.Assert.assertTrue(Assert.java:41)
+	at org.junit.Assert.assertTrue(Assert.java:52)
+	at org.ssa.ironyard.AccountDAOImplEagerTest.testEagerReadUser(AccountDAOImplEagerTest.java:102)
+
+testReadEagerType(org.ssa.ironyard.AccountDAOImplEagerTest)  Time elapsed: 0.141 sec  <<< FAILURE!
+java.lang.AssertionError: null
+	at org.junit.Assert.fail(Assert.java:86)
+	at org.junit.Assert.assertTrue(Assert.java:41)
+	at org.junit.Assert.assertTrue(Assert.java:52)
+	at org.ssa.ironyard.AccountDAOImplEagerTest.testReadEagerType(AccountDAOImplEagerTest.java:123)
+>>>>>>> 637ac3bbe6c4fcb5c5ca7dc546ff3aeee32fe358
 
