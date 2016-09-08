@@ -1,0 +1,9 @@
+-------------------------------------------------------------------------------
+Test set: org.ssa.ironyard.AccountControllerTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec <<< FAILURE! - in org.ssa.ironyard.AccountControllerTest
+test(org.ssa.ironyard.AccountControllerTest)  Time elapsed: 0.001 sec  <<< FAILURE!
+java.lang.AssertionError: Not yet implemented
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.ssa.ironyard.AccountControllerTest.test(AccountControllerTest.java:11)
+

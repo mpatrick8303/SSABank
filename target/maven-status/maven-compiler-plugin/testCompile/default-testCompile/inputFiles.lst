@@ -1,13 +1,6 @@
-<<<<<<< HEAD
-C:\Users\admin\SSABank\src\test\java\org\ssa\ironyard\BankAccountServicesImplTest.java
-C:\Users\admin\SSABank\src\test\java\org\ssa\ironyard\BankTransactionServicesImplTest.java
-C:\Users\admin\SSABank\src\test\java\org\ssa\ironyard\CustomerDAOImplTest.java
-C:\Users\admin\SSABank\src\test\java\org\ssa\ironyard\AccountDAOImplTest.java
-C:\Users\admin\SSABank\src\test\java\org\ssa\ironyard\AccountDAOImplEagerTest.java
-=======
 C:\Users\admin\workspace\SSABank\src\test\java\org\ssa\ironyard\BankAccountServicesImplTest.java
 C:\Users\admin\workspace\SSABank\src\test\java\org\ssa\ironyard\BankTransactionServicesImplTest.java
 C:\Users\admin\workspace\SSABank\src\test\java\org\ssa\ironyard\AccountDAOImplTest.java
+C:\Users\admin\workspace\SSABank\src\test\java\org\ssa\ironyard\AccountControllerTest.java
 C:\Users\admin\workspace\SSABank\src\test\java\org\ssa\ironyard\AccountDAOImplEagerTest.java
 C:\Users\admin\workspace\SSABank\src\test\java\org\ssa\ironyard\CustomerDAOImplTest.java
->>>>>>> 637ac3bbe6c4fcb5c5ca7dc546ff3aeee32fe358
