@@ -1,11 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <testsuite name="org.ssa.ironyard.AccountDAOImplTest" time="1.313" tests="7" errors="0" skipped="0" failures="0">
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+<testsuite name="org.ssa.ironyard.AccountDAOImplTest" time="1.645" tests="7" errors="7" skipped="0" failures="0">
+=======
+<testsuite name="org.ssa.ironyard.AccountDAOImplTest" time="1.155" tests="7" errors="0" skipped="0" failures="4">
+>>>>>>> 637ac3bbe6c4fcb5c5ca7dc546ff3aeee32fe358
+=======
+<testsuite name="org.ssa.ironyard.AccountDAOImplTest" time="1.68" tests="7" errors="0" skipped="0" failures="0">
+>>>>>>> 8d9e679b741c3a1362e77fe7a44d0e502bb9f0b7
+>>>>>>> 32b4d65d16a2c620dade401fed6e3f1d38a829ed
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_92\jre\bin"/>
     <property name="java.vm.version" value="25.92-b14"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
+<<<<<<< HEAD
+    <property name="maven.multiModuleProjectDirectory" value="C:\Users\admin\SSABank"/>
+=======
     <property name="maven.multiModuleProjectDirectory" value="C:\Users\admin\workspace\SSABank"/>
+>>>>>>> 637ac3bbe6c4fcb5c5ca7dc546ff3aeee32fe358
     <property name="java.vendor.url" value="http://java.oracle.com/"/>
     <property name="path.separator" value=";"/>
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
@@ -16,7 +32,11 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.os.patch.level" value="Service Pack 1"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+<<<<<<< HEAD
+    <property name="user.dir" value="C:\Users\admin\SSABank"/>
+=======
     <property name="user.dir" value="C:\Users\admin\workspace\SSABank"/>
+>>>>>>> 637ac3bbe6c4fcb5c5ca7dc546ff3aeee32fe358
     <property name="java.runtime.version" value="1.8.0_92-b14"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
     <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.8.0_92\jre\lib\endorsed"/>
@@ -28,7 +48,11 @@
     <property name="os.name" value="Windows 7"/>
     <property name="classworlds.conf" value="C:\tools\maven\apache-maven-3.3.9-bin\apache-maven-3.3.9\bin\..\bin\m2.conf"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
+<<<<<<< HEAD
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_92\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Haskell\bin;C:\Program Files\Haskell Platform\8.0.1\lib\extralibs\bin;C:\Program Files\Haskell Platform\8.0.1\bin;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Skype\Phone\;C:\Program Files\Java\jdk1.8.0_92\bin;C:\tools\tomcat\apache-tomcat-7.0.70-windows-x64\apache-tomcat-7.0.70\bin;C:\tools\maven\apache-maven-3.3.9-bin\apache-maven-3.3.9\bin;C:\Program Files\Git\cmd;C:\Program Files\TortoiseGit\bin;C:\Program Files\Haskell Platform\8.0.1\mingw\bin;C:\Users\admin\AppData\Roaming\cabal\bin;C:\Users\admin\AppData\Roaming\local\bin;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;."/>
+=======
     <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_92\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Skype\Phone\;C:\Program Files\Java\jdk1.8.0_92\bin\;C:\tools\tomcat\apache-tomcat-7.0.70-windows-x64\apache-tomcat-7.0.70\bin\;C:\tools\maven\apache-maven-3.3.9-bin\apache-maven-3.3.9\bin\;C:\Program Files\Git\cmd;C:\Program Files\TortoiseGit\bin;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;."/>
+>>>>>>> 637ac3bbe6c4fcb5c5ca7dc546ff3aeee32fe358
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.class.version" value="52.0"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
@@ -62,6 +86,7 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
+<<<<<<< HEAD
   <testcase name="testRead" classname="org.ssa.ironyard.AccountDAOImplTest" time="0.119"/>
   <testcase name="testReadType" classname="org.ssa.ironyard.AccountDAOImplTest" time="0.213"/>
   <testcase name="testReadUser" classname="org.ssa.ironyard.AccountDAOImplTest" time="0.19"/>
@@ -69,4 +94,95 @@
   <testcase name="testInsert" classname="org.ssa.ironyard.AccountDAOImplTest" time="0.185"/>
   <testcase name="testUpdate" classname="org.ssa.ironyard.AccountDAOImplTest" time="0.168"/>
   <testcase name="testUnderwater" classname="org.ssa.ironyard.AccountDAOImplTest" time="0.214"/>
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+  <testcase name="testRead" classname="org.ssa.ironyard.AccountDAOImplTest" time="0.195">
+    <error type="java.lang.RuntimeException:">java.lang.RuntimeException: null
+	at org.ssa.ironyard.dao.AccountDAOImpl.insert(AccountDAOImpl.java:62)
+	at org.ssa.ironyard.AccountDAOImplTest.testRead(AccountDAOImplTest.java:134)
+</error>
+  </testcase>
+  <testcase name="testReadType" classname="org.ssa.ironyard.AccountDAOImplTest" time="0.168">
+    <error type="java.lang.RuntimeException:">java.lang.RuntimeException: null
+	at org.ssa.ironyard.dao.AccountDAOImpl.insert(AccountDAOImpl.java:62)
+	at org.ssa.ironyard.AccountDAOImplTest.testReadType(AccountDAOImplTest.java:167)
+</error>
+  </testcase>
+  <testcase name="testReadUser" classname="org.ssa.ironyard.AccountDAOImplTest" time="0.267">
+    <error type="java.lang.RuntimeException:">java.lang.RuntimeException: null
+	at org.ssa.ironyard.dao.AccountDAOImpl.insert(AccountDAOImpl.java:62)
+	at org.ssa.ironyard.AccountDAOImplTest.testReadUser(AccountDAOImplTest.java:150)
+</error>
+  </testcase>
+  <testcase name="testDelete" classname="org.ssa.ironyard.AccountDAOImplTest" time="0.231">
+    <error type="java.lang.RuntimeException:">java.lang.RuntimeException: null
+	at org.ssa.ironyard.dao.AccountDAOImpl.insert(AccountDAOImpl.java:62)
+	at org.ssa.ironyard.AccountDAOImplTest.testDelete(AccountDAOImplTest.java:98)
+</error>
+  </testcase>
+  <testcase name="testInsert" classname="org.ssa.ironyard.AccountDAOImplTest" time="0.258">
+    <error type="java.lang.RuntimeException:">java.lang.RuntimeException: null
+	at org.ssa.ironyard.dao.AccountDAOImpl.insert(AccountDAOImpl.java:62)
+	at org.ssa.ironyard.AccountDAOImplTest.testInsert(AccountDAOImplTest.java:62)
+</error>
+  </testcase>
+  <testcase name="testUpdate" classname="org.ssa.ironyard.AccountDAOImplTest" time="0.294">
+    <error type="java.lang.RuntimeException:">java.lang.RuntimeException: null
+	at org.ssa.ironyard.dao.AccountDAOImpl.insert(AccountDAOImpl.java:62)
+	at org.ssa.ironyard.AccountDAOImplTest.testUpdate(AccountDAOImplTest.java:111)
+</error>
+  </testcase>
+  <testcase name="testUnderwater" classname="org.ssa.ironyard.AccountDAOImplTest" time="0.232">
+    <error type="java.lang.RuntimeException:">java.lang.RuntimeException: null
+	at org.ssa.ironyard.dao.AccountDAOImpl.insert(AccountDAOImpl.java:62)
+	at org.ssa.ironyard.AccountDAOImplTest.testUnderwater(AccountDAOImplTest.java:181)
+</error>
+=======
+  <testcase name="testRead" classname="org.ssa.ironyard.AccountDAOImplTest" time="0.078"/>
+  <testcase name="testReadType" classname="org.ssa.ironyard.AccountDAOImplTest" time="0.199">
+    <failure type="java.lang.AssertionError:">java.lang.AssertionError: null
+	at org.junit.Assert.fail(Assert.java:86)
+	at org.junit.Assert.assertTrue(Assert.java:41)
+	at org.junit.Assert.assertTrue(Assert.java:52)
+	at org.ssa.ironyard.AccountDAOImplTest.testReadType(AccountDAOImplTest.java:174)
+</failure>
+  </testcase>
+  <testcase name="testReadUser" classname="org.ssa.ironyard.AccountDAOImplTest" time="0.137">
+    <failure type="java.lang.AssertionError:">java.lang.AssertionError: null
+	at org.junit.Assert.fail(Assert.java:86)
+	at org.junit.Assert.assertTrue(Assert.java:41)
+	at org.junit.Assert.assertTrue(Assert.java:52)
+	at org.ssa.ironyard.AccountDAOImplTest.testReadUser(AccountDAOImplTest.java:156)
+</failure>
+  </testcase>
+  <testcase name="testDelete" classname="org.ssa.ironyard.AccountDAOImplTest" time="0.161"/>
+  <testcase name="testInsert" classname="org.ssa.ironyard.AccountDAOImplTest" time="0.152"/>
+  <testcase name="testUpdate" classname="org.ssa.ironyard.AccountDAOImplTest" time="0.14">
+    <failure type="java.lang.AssertionError:">java.lang.AssertionError: null
+	at org.junit.Assert.fail(Assert.java:86)
+	at org.junit.Assert.assertTrue(Assert.java:41)
+	at org.junit.Assert.assertTrue(Assert.java:52)
+	at org.ssa.ironyard.AccountDAOImplTest.testUpdate(AccountDAOImplTest.java:124)
+</failure>
+  </testcase>
+  <testcase name="testUnderwater" classname="org.ssa.ironyard.AccountDAOImplTest" time="0.288">
+    <failure type="java.lang.AssertionError:">java.lang.AssertionError: null
+	at org.junit.Assert.fail(Assert.java:86)
+	at org.junit.Assert.assertTrue(Assert.java:41)
+	at org.junit.Assert.assertTrue(Assert.java:52)
+	at org.ssa.ironyard.AccountDAOImplTest.testUnderwater(AccountDAOImplTest.java:196)
+</failure>
+>>>>>>> 637ac3bbe6c4fcb5c5ca7dc546ff3aeee32fe358
+  </testcase>
+=======
+  <testcase name="testRead" classname="org.ssa.ironyard.AccountDAOImplTest" time="0.14"/>
+  <testcase name="testReadType" classname="org.ssa.ironyard.AccountDAOImplTest" time="0.303"/>
+  <testcase name="testReadUser" classname="org.ssa.ironyard.AccountDAOImplTest" time="0.325"/>
+  <testcase name="testDelete" classname="org.ssa.ironyard.AccountDAOImplTest" time="0.16"/>
+  <testcase name="testInsert" classname="org.ssa.ironyard.AccountDAOImplTest" time="0.246"/>
+  <testcase name="testUpdate" classname="org.ssa.ironyard.AccountDAOImplTest" time="0.254"/>
+  <testcase name="testUnderwater" classname="org.ssa.ironyard.AccountDAOImplTest" time="0.252"/>
+>>>>>>> 8d9e679b741c3a1362e77fe7a44d0e502bb9f0b7
+>>>>>>> 32b4d65d16a2c620dade401fed6e3f1d38a829ed
 </testsuite>

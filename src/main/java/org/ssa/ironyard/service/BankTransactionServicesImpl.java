@@ -69,6 +69,20 @@ public class BankTransactionServicesImpl implements BankTransactionServices
         return accounts.update(wB);
     }
     
+    public Account addAccount(Account acct)
+    {
+       return accounts.insert(acct);
+    }
+    public Account getAccount(int id)
+    {
+        return accounts.read(id);
+    }
+    
+    public Customer getCustomer(int id)
+    {
+        return customers.read(id);
+    }
+    
     public List<Customer> readCustomers()
     {
         return customers.readAll();
