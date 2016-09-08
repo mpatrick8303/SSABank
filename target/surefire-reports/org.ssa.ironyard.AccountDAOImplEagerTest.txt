@@ -2,6 +2,7 @@
 Test set: org.ssa.ironyard.AccountDAOImplEagerTest
 -------------------------------------------------------------------------------
 <<<<<<< HEAD
+<<<<<<< HEAD
 Tests run: 5, Failures: 0, Errors: 5, Skipped: 0, Time elapsed: 3.721 sec <<< FAILURE! - in org.ssa.ironyard.AccountDAOImplEagerTest
 testReadEagerUnderwater(org.ssa.ironyard.AccountDAOImplEagerTest)  Time elapsed: 2.354 sec  <<< ERROR!
 java.lang.RuntimeException: null
@@ -51,3 +52,6 @@ java.lang.AssertionError: null
 	at org.ssa.ironyard.AccountDAOImplEagerTest.testReadEagerType(AccountDAOImplEagerTest.java:123)
 >>>>>>> 637ac3bbe6c4fcb5c5ca7dc546ff3aeee32fe358
 
+=======
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.695 sec - in org.ssa.ironyard.AccountDAOImplEagerTest
+>>>>>>> 8d9e679b741c3a1362e77fe7a44d0e502bb9f0b7

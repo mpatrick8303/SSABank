@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <<<<<<< HEAD
+<<<<<<< HEAD
 <testsuite name="org.ssa.ironyard.BankAccountServicesImplTest" time="1.122" tests="6" errors="4" skipped="0" failures="0">
 =======
 <testsuite name="org.ssa.ironyard.BankAccountServicesImplTest" time="0" tests="6" errors="6" skipped="0" failures="0">
 >>>>>>> 637ac3bbe6c4fcb5c5ca7dc546ff3aeee32fe358
+=======
+<testsuite name="org.ssa.ironyard.BankAccountServicesImplTest" time="0.004" tests="6" errors="6" skipped="0" failures="0">
+>>>>>>> 8d9e679b741c3a1362e77fe7a44d0e502bb9f0b7
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_92\jre\bin"/>
@@ -79,6 +83,7 @@
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <testcase name="testUpdateAccount" classname="org.ssa.ironyard.BankAccountServicesImplTest" time="0.117">
     <error type="java.lang.RuntimeException:">java.lang.RuntimeException: null
 	at org.ssa.ironyard.dao.AccountDAOImpl.insert(AccountDAOImpl.java:62)
@@ -109,6 +114,9 @@
 	at org.ssa.ironyard.BankAccountServicesImplTest.testDeleteCustomer(BankAccountServicesImplTest.java:83)
 =======
   <testcase name="testUpdateAccount" classname="org.ssa.ironyard.BankAccountServicesImplTest" time="0">
+=======
+  <testcase name="testUpdateAccount" classname="org.ssa.ironyard.BankAccountServicesImplTest" time="0.003">
+>>>>>>> 8d9e679b741c3a1362e77fe7a44d0e502bb9f0b7
     <error type="java.lang.NullPointerException:">java.lang.NullPointerException: null
 	at org.ssa.ironyard.BankTransactionServicesImplTest.testDeleteAll(BankTransactionServicesImplTest.java:127)
 	at org.ssa.ironyard.BankAccountServicesImplTest.setup(BankAccountServicesImplTest.java:38)
@@ -138,7 +146,7 @@
 	at org.ssa.ironyard.BankAccountServicesImplTest.setup(BankAccountServicesImplTest.java:38)
 </error>
   </testcase>
-  <testcase name="testDeleteCustomer" classname="org.ssa.ironyard.BankAccountServicesImplTest" time="0">
+  <testcase name="testDeleteCustomer" classname="org.ssa.ironyard.BankAccountServicesImplTest" time="0.001">
     <error type="java.lang.NullPointerException:">java.lang.NullPointerException: null
 	at org.ssa.ironyard.BankTransactionServicesImplTest.testDeleteAll(BankTransactionServicesImplTest.java:127)
 	at org.ssa.ironyard.BankAccountServicesImplTest.setup(BankAccountServicesImplTest.java:38)

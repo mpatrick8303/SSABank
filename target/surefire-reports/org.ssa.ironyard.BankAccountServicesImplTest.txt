@@ -2,6 +2,7 @@
 Test set: org.ssa.ironyard.BankAccountServicesImplTest
 -------------------------------------------------------------------------------
 <<<<<<< HEAD
+<<<<<<< HEAD
 Tests run: 6, Failures: 0, Errors: 4, Skipped: 0, Time elapsed: 1.126 sec <<< FAILURE! - in org.ssa.ironyard.BankAccountServicesImplTest
 testUpdateAccount(org.ssa.ironyard.BankAccountServicesImplTest)  Time elapsed: 0.117 sec  <<< ERROR!
 java.lang.RuntimeException: null
@@ -29,6 +30,10 @@ java.lang.RuntimeException: null
 =======
 Tests run: 6, Failures: 0, Errors: 6, Skipped: 0, Time elapsed: 0.002 sec <<< FAILURE! - in org.ssa.ironyard.BankAccountServicesImplTest
 testUpdateAccount(org.ssa.ironyard.BankAccountServicesImplTest)  Time elapsed: 0 sec  <<< ERROR!
+=======
+Tests run: 6, Failures: 0, Errors: 6, Skipped: 0, Time elapsed: 0.004 sec <<< FAILURE! - in org.ssa.ironyard.BankAccountServicesImplTest
+testUpdateAccount(org.ssa.ironyard.BankAccountServicesImplTest)  Time elapsed: 0.003 sec  <<< ERROR!
+>>>>>>> 8d9e679b741c3a1362e77fe7a44d0e502bb9f0b7
 java.lang.NullPointerException: null
 	at org.ssa.ironyard.BankTransactionServicesImplTest.testDeleteAll(BankTransactionServicesImplTest.java:127)
 	at org.ssa.ironyard.BankAccountServicesImplTest.setup(BankAccountServicesImplTest.java:38)
@@ -53,7 +58,7 @@ java.lang.NullPointerException: null
 	at org.ssa.ironyard.BankTransactionServicesImplTest.testDeleteAll(BankTransactionServicesImplTest.java:127)
 	at org.ssa.ironyard.BankAccountServicesImplTest.setup(BankAccountServicesImplTest.java:38)
 
-testDeleteCustomer(org.ssa.ironyard.BankAccountServicesImplTest)  Time elapsed: 0 sec  <<< ERROR!
+testDeleteCustomer(org.ssa.ironyard.BankAccountServicesImplTest)  Time elapsed: 0.001 sec  <<< ERROR!
 java.lang.NullPointerException: null
 	at org.ssa.ironyard.BankTransactionServicesImplTest.testDeleteAll(BankTransactionServicesImplTest.java:127)
 	at org.ssa.ironyard.BankAccountServicesImplTest.setup(BankAccountServicesImplTest.java:38)

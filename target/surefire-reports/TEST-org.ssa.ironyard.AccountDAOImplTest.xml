@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <<<<<<< HEAD
+<<<<<<< HEAD
 <testsuite name="org.ssa.ironyard.AccountDAOImplTest" time="1.645" tests="7" errors="7" skipped="0" failures="0">
 =======
 <testsuite name="org.ssa.ironyard.AccountDAOImplTest" time="1.155" tests="7" errors="0" skipped="0" failures="4">
 >>>>>>> 637ac3bbe6c4fcb5c5ca7dc546ff3aeee32fe358
+=======
+<testsuite name="org.ssa.ironyard.AccountDAOImplTest" time="1.68" tests="7" errors="0" skipped="0" failures="0">
+>>>>>>> 8d9e679b741c3a1362e77fe7a44d0e502bb9f0b7
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_92\jre\bin"/>
@@ -78,6 +82,7 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
+<<<<<<< HEAD
 <<<<<<< HEAD
   <testcase name="testRead" classname="org.ssa.ironyard.AccountDAOImplTest" time="0.195">
     <error type="java.lang.RuntimeException:">java.lang.RuntimeException: null
@@ -157,4 +162,13 @@
 </failure>
 >>>>>>> 637ac3bbe6c4fcb5c5ca7dc546ff3aeee32fe358
   </testcase>
+=======
+  <testcase name="testRead" classname="org.ssa.ironyard.AccountDAOImplTest" time="0.14"/>
+  <testcase name="testReadType" classname="org.ssa.ironyard.AccountDAOImplTest" time="0.303"/>
+  <testcase name="testReadUser" classname="org.ssa.ironyard.AccountDAOImplTest" time="0.325"/>
+  <testcase name="testDelete" classname="org.ssa.ironyard.AccountDAOImplTest" time="0.16"/>
+  <testcase name="testInsert" classname="org.ssa.ironyard.AccountDAOImplTest" time="0.246"/>
+  <testcase name="testUpdate" classname="org.ssa.ironyard.AccountDAOImplTest" time="0.254"/>
+  <testcase name="testUnderwater" classname="org.ssa.ironyard.AccountDAOImplTest" time="0.252"/>
+>>>>>>> 8d9e679b741c3a1362e77fe7a44d0e502bb9f0b7
 </testsuite>

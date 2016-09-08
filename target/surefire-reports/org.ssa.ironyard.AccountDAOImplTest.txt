@@ -2,6 +2,7 @@
 Test set: org.ssa.ironyard.AccountDAOImplTest
 -------------------------------------------------------------------------------
 <<<<<<< HEAD
+<<<<<<< HEAD
 Tests run: 7, Failures: 0, Errors: 7, Skipped: 0, Time elapsed: 1.647 sec <<< FAILURE! - in org.ssa.ironyard.AccountDAOImplTest
 testRead(org.ssa.ironyard.AccountDAOImplTest)  Time elapsed: 0.195 sec  <<< ERROR!
 java.lang.RuntimeException: null
@@ -68,3 +69,6 @@ java.lang.AssertionError: null
 	at org.ssa.ironyard.AccountDAOImplTest.testUnderwater(AccountDAOImplTest.java:196)
 >>>>>>> 637ac3bbe6c4fcb5c5ca7dc546ff3aeee32fe358
 
+=======
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.683 sec - in org.ssa.ironyard.AccountDAOImplTest
+>>>>>>> 8d9e679b741c3a1362e77fe7a44d0e502bb9f0b7

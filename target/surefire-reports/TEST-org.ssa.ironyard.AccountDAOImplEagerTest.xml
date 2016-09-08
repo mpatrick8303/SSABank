@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <<<<<<< HEAD
+<<<<<<< HEAD
 <testsuite name="org.ssa.ironyard.AccountDAOImplEagerTest" time="3.704" tests="5" errors="5" skipped="0" failures="0">
 =======
 <testsuite name="org.ssa.ironyard.AccountDAOImplEagerTest" time="1.394" tests="5" errors="0" skipped="0" failures="3">
 >>>>>>> 637ac3bbe6c4fcb5c5ca7dc546ff3aeee32fe358
+=======
+<testsuite name="org.ssa.ironyard.AccountDAOImplEagerTest" time="1.661" tests="5" errors="0" skipped="0" failures="0">
+>>>>>>> 8d9e679b741c3a1362e77fe7a44d0e502bb9f0b7
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_92\jre\bin"/>
@@ -79,6 +83,7 @@
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <testcase name="testReadEagerUnderwater" classname="org.ssa.ironyard.AccountDAOImplEagerTest" time="2.354">
     <error type="java.lang.RuntimeException:">java.lang.RuntimeException: null
 	at org.ssa.ironyard.dao.AccountDAOImpl.insert(AccountDAOImpl.java:62)
@@ -137,4 +142,11 @@
   <testcase name="testEagerRead" classname="org.ssa.ironyard.AccountDAOImplEagerTest" time="0.17"/>
   <testcase name="testIsLoaded" classname="org.ssa.ironyard.AccountDAOImplEagerTest" time="0.147"/>
 >>>>>>> 637ac3bbe6c4fcb5c5ca7dc546ff3aeee32fe358
+=======
+  <testcase name="testReadEagerUnderwater" classname="org.ssa.ironyard.AccountDAOImplEagerTest" time="0.59"/>
+  <testcase name="testEagerReadUser" classname="org.ssa.ironyard.AccountDAOImplEagerTest" time="0.275"/>
+  <testcase name="testReadEagerType" classname="org.ssa.ironyard.AccountDAOImplEagerTest" time="0.215"/>
+  <testcase name="testEagerRead" classname="org.ssa.ironyard.AccountDAOImplEagerTest" time="0.249"/>
+  <testcase name="testIsLoaded" classname="org.ssa.ironyard.AccountDAOImplEagerTest" time="0.332"/>
+>>>>>>> 8d9e679b741c3a1362e77fe7a44d0e502bb9f0b7
 </testsuite>
