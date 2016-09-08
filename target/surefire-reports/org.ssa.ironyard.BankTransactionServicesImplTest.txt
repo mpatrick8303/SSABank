@@ -1,32 +1,19 @@
 -------------------------------------------------------------------------------
 Test set: org.ssa.ironyard.BankTransactionServicesImplTest
 -------------------------------------------------------------------------------
-<<<<<<< HEAD
-<<<<<<< HEAD
-Tests run: 4, Failures: 0, Errors: 4, Skipped: 0, Time elapsed: 1.008 sec <<< FAILURE! - in org.ssa.ironyard.BankTransactionServicesImplTest
-testDeleteAll(org.ssa.ironyard.BankTransactionServicesImplTest)  Time elapsed: 0.275 sec  <<< ERROR!
+Tests run: 3, Failures: 0, Errors: 3, Skipped: 0, Time elapsed: 0.322 sec <<< FAILURE! - in org.ssa.ironyard.BankTransactionServicesImplTest
+testDeposit(org.ssa.ironyard.BankTransactionServicesImplTest)  Time elapsed: 0.074 sec  <<< ERROR!
 java.lang.RuntimeException: null
-	at org.ssa.ironyard.dao.AccountDAOImpl.insert(AccountDAOImpl.java:62)
-	at org.ssa.ironyard.BankTransactionServicesImplTest.setup(BankTransactionServicesImplTest.java:63)
+	at org.ssa.ironyard.dao.AccountDAOImpl.insert(AccountDAOImpl.java:64)
+	at org.ssa.ironyard.BankTransactionServicesImplTest.setup(BankTransactionServicesImplTest.java:67)
 
-testDeposit(org.ssa.ironyard.BankTransactionServicesImplTest)  Time elapsed: 0.241 sec  <<< ERROR!
+testWithdrawl(org.ssa.ironyard.BankTransactionServicesImplTest)  Time elapsed: 0.1 sec  <<< ERROR!
 java.lang.RuntimeException: null
-	at org.ssa.ironyard.dao.AccountDAOImpl.insert(AccountDAOImpl.java:62)
-	at org.ssa.ironyard.BankTransactionServicesImplTest.setup(BankTransactionServicesImplTest.java:63)
+	at org.ssa.ironyard.dao.AccountDAOImpl.insert(AccountDAOImpl.java:64)
+	at org.ssa.ironyard.BankTransactionServicesImplTest.setup(BankTransactionServicesImplTest.java:67)
 
-testWithdrawl(org.ssa.ironyard.BankTransactionServicesImplTest)  Time elapsed: 0.288 sec  <<< ERROR!
+testTransfer(org.ssa.ironyard.BankTransactionServicesImplTest)  Time elapsed: 0.144 sec  <<< ERROR!
 java.lang.RuntimeException: null
-	at org.ssa.ironyard.dao.AccountDAOImpl.insert(AccountDAOImpl.java:62)
-	at org.ssa.ironyard.BankTransactionServicesImplTest.setup(BankTransactionServicesImplTest.java:63)
+	at org.ssa.ironyard.dao.AccountDAOImpl.insert(AccountDAOImpl.java:64)
+	at org.ssa.ironyard.BankTransactionServicesImplTest.setup(BankTransactionServicesImplTest.java:67)
 
-testTransfer(org.ssa.ironyard.BankTransactionServicesImplTest)  Time elapsed: 0.204 sec  <<< ERROR!
-java.lang.RuntimeException: null
-	at org.ssa.ironyard.dao.AccountDAOImpl.insert(AccountDAOImpl.java:62)
-	at org.ssa.ironyard.BankTransactionServicesImplTest.setup(BankTransactionServicesImplTest.java:63)
-
-=======
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.578 sec - in org.ssa.ironyard.BankTransactionServicesImplTest
->>>>>>> 637ac3bbe6c4fcb5c5ca7dc546ff3aeee32fe358
-=======
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.993 sec - in org.ssa.ironyard.BankTransactionServicesImplTest
->>>>>>> 8d9e679b741c3a1362e77fe7a44d0e502bb9f0b7

@@ -1,12 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: org.ssa.ironyard.CustomerDAOImplTest
 -------------------------------------------------------------------------------
-<<<<<<< HEAD
-<<<<<<< HEAD
-Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.402 sec - in org.ssa.ironyard.CustomerDAOImplTest
-=======
-Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.829 sec - in org.ssa.ironyard.CustomerDAOImplTest
->>>>>>> 637ac3bbe6c4fcb5c5ca7dc546ff3aeee32fe358
-=======
-Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.094 sec - in org.ssa.ironyard.CustomerDAOImplTest
->>>>>>> 8d9e679b741c3a1362e77fe7a44d0e502bb9f0b7
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.51 sec - in org.ssa.ironyard.CustomerDAOImplTest
