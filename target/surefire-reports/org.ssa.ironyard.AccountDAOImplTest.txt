@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: org.ssa.ironyard.AccountDAOImplTest
 -------------------------------------------------------------------------------
-Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.683 sec - in org.ssa.ironyard.AccountDAOImplTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.317 sec - in org.ssa.ironyard.AccountDAOImplTest

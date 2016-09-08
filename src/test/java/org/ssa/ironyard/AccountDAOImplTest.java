@@ -41,7 +41,7 @@ public class AccountDAOImplTest
         cus = new CustomerDAOImpl(mysqlDataSource);
         cus.deleteAll();
         
-        
+        assertTrue(true);
         mikePatrick = new Customer("Mike","Patrick");
         travisAdams = new Customer("Travis","Adams");
         mikePatrick = cus.insert(mikePatrick);
@@ -121,7 +121,7 @@ public class AccountDAOImplTest
         
         assertTrue(readUpdateMC.getBalance().compareTo(dbMikeCH.getBalance())==0);
         assertTrue(readUpdateMC.getType() == dbMikeCH.getType());
-        assertTrue(readUpdateMC.getId() == dbMikeCH.getId());
+        assertTrue(readUpdateMC.getId().equals(dbMikeCH.getId()));
         assertTrue(readUpdateMC.getCustomer().equals(dbMikeCH.getCustomer()));
         
         

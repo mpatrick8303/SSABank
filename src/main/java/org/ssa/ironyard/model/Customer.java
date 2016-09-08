@@ -5,7 +5,7 @@ import org.ssa.ironyard.model.DomainObject;
 
 public class Customer implements DomainObject
 {
-    private int id;
+    private Integer id;
     private String firstName;
     private String lastName;
     private boolean isLoaded = false;
@@ -107,7 +107,7 @@ public class Customer implements DomainObject
         if (getClass() != obj.getClass())
             return false;
         Customer other = (Customer) obj;
-      return this.id == other.id;
+      return this.id.equals(other.id);
     }
     
     

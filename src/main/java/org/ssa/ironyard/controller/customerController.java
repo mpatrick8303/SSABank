@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
-import org.ssa.ironyard.SpringStarter;
+import org.ssa.ironyard.BankStarter;
 import org.ssa.ironyard.model.Customer;
 import org.ssa.ironyard.service.BankTransactionServicesImpl;
 
@@ -19,7 +19,7 @@ public class customerController
     @Autowired
     BankTransactionServicesImpl service;
     
-    static final Logger LOGGER = LogManager.getLogger(SpringStarter.class);
+    static final Logger LOGGER = LogManager.getLogger(BankStarter.class);
     
     @RequestMapping("/customers")
     @ResponseBody

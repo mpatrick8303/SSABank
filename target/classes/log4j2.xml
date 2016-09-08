@@ -13,7 +13,7 @@
         <AppenderRef ref ="log-file"/>
         <!-- takes precedence over root level -->
           </Logger> 
-        <Root level="debug">
+        <Root level="info">
             <AppenderRef ref="Console" />
         </Root>
     </Loggers>
