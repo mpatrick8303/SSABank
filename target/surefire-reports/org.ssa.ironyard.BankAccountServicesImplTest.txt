@@ -1,26 +1,26 @@
 -------------------------------------------------------------------------------
 Test set: org.ssa.ironyard.BankAccountServicesImplTest
 -------------------------------------------------------------------------------
-Tests run: 6, Failures: 0, Errors: 4, Skipped: 0, Time elapsed: 0.653 sec <<< FAILURE! - in org.ssa.ironyard.BankAccountServicesImplTest
-testUpdateAccount(org.ssa.ironyard.BankAccountServicesImplTest)  Time elapsed: 0.099 sec  <<< ERROR!
+Tests run: 6, Failures: 0, Errors: 4, Skipped: 0, Time elapsed: 0.644 sec <<< FAILURE! - in org.ssa.ironyard.BankAccountServicesImplTest
+testUpdateAccount(org.ssa.ironyard.BankAccountServicesImplTest)  Time elapsed: 0.071 sec  <<< ERROR!
 java.lang.RuntimeException: null
 	at org.ssa.ironyard.dao.AccountDAOImpl.insert(AccountDAOImpl.java:64)
 	at org.ssa.ironyard.service.BankAccountServicesImpl.insertAccount(BankAccountServicesImpl.java:40)
 	at org.ssa.ironyard.BankAccountServicesImplTest.testUpdateAccount(BankAccountServicesImplTest.java:117)
 
-testDeleteAccount(org.ssa.ironyard.BankAccountServicesImplTest)  Time elapsed: 0.061 sec  <<< ERROR!
+testDeleteAccount(org.ssa.ironyard.BankAccountServicesImplTest)  Time elapsed: 0.062 sec  <<< ERROR!
 java.lang.RuntimeException: null
 	at org.ssa.ironyard.dao.AccountDAOImpl.insert(AccountDAOImpl.java:64)
 	at org.ssa.ironyard.service.BankAccountServicesImpl.insertAccount(BankAccountServicesImpl.java:40)
 	at org.ssa.ironyard.BankAccountServicesImplTest.testDeleteAccount(BankAccountServicesImplTest.java:74)
 
-testAccountInsert(org.ssa.ironyard.BankAccountServicesImplTest)  Time elapsed: 0.063 sec  <<< ERROR!
+testAccountInsert(org.ssa.ironyard.BankAccountServicesImplTest)  Time elapsed: 0.058 sec  <<< ERROR!
 java.lang.RuntimeException: null
 	at org.ssa.ironyard.dao.AccountDAOImpl.insert(AccountDAOImpl.java:64)
 	at org.ssa.ironyard.service.BankAccountServicesImpl.insertAccount(BankAccountServicesImpl.java:40)
 	at org.ssa.ironyard.BankAccountServicesImplTest.testAccountInsert(BankAccountServicesImplTest.java:61)
 
-testDeleteCustomer(org.ssa.ironyard.BankAccountServicesImplTest)  Time elapsed: 0.106 sec  <<< ERROR!
+testDeleteCustomer(org.ssa.ironyard.BankAccountServicesImplTest)  Time elapsed: 0.103 sec  <<< ERROR!
 java.lang.RuntimeException: null
 	at org.ssa.ironyard.dao.AccountDAOImpl.insert(AccountDAOImpl.java:64)
 	at org.ssa.ironyard.service.BankAccountServicesImpl.insertAccount(BankAccountServicesImpl.java:40)

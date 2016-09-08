@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.ssa.ironyard.CustomerDAOImplTest" time="1.508" tests="8" errors="0" skipped="0" failures="0">
+<testsuite name="org.ssa.ironyard.CustomerDAOImplTest" time="1.507" tests="8" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_92\jre\bin"/>
@@ -62,12 +62,12 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase name="testReadLastName" classname="org.ssa.ironyard.CustomerDAOImplTest" time="0.458"/>
-  <testcase name="testRead" classname="org.ssa.ironyard.CustomerDAOImplTest" time="0.173"/>
-  <testcase name="testReadFirstName" classname="org.ssa.ironyard.CustomerDAOImplTest" time="0.131"/>
-  <testcase name="testDeleteAll" classname="org.ssa.ironyard.CustomerDAOImplTest" time="0.215"/>
-  <testcase name="testReadAll" classname="org.ssa.ironyard.CustomerDAOImplTest" time="0.137"/>
-  <testcase name="testDelete" classname="org.ssa.ironyard.CustomerDAOImplTest" time="0.16"/>
-  <testcase name="testInsert" classname="org.ssa.ironyard.CustomerDAOImplTest" time="0.077"/>
-  <testcase name="testUpdate" classname="org.ssa.ironyard.CustomerDAOImplTest" time="0.157"/>
+  <testcase name="testReadLastName" classname="org.ssa.ironyard.CustomerDAOImplTest" time="0.154"/>
+  <testcase name="testRead" classname="org.ssa.ironyard.CustomerDAOImplTest" time="0.162"/>
+  <testcase name="testReadFirstName" classname="org.ssa.ironyard.CustomerDAOImplTest" time="0.1"/>
+  <testcase name="testDeleteAll" classname="org.ssa.ironyard.CustomerDAOImplTest" time="0.513"/>
+  <testcase name="testReadAll" classname="org.ssa.ironyard.CustomerDAOImplTest" time="0.118"/>
+  <testcase name="testDelete" classname="org.ssa.ironyard.CustomerDAOImplTest" time="0.138"/>
+  <testcase name="testInsert" classname="org.ssa.ironyard.CustomerDAOImplTest" time="0.154"/>
+  <testcase name="testUpdate" classname="org.ssa.ironyard.CustomerDAOImplTest" time="0.168"/>
 </testsuite>
