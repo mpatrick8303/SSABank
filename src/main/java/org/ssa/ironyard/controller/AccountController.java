@@ -1,5 +1,6 @@
 package org.ssa.ironyard.controller;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,12 +31,37 @@ public class AccountController {
        return ResponseEntity.ok().body(accountList);
     }
     
-    @RequestMapping(produces = "application/json", value = "accounts/detail", method = RequestMethod.GET)
+    @RequestMapping(produces = "application/json", value = "accounts/{accId}/detail", method = RequestMethod.GET)
     @ResponseBody
-    public ResponseEntity<Account> accountDetails(@PathVariable int id)
+    public ResponseEntity<Account> accountDetails(@PathVariable int id, @PathVariable int accId)
     {
-        ResponseEntity.status(HttpStatus.CREATED);
-        
-        service.
+        ResponseEntity.status(HttpStatus.CREATED);      
+        return ResponseEntity.ok().body(service.getAccount(accId));
     }
+    
+    @RequestMapping(produces = "application/json", value = "accounts/{accId}/withdraw/{amt}", method = RequestMethod.GET)
+    @ResponseBody
+    public ResponseEntity<Account> accountWithdraw(@PathVariable int id, @PathVariable int accId, @PathVariable BigDecimal amt)
+    {
+        ResponseEntity.status(HttpStatus.CREATED);      
+        return ResponseEntity.ok().body(service.Withdrawl(accId, amt));
+    }
+    
+    @RequestMapping(produces = "application/json", value = "accounts/{accId}/deposit/{amt}", method = RequestMethod.GET)
+    @ResponseBody
+    public ResponseEntity<Account> accountDeposit(@PathVariable int id, @PathVariable int accId, @PathVariable BigDecimal amt)
+    {
+        ResponseEntity.status(HttpStatus.CREATED);      
+        return ResponseEntity.ok().body(service.Deposit(accId, amt));
+    }
+    
+    @RequestMapping(produces = "application/json", value = "accounts/{accId}/transfer/{accId2}/{amt}", method = RequestMethod.GET)
+    @ResponseBody
+    public ResponseEntity<Account> accountDeposit(@PathVariable int id, @PathVariable int accId, @PathVariable int accId2, @PathVariable BigDecimal amt)
+    {
+        ResponseEntity.status(HttpStatus.CREATED);      
+        return ResponseEntity.ok().body(service.Transfer(accId, accId2, amt));
+    }
+    
+    
 }
