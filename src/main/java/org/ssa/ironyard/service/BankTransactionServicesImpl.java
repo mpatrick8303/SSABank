@@ -3,17 +3,21 @@ package org.ssa.ironyard.service;
 import java.math.BigDecimal;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.ssa.ironyard.dao.AccountDAOImpl;
 import org.ssa.ironyard.dao.CustomerDAOImpl;
 import org.ssa.ironyard.model.Account;
 import org.ssa.ironyard.model.Customer;
 
+@Component
 public class BankTransactionServicesImpl implements BankTransactionServices
 {
-    
+    @Autowired
     AccountDAOImpl accounts;
     CustomerDAOImpl customers;
     
+    @Autowired
     public BankTransactionServicesImpl(AccountDAOImpl accounts,CustomerDAOImpl customers)
     {
         
