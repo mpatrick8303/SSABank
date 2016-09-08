@@ -32,10 +32,13 @@ public class BankTransactionServicesImplTest
     Account travisAdamsCHIns;
     
     
+    
+    BankTransactionServicesImpl bankS;
+    
     AccountDAOImpl accounts;
-    CustomerDAO cus;
+    CustomerDAOImpl cus;
 
-    BankTransactionServicesImpl bankS = new BankTransactionServicesImpl();
+    
     
     static String URL = "jdbc:mysql://localhost/ssa_bank?" + "user=root&password=root&" + "useServerPrepStmts=true";
     
@@ -46,8 +49,9 @@ public class BankTransactionServicesImplTest
         mysqlDataSource.setURL(URL);
         accounts = new AccountDAOImpl(mysqlDataSource);
         cus = new CustomerDAOImpl(mysqlDataSource);
+        bankS = new BankTransactionServicesImpl(accounts, cus);
         
-        bankS.deleteAll();
+        //bankS.deleteAll();
         
         mikePatrick = new Customer("Mike","Patrick");
         travisAdams = new Customer("Travis","Adams");
@@ -117,7 +121,7 @@ public class BankTransactionServicesImplTest
         
     }
     
-    @Test
+    //@Test
     public void testDeleteAll()
     {
         bankS.deleteAll();

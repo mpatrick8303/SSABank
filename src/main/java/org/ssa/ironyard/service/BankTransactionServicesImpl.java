@@ -1,26 +1,24 @@
 package org.ssa.ironyard.service;
 
 import java.math.BigDecimal;
+import java.util.List;
 
-import org.ssa.ironyard.model.Account;
 import org.ssa.ironyard.dao.AccountDAOImpl;
 import org.ssa.ironyard.dao.CustomerDAOImpl;
-
-import com.mysql.cj.jdbc.MysqlDataSource;
+import org.ssa.ironyard.model.Account;
+import org.ssa.ironyard.model.Customer;
 
 public class BankTransactionServicesImpl implements BankTransactionServices
 {
-    static String URL = "jdbc:mysql://localhost/ssa_bank?" + "user=root&password=root&" + "useServerPrepStmts=true";
+    
     AccountDAOImpl accounts;
     CustomerDAOImpl customers;
     
-    public BankTransactionServicesImpl()
+    public BankTransactionServicesImpl(AccountDAOImpl accounts,CustomerDAOImpl customers)
     {
         
-        MysqlDataSource mysqlDataSource = new MysqlDataSource();
-        mysqlDataSource.setURL(URL);
-        accounts = new AccountDAOImpl(mysqlDataSource);
-        customers = new CustomerDAOImpl(mysqlDataSource);
+        this.accounts = accounts;
+        this.customers = customers;
         
     }
  
@@ -69,6 +67,11 @@ public class BankTransactionServicesImpl implements BankTransactionServices
         Account wB = new Account(b.getId(),b.getCustomer(),b.getType(),bBalance);
         accounts.update(wA);
         return accounts.update(wB);
+    }
+    
+    public List<Customer> readCustomers()
+    {
+        return customers.readAll();
     }
     
     public void deleteAll()

@@ -30,12 +30,13 @@ public class AccountDAOImplEagerTest
     static String URL = "jdbc:mysql://localhost/ssa_bank?" + "user=root&password=root&" + "useServerPrepStmts=true";
     AccountDAOImpl accounts;
     CustomerDAO cus;
+    MysqlDataSource mysqlDataSource = new MysqlDataSource();
     
     @Before
     public void setup()
     {
         
-        MysqlDataSource mysqlDataSource = new MysqlDataSource();
+        
         mysqlDataSource.setURL(URL);
         accounts = new AccountDAOImpl(mysqlDataSource);
         cus = new CustomerDAOImpl(mysqlDataSource);
