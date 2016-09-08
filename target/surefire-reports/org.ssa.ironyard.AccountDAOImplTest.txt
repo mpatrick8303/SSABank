@@ -1,0 +1,39 @@
+-------------------------------------------------------------------------------
+Test set: org.ssa.ironyard.AccountDAOImplTest
+-------------------------------------------------------------------------------
+Tests run: 7, Failures: 0, Errors: 7, Skipped: 0, Time elapsed: 1.647 sec <<< FAILURE! - in org.ssa.ironyard.AccountDAOImplTest
+testRead(org.ssa.ironyard.AccountDAOImplTest)  Time elapsed: 0.195 sec  <<< ERROR!
+java.lang.RuntimeException: null
+	at org.ssa.ironyard.dao.AccountDAOImpl.insert(AccountDAOImpl.java:62)
+	at org.ssa.ironyard.AccountDAOImplTest.testRead(AccountDAOImplTest.java:134)
+
+testReadType(org.ssa.ironyard.AccountDAOImplTest)  Time elapsed: 0.168 sec  <<< ERROR!
+java.lang.RuntimeException: null
+	at org.ssa.ironyard.dao.AccountDAOImpl.insert(AccountDAOImpl.java:62)
+	at org.ssa.ironyard.AccountDAOImplTest.testReadType(AccountDAOImplTest.java:167)
+
+testReadUser(org.ssa.ironyard.AccountDAOImplTest)  Time elapsed: 0.267 sec  <<< ERROR!
+java.lang.RuntimeException: null
+	at org.ssa.ironyard.dao.AccountDAOImpl.insert(AccountDAOImpl.java:62)
+	at org.ssa.ironyard.AccountDAOImplTest.testReadUser(AccountDAOImplTest.java:150)
+
+testDelete(org.ssa.ironyard.AccountDAOImplTest)  Time elapsed: 0.231 sec  <<< ERROR!
+java.lang.RuntimeException: null
+	at org.ssa.ironyard.dao.AccountDAOImpl.insert(AccountDAOImpl.java:62)
+	at org.ssa.ironyard.AccountDAOImplTest.testDelete(AccountDAOImplTest.java:98)
+
+testInsert(org.ssa.ironyard.AccountDAOImplTest)  Time elapsed: 0.258 sec  <<< ERROR!
+java.lang.RuntimeException: null
+	at org.ssa.ironyard.dao.AccountDAOImpl.insert(AccountDAOImpl.java:62)
+	at org.ssa.ironyard.AccountDAOImplTest.testInsert(AccountDAOImplTest.java:62)
+
+testUpdate(org.ssa.ironyard.AccountDAOImplTest)  Time elapsed: 0.294 sec  <<< ERROR!
+java.lang.RuntimeException: null
+	at org.ssa.ironyard.dao.AccountDAOImpl.insert(AccountDAOImpl.java:62)
+	at org.ssa.ironyard.AccountDAOImplTest.testUpdate(AccountDAOImplTest.java:111)
+
+testUnderwater(org.ssa.ironyard.AccountDAOImplTest)  Time elapsed: 0.232 sec  <<< ERROR!
+java.lang.RuntimeException: null
+	at org.ssa.ironyard.dao.AccountDAOImpl.insert(AccountDAOImpl.java:62)
+	at org.ssa.ironyard.AccountDAOImplTest.testUnderwater(AccountDAOImplTest.java:181)
+
