@@ -5,6 +5,31 @@
 	<title>SSA Bank</title>
 	</head>
 	<body>
-
+	
+		<section id="customer-list">
+			<ul id ="ul-c">
+			
+			</ul>
+		</section>	
+		
+		
+		<script src="/jquery-3.1.0.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function()
+					{
+						$.getJSON("customers",customers);
+				
+					});
+			function customers(response)
+			{
+				for(let i = 0; i<response.length;i++)
+				{
+					response[i].first
+				}
+				
+				console.log('got customers list of ' + response.length)
+			}
+		
+		</script>
 	</body>
 </html>

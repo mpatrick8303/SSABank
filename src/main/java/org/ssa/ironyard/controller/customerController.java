@@ -25,8 +25,8 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 @RestController
-@RequestMapping("/ssa-bank")
-public class customerController
+@RequestMapping(value = "/ssa-bank", method= RequestMethod.GET)
+public class CustomerController
 {
     
     @Autowired
@@ -34,62 +34,28 @@ public class customerController
     
     static final Logger LOGGER = LogManager.getLogger(BankStarter.class);
     
-    @RequestMapping("/customers")
+    @RequestMapping(value = "", method = RequestMethod.GET)
     @ResponseBody
-    public ResponseEntity<List<String>> customers()
+    public ResponseEntity<List<Customer>> customers()
     {
         List<Customer> customers = service.readCustomers();
-        List<String> customerStrings = new ArrayList<>();
         
-        for (int i = 0; i < customers.size(); i++)
-        {
-            customerStrings.add(convertCustomerJson(customers.get(i)));
-        }
-        return ResponseEntity.ok().header("SSA-Bank Customer", "List of Customers").body(customerStrings);
+
+        return ResponseEntity.ok().header("SSA-Bank Customer", "List of Customers").body(customers);
     }
     
     @RequestMapping(value = "/customers/{customerID}", method = RequestMethod.GET)
     @ResponseBody
-    public ResponseEntity<String> customer(@PathVariable String customerID)
+    public ResponseEntity<Customer> customer(@PathVariable String customerID)
     {
         int id = Integer.parseInt(customerID);
-        String customer = convertCustomerJson(service.readCustomer(id));
+        Customer cus = service.readCustomer(id);
         
-        return ResponseEntity.ok().header("SSA_Bank Customer", "Customer").body(customer);
-        
-    }
-    
-    @RequestMapping( "/customers/cus")
-    @ResponseBody
-    public ResponseEntity<String> customer2(HttpServletRequest customerID)
-    {
-        String cID = customerID.getParameter("id");
-        int id = Integer.parseInt(cID);
-        String customer = convertCustomerJson(service.readCustomer(id));
-        
-        return ResponseEntity.ok().header("SSA_Bank Customer", "Customer").body(customer);
+        return ResponseEntity.ok().header("SSA_Bank Customer", "Customer").body(cus);
         
     }
     
-    private String convertCustomerJson(Customer customers) 
-    {
-        ObjectMapper mapper = new ObjectMapper();
-        String jsonInString = null;
-        String jsonInString2 = null;
-        
-        try {
-            jsonInString = mapper.writeValueAsString(customers);
-    
-            jsonInString2 = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(customers);
 
-        } catch (JsonGenerationException e) {
-            e.printStackTrace();
-        } catch (JsonMappingException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return jsonInString;
-        
-    }
+    
+    
 }

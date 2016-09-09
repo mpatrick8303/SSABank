@@ -4,7 +4,7 @@ C:\Users\admin\workspace\SSABank\src\main\java\org\ssa\ironyard\model\DomainObje
 C:\Users\admin\workspace\SSABank\src\main\java\org\ssa\ironyard\config\DataSourceConfiguration.java
 C:\Users\admin\workspace\SSABank\src\main\java\org\ssa\ironyard\dao\CustomerORM.java
 C:\Users\admin\workspace\SSABank\src\main\java\org\ssa\ironyard\model\Account.java
-C:\Users\admin\workspace\SSABank\src\main\java\org\ssa\ironyard\controller\customerController.java
+C:\Users\admin\workspace\SSABank\src\main\java\org\ssa\ironyard\controller\CustomerController.java
 C:\Users\admin\workspace\SSABank\src\main\java\org\ssa\ironyard\dao\AccountDAOImpl.java
 C:\Users\admin\workspace\SSABank\src\main\java\org\ssa\ironyard\dao\AccountORM.java
 C:\Users\admin\workspace\SSABank\src\main\java\org\ssa\ironyard\model\ORM.java
