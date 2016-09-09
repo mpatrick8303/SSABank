@@ -9,7 +9,7 @@ public class Account implements DomainObject
 {
     
     Type type;
-    private Customer customer;
+    Customer customer;
     Integer id;
     BigDecimal balance;
     boolean isLoaded = false;

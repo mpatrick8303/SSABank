@@ -5,7 +5,15 @@
 	<title>SSA Bank</title>
 	</head>
 	<body>
-	
+		<header>
+			<h1>SSA-Bank</h1>
+			<menu id="menu">
+				<ul>
+					<li id="addCust">Add Customers</a></li>
+					<li id="addAcc">Add Account</a></li>
+				</ul>
+			</menu>
+		</header>
 		<section class="hidden" id="customer-list">
 			<ul id ="ul-c">
 			
@@ -15,7 +23,7 @@
 		</section>	
 		
 		<section class="hidden" id="customer">
-			<div id="cus"></div>
+			<div class="custClass"></div>
 			<button id="show-accounts">Show</button>
 		</section>
 		
@@ -23,6 +31,32 @@
 			<ul id="ul-a">
 			
 			</ul>
+		</section>
+		
+		<section class="hidden" id="account">
+			<div class="accClass"></div><br>
+			<div id = wdt>
+			<input id="textW" type="text">
+			<button  id = "accountW">Withdraw</button>
+			
+			<input id="textD" type="text">
+			<button id = "accountD">Deposit</button>
+			
+			<input id="textT" type="text">
+			<button id = "accountT">Transfer</button>
+			
+			</div>
+			
+		</section>
+		
+		<section id="addCustForm">
+		
+			<form>
+				First Name<input id="fNameAdd" type="text">
+				Last Name<input id="lNameAdd" type="text">
+				<input id="submitAddC" type="submit">Add this BITCH</input>
+			</form>
+		
 		</section>
 		
 		
@@ -43,39 +77,98 @@
 				}
 				
 				$('#customer-list').show()
+				$('#customer').hide()
+				$('#accounts').hide()
+				$('#wdt').hide()
+				$('#addCustForm').hide()
+				
 				
 			}
 			
 			$('#ul-c').click(function(evt)
 			{
 				console.log(evt.target.id)
-				$('#cus').empty()
+				$('.custClass').empty()
 				$.getJSON("ssa-bank/customers/" + $(evt.target).attr('id'), customer)
 				
 
 			});
 			function customer(response)
 			{
-				$('#cus').append('<p>').attr('id',response.id).addClass("custClass").append(response.id + " " + response.firstName + " " + response.lastName)
+				$('.custClass').attr('id',response.id).text(response.id + " " + response.firstName + " " + response.lastName)
 
 				$('#customer-list').hide()
-				$('#cus').show()
+				$('#customer').show()
 			}
 			
+			$('#addCust').click(function(evt)
+			{
+				$('#addCustForm').show()
+				$('#customer-list').hide()
+				$('#customer').hide()
+				$('#accounts').hide()
+				$('#wdt').hide()
+				
+			});
+			
 			$('#show-accounts').click(function(evt)
-					{
-						console.log(document.getElementsByClassName('custClass')[0].id)
-						$.getJSON("ssa-bank/customers/"+ document.getElementsByClassName('custClass')[0].id + "/accounts" , accounts)
+			{
+				console.log(document.getElementsByClassName('custClass')[0].id)
+				$.getJSON("ssa-bank/customers/"+ document.getElementsByClassName('custClass')[0].id + "/accounts" , accounts)
 						
 
-					});
-					function accounts(response)
-					{
-						$('#cus').append(response.id + " " + response.firstName + " " + response.lastName)
-						$('#customer-list').hide()
-						$('#cus').show()
-					}
+			});
+			function accounts(response)
+			{
+				$('#customer').hide()
+				console.log(response.length)
+				console.log(response[0].id)
+				
+				
+				for(let i = 0; i<response.length;i++)
+				{
+					$('#ul-a').append('<li id=\''+response[i].id+'\'>' + response[i].id + " " + response[i].customer.id + " " + response[i].type + " " + response[i].balance  + '</li>')
+					
+				}
+				
+				$('#accounts').show()
+			}
 			
+			$('#ul-a').click(function(evt)
+			{
+				console.log(evt.target.id)
+				console.log(document.getElementsByClassName('custClass')[0].id)
+				$('.accClass').empty()
+				$.getJSON("ssa-bank/customers/" + document.getElementsByClassName('custClass')[0].id  + "/accounts/" + $(evt.target).attr('id') + "/detail", account)
+						
+
+			});
+			function account(response)
+			{
+				$('.accClass').attr('id',response.id).text(response.id + " " + response.customer.id + " " + response.type + " " + response.balance)
+
+				$('#accounts').hide()
+				$('#account').show()
+				$('#wdt').show()
+			}
+			
+			//$('#accountW').click(function(evt)
+			//{
+			//	console.log(document.getElementsByClassName('custClass')[0].id)
+			//	console.log(document.getElementsByClassName('accClass')[0].id)
+			//	console.log(document.getElementById('textW').value)
+			//	
+			//	$.getJSON("ssa-bank/customers/" + document.getElementsByClassName('custClass')[0].id + "/accounts/" + document.getElementsByClassName('accClass')[0].id + "/withdraw/" + document.getElementById('textW').value, withdraw)
+			//
+			//	
+			//})
+			
+			//function withdraw(response)
+			//{
+			//	$('.accClass').attr('id',response.id).text(response.id + " " + response.customer.id + " " + response.type + " " + response.balance)
+//
+	//			
+		//	}
 			
 			
 	

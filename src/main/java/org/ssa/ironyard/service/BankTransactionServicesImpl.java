@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 import org.ssa.ironyard.dao.AccountDAOImpl;
 import org.ssa.ironyard.dao.CustomerDAOImpl;
 import org.ssa.ironyard.model.Account;
@@ -27,6 +28,7 @@ public class BankTransactionServicesImpl implements BankTransactionServices
     }
  
     @Override
+    @Transactional
     public Account Withdrawl(int account, BigDecimal amount)
     {
         Account a = accounts.read(account);
@@ -41,6 +43,7 @@ public class BankTransactionServicesImpl implements BankTransactionServices
     }
 
     @Override
+    @Transactional
     public Account Deposit(int account, BigDecimal amount)
     {
         Account a = accounts.read(account);
@@ -55,6 +58,7 @@ public class BankTransactionServicesImpl implements BankTransactionServices
     }
 
     @Override
+    @Transactional
     public Account Transfer(int accountOne, int accountTwo, BigDecimal amount)
     {
         Account a = accounts.read(accountOne);
@@ -73,30 +77,32 @@ public class BankTransactionServicesImpl implements BankTransactionServices
         return accounts.update(wB);
     }
     
+    @Transactional
     public Account addAccount(Account acct)
     {
        return accounts.insert(acct);
     }
+    @Transactional
     public Account getAccount(int id)
     {
         return accounts.read(id);
     }
-    
+    @Transactional
     public Customer getCustomer(int id)
     {
         return customers.read(id);
     }
-    
+    @Transactional
     public List<Customer> readCustomers()
     {
         return customers.readAll();
     }
-    
+    @Transactional
     public Customer readCustomer(int id)
     {
         return customers.read(id);
     }
-    
+    @Transactional
     public List<Account> readAccounts(int id)
     {
         return accounts.readUser(id);

@@ -3,6 +3,8 @@ package org.ssa.ironyard.controller;
 import java.math.BigDecimal;
 import java.util.List;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.ssa.ironyard.BankStarter;
 import org.ssa.ironyard.model.Account;
 import org.ssa.ironyard.model.Account.Type;
 import org.ssa.ironyard.service.BankTransactionServicesImpl;
@@ -19,6 +22,8 @@ import org.ssa.ironyard.service.BankTransactionServicesImpl;
 @RequestMapping("/ssa-bank/customers/{id}/")
 public class AccountController {
 
+    static final Logger LOGGER = LogManager.getLogger(BankStarter.class);
+    
     @Autowired
     BankTransactionServicesImpl service;
     
@@ -29,7 +34,7 @@ public class AccountController {
        ResponseEntity.status(HttpStatus.CREATED);
        
        List<Account> accountList = service.readAccounts(id);
-       return ResponseEntity.ok().body(accountList);
+       return ResponseEntity.ok().header("SSA_Bank Customer", "Account").body(accountList);
     }
     
     @RequestMapping(produces = "application/json", value = "accounts/{accId}/detail", method = RequestMethod.GET)
