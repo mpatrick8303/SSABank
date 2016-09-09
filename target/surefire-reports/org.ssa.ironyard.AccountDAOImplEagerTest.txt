@@ -1,4 +1,33 @@
 -------------------------------------------------------------------------------
 Test set: org.ssa.ironyard.AccountDAOImplEagerTest
 -------------------------------------------------------------------------------
+<<<<<<< HEAD
 Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.546 sec - in org.ssa.ironyard.AccountDAOImplEagerTest
+=======
+Tests run: 5, Failures: 0, Errors: 5, Skipped: 0, Time elapsed: 1.362 sec <<< FAILURE! - in org.ssa.ironyard.AccountDAOImplEagerTest
+testReadEagerUnderwater(org.ssa.ironyard.AccountDAOImplEagerTest)  Time elapsed: 0.582 sec  <<< ERROR!
+java.lang.RuntimeException: null
+	at org.ssa.ironyard.dao.AccountDAOImpl.insert(AccountDAOImpl.java:64)
+	at org.ssa.ironyard.AccountDAOImplEagerTest.testReadEagerUnderwater(AccountDAOImplEagerTest.java:139)
+
+testEagerReadUser(org.ssa.ironyard.AccountDAOImplEagerTest)  Time elapsed: 0.273 sec  <<< ERROR!
+java.lang.RuntimeException: null
+	at org.ssa.ironyard.dao.AccountDAOImpl.insert(AccountDAOImpl.java:64)
+	at org.ssa.ironyard.AccountDAOImplEagerTest.testEagerReadUser(AccountDAOImplEagerTest.java:96)
+
+testReadEagerType(org.ssa.ironyard.AccountDAOImplEagerTest)  Time elapsed: 0.178 sec  <<< ERROR!
+java.lang.RuntimeException: null
+	at org.ssa.ironyard.dao.AccountDAOImpl.insert(AccountDAOImpl.java:64)
+	at org.ssa.ironyard.AccountDAOImplEagerTest.testReadEagerType(AccountDAOImplEagerTest.java:118)
+
+testEagerRead(org.ssa.ironyard.AccountDAOImplEagerTest)  Time elapsed: 0.166 sec  <<< ERROR!
+java.lang.RuntimeException: null
+	at org.ssa.ironyard.dao.AccountDAOImpl.insert(AccountDAOImpl.java:64)
+	at org.ssa.ironyard.AccountDAOImplEagerTest.testEagerRead(AccountDAOImplEagerTest.java:79)
+
+testIsLoaded(org.ssa.ironyard.AccountDAOImplEagerTest)  Time elapsed: 0.15 sec  <<< ERROR!
+java.lang.RuntimeException: null
+	at org.ssa.ironyard.dao.AccountDAOImpl.insert(AccountDAOImpl.java:64)
+	at org.ssa.ironyard.AccountDAOImplEagerTest.testIsLoaded(AccountDAOImplEagerTest.java:63)
+
+>>>>>>> e8b846472069dba0ae4b81e2d7e07b49f77e7fa5

@@ -1,4 +1,23 @@
 -------------------------------------------------------------------------------
 Test set: org.ssa.ironyard.BankTransactionServicesImplTest
 -------------------------------------------------------------------------------
+<<<<<<< HEAD
 Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.606 sec - in org.ssa.ironyard.BankTransactionServicesImplTest
+=======
+Tests run: 3, Failures: 0, Errors: 3, Skipped: 0, Time elapsed: 0.671 sec <<< FAILURE! - in org.ssa.ironyard.BankTransactionServicesImplTest
+testDeposit(org.ssa.ironyard.BankTransactionServicesImplTest)  Time elapsed: 0.246 sec  <<< ERROR!
+java.lang.RuntimeException: null
+	at org.ssa.ironyard.dao.AccountDAOImpl.insert(AccountDAOImpl.java:64)
+	at org.ssa.ironyard.BankTransactionServicesImplTest.setup(BankTransactionServicesImplTest.java:68)
+
+testWithdrawl(org.ssa.ironyard.BankTransactionServicesImplTest)  Time elapsed: 0.258 sec  <<< ERROR!
+java.lang.RuntimeException: null
+	at org.ssa.ironyard.dao.AccountDAOImpl.insert(AccountDAOImpl.java:64)
+	at org.ssa.ironyard.BankTransactionServicesImplTest.setup(BankTransactionServicesImplTest.java:68)
+
+testTransfer(org.ssa.ironyard.BankTransactionServicesImplTest)  Time elapsed: 0.16 sec  <<< ERROR!
+java.lang.RuntimeException: null
+	at org.ssa.ironyard.dao.AccountDAOImpl.insert(AccountDAOImpl.java:64)
+	at org.ssa.ironyard.BankTransactionServicesImplTest.setup(BankTransactionServicesImplTest.java:68)
+
+>>>>>>> e8b846472069dba0ae4b81e2d7e07b49f77e7fa5

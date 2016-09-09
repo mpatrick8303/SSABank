@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\admin\workspace\SSABank\src\main\java\org\ssa\ironyard\dao\AbstractDAO.java
 C:\Users\admin\workspace\SSABank\src\main\java\org\ssa\ironyard\model\Customer.java
 C:\Users\admin\workspace\SSABank\src\main\java\org\ssa\ironyard\model\DomainObject.java
@@ -17,3 +18,24 @@ C:\Users\admin\workspace\SSABank\src\main\java\org\ssa\ironyard\service\BankAcco
 C:\Users\admin\workspace\SSABank\src\main\java\org\ssa\ironyard\service\BankAccountServicesImpl.java
 C:\Users\admin\workspace\SSABank\src\main\java\org\ssa\ironyard\service\BankTransactionServices.java
 C:\Users\admin\workspace\SSABank\src\main\java\org\ssa\ironyard\dao\CustomerDAO.java
+=======
+C:\Users\admin\SSABank\src\main\java\org\ssa\ironyard\BankStarter.java
+C:\Users\admin\SSABank\src\main\java\org\ssa\ironyard\dao\CustomerDAO.java
+C:\Users\admin\SSABank\src\main\java\org\ssa\ironyard\dao\AccountORM.java
+C:\Users\admin\SSABank\src\main\java\org\ssa\ironyard\dao\AccountDAOImpl.java
+C:\Users\admin\SSABank\src\main\java\org\ssa\ironyard\dao\AccountDAO.java
+C:\Users\admin\SSABank\src\main\java\org\ssa\ironyard\service\BankTransactionServices.java
+C:\Users\admin\SSABank\src\main\java\org\ssa\ironyard\dao\CustomerDAOImpl.java
+C:\Users\admin\SSABank\src\main\java\org\ssa\ironyard\dao\CustomerORM.java
+C:\Users\admin\SSABank\src\main\java\org\ssa\ironyard\service\BankAccountServices.java
+C:\Users\admin\SSABank\src\main\java\org\ssa\ironyard\model\Account.java
+C:\Users\admin\SSABank\src\main\java\org\ssa\ironyard\controller\customerController.java
+C:\Users\admin\SSABank\src\main\java\org\ssa\ironyard\service\BankAccountServicesImpl.java
+C:\Users\admin\SSABank\src\main\java\org\ssa\ironyard\controller\AccountController.java
+C:\Users\admin\SSABank\src\main\java\org\ssa\ironyard\service\BankTransactionServicesImpl.java
+C:\Users\admin\SSABank\src\main\java\org\ssa\ironyard\model\DomainObject.java
+C:\Users\admin\SSABank\src\main\java\org\ssa\ironyard\model\ORM.java
+C:\Users\admin\SSABank\src\main\java\org\ssa\ironyard\config\DataSourceConfiguration.java
+C:\Users\admin\SSABank\src\main\java\org\ssa\ironyard\model\Customer.java
+C:\Users\admin\SSABank\src\main\java\org\ssa\ironyard\dao\AbstractDAO.java
+>>>>>>> e8b846472069dba0ae4b81e2d7e07b49f77e7fa5

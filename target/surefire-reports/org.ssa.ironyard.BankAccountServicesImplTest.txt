@@ -1,4 +1,36 @@
 -------------------------------------------------------------------------------
 Test set: org.ssa.ironyard.BankAccountServicesImplTest
 -------------------------------------------------------------------------------
+<<<<<<< HEAD
 Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.795 sec - in org.ssa.ironyard.BankAccountServicesImplTest
+=======
+<<<<<<< HEAD
+Tests run: 6, Failures: 0, Errors: 4, Skipped: 0, Time elapsed: 0.644 sec <<< FAILURE! - in org.ssa.ironyard.BankAccountServicesImplTest
+testUpdateAccount(org.ssa.ironyard.BankAccountServicesImplTest)  Time elapsed: 0.071 sec  <<< ERROR!
+java.lang.RuntimeException: null
+	at org.ssa.ironyard.dao.AccountDAOImpl.insert(AccountDAOImpl.java:64)
+	at org.ssa.ironyard.service.BankAccountServicesImpl.insertAccount(BankAccountServicesImpl.java:40)
+	at org.ssa.ironyard.BankAccountServicesImplTest.testUpdateAccount(BankAccountServicesImplTest.java:117)
+
+testDeleteAccount(org.ssa.ironyard.BankAccountServicesImplTest)  Time elapsed: 0.062 sec  <<< ERROR!
+java.lang.RuntimeException: null
+	at org.ssa.ironyard.dao.AccountDAOImpl.insert(AccountDAOImpl.java:64)
+	at org.ssa.ironyard.service.BankAccountServicesImpl.insertAccount(BankAccountServicesImpl.java:40)
+	at org.ssa.ironyard.BankAccountServicesImplTest.testDeleteAccount(BankAccountServicesImplTest.java:74)
+
+testAccountInsert(org.ssa.ironyard.BankAccountServicesImplTest)  Time elapsed: 0.058 sec  <<< ERROR!
+java.lang.RuntimeException: null
+	at org.ssa.ironyard.dao.AccountDAOImpl.insert(AccountDAOImpl.java:64)
+	at org.ssa.ironyard.service.BankAccountServicesImpl.insertAccount(BankAccountServicesImpl.java:40)
+	at org.ssa.ironyard.BankAccountServicesImplTest.testAccountInsert(BankAccountServicesImplTest.java:61)
+
+testDeleteCustomer(org.ssa.ironyard.BankAccountServicesImplTest)  Time elapsed: 0.103 sec  <<< ERROR!
+java.lang.RuntimeException: null
+	at org.ssa.ironyard.dao.AccountDAOImpl.insert(AccountDAOImpl.java:64)
+	at org.ssa.ironyard.service.BankAccountServicesImpl.insertAccount(BankAccountServicesImpl.java:40)
+	at org.ssa.ironyard.BankAccountServicesImplTest.testDeleteCustomer(BankAccountServicesImplTest.java:86)
+
+=======
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.877 sec - in org.ssa.ironyard.BankAccountServicesImplTest
+>>>>>>> dfc25fa45b49b92f9d009c4b5af6f3edce13344a
+>>>>>>> e8b846472069dba0ae4b81e2d7e07b49f77e7fa5

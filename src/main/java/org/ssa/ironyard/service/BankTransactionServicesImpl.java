@@ -13,7 +13,7 @@ import org.ssa.ironyard.model.Customer;
 @Component
 public class BankTransactionServicesImpl implements BankTransactionServices
 {
-    
+    @Autowired
     AccountDAOImpl accounts;
     CustomerDAOImpl customers;
     
