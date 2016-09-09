@@ -6,29 +6,50 @@
 	</head>
 	<body>
 	
-		<section id="customer-list">
+		<section class="hidden" id="customer-list">
 			<ul id ="ul-c">
 			
 			</ul>
+			
+			
 		</section>	
+		
+		<section class="hidden" id="customer">
+			<span id="cus"></span>
+		</section>
 		
 		
 		<script src="/jquery-3.1.0.min.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function()
-					{
-						$.getJSON("customers",customers);
+			{
+				$.getJSON("ssa-bank/customers",customers);
 				
-					});
+			});
 			function customers(response)
 			{
 				for(let i = 0; i<response.length;i++)
 				{
-					response[i].first
+					$('#ul-c').append('<li id=\''+response[i].id+'\'>' + response[i].id + " " + response[i].firstName + " " + response[i].lastName  + '</li>')
+					
+					
 				}
 				
-				console.log('got customers list of ' + response.length)
 			}
+			
+			$('#ul-c li').click(function()
+			{
+				
+				$.getJSON("ssa-bank/customers/" + $(this.id).attr('id'), customer)
+			});
+			function customer(response)
+			{
+				$('#cus').append($(this.id).attr('id'))
+			}
+			
+			
+			
+	
 		
 		</script>
 	</body>

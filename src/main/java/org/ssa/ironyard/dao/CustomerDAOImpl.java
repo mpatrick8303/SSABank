@@ -139,7 +139,7 @@ public class CustomerDAOImpl  extends AbstractDAO<Customer> implements CustomerD
         try
         {
             connection = datasource.getConnection();
-            preparedStatement = connection.prepareStatement("Select * From customers");
+            preparedStatement = connection.prepareStatement("Select * From customers Order By last ASC");
             ResultSet results = preparedStatement.executeQuery();
 
             while (results.next())

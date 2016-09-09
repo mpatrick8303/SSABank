@@ -11,6 +11,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -24,8 +25,8 @@ import com.fasterxml.jackson.core.JsonGenerationException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-@RestController
-@RequestMapping(value = "/ssa-bank", method= RequestMethod.GET)
+@Controller
+@RequestMapping("/ssa-bank")
 public class CustomerController
 {
     
@@ -34,14 +35,24 @@ public class CustomerController
     
     static final Logger LOGGER = LogManager.getLogger(BankStarter.class);
     
-    @RequestMapping(value = "", method = RequestMethod.GET)
-    @ResponseBody
-    public ResponseEntity<List<Customer>> customers()
+    @RequestMapping(value = "")
+    public String home()
     {
-        List<Customer> customers = service.readCustomers();
+        return "SSABank.html";
         
 
-        return ResponseEntity.ok().header("SSA-Bank Customer", "List of Customers").body(customers);
+        
+    }
+    
+    @RequestMapping(value = "/customers", method = RequestMethod.GET)
+    @ResponseBody
+    public ResponseEntity<List<Customer>> allCustomers()
+    {
+        
+        List<Customer> customers = service.readCustomers();
+        
+        return ResponseEntity.ok().header("SSA_Bank Customer", "Customer").body(customers);
+        
     }
     
     @RequestMapping(value = "/customers/{customerID}", method = RequestMethod.GET)
