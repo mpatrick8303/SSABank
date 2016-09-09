@@ -15,7 +15,14 @@
 		</section>	
 		
 		<section class="hidden" id="customer">
-			<span id="cus"></span>
+			<div id="cus"></div>
+			<button id="show-accounts">Show</button>
+		</section>
+		
+		<section class="hidden" id="accounts">
+			<ul id="ul-a">
+			
+			</ul>
 		</section>
 		
 		
@@ -35,17 +42,39 @@
 					
 				}
 				
+				$('#customer-list').show()
+				
 			}
 			
-			$('#ul-c li').click(function()
+			$('#ul-c').click(function(evt)
 			{
+				console.log(evt.target.id)
+				$('#cus').empty()
+				$.getJSON("ssa-bank/customers/" + $(evt.target).attr('id'), customer)
 				
-				$.getJSON("ssa-bank/customers/" + $(this.id).attr('id'), customer)
+
 			});
 			function customer(response)
 			{
-				$('#cus').append($(this.id).attr('id'))
+				$('#cus').append('<p>').attr('id',response.id).addClass("custClass").append(response.id + " " + response.firstName + " " + response.lastName)
+
+				$('#customer-list').hide()
+				$('#cus').show()
 			}
+			
+			$('#show-accounts').click(function(evt)
+					{
+						console.log(document.getElementsByClassName('custClass')[0].id)
+						$.getJSON("ssa-bank/customers/"+ document.getElementsByClassName('custClass')[0].id + "/accounts" , accounts)
+						
+
+					});
+					function accounts(response)
+					{
+						$('#cus').append(response.id + " " + response.firstName + " " + response.lastName)
+						$('#customer-list').hide()
+						$('#cus').show()
+					}
 			
 			
 			

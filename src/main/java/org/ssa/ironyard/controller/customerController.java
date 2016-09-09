@@ -1,15 +1,6 @@
 package org.ssa.ironyard.controller;
 
-import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
-
-<<<<<<< HEAD
-import javax.security.auth.message.callback.PrivateKeyCallback.Request;
-import javax.servlet.http.HttpServletRequest;
-=======
-
->>>>>>> e8b846472069dba0ae4b81e2d7e07b49f77e7fa5
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -20,15 +11,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
 import org.ssa.ironyard.BankStarter;
-
 import org.ssa.ironyard.model.Customer;
 import org.ssa.ironyard.service.BankTransactionServicesImpl;
-
-import com.fasterxml.jackson.core.JsonGenerationException;
-import com.fasterxml.jackson.databind.JsonMappingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 
 @Controller
 @RequestMapping("/ssa-bank")
