@@ -36,7 +36,7 @@ public class BankTransactionServicesImpl implements BankTransactionServices
         if(a == null)
             return new Account();
         
-        BigDecimal wBalance = a.getBalance().add(amount);
+        BigDecimal wBalance = a.getBalance().subtract(amount);
         
         Account wA = new Account(a.getId(),a.getCustomer(),a.getType(),wBalance);
         return accounts.update(wA);
@@ -51,7 +51,7 @@ public class BankTransactionServicesImpl implements BankTransactionServices
         if(a == null)
             return new Account();
         
-        BigDecimal wBalance = a.getBalance().subtract(amount);
+        BigDecimal wBalance = a.getBalance().add(amount);
         
         Account wA = new Account(a.getId(),a.getCustomer(),a.getType(),wBalance);
         return accounts.update(wA);
