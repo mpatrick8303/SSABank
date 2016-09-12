@@ -10,7 +10,7 @@
 			<menu id="menu">
 				<ul>
 					<li id="addCust">Add Customers</li>
-					<li id="updateCust">Update Customer</li>
+					
 					
 				</ul>
 			</menu>
@@ -25,7 +25,8 @@
 		
 		<section class="hidden" id="customer">
 			<div class="custClass"></div>
-			<button id="show-accounts">Show</button>
+			<button id="show-accounts">Show Accounts</button>
+			<button id="updateCust">Update Customer</button>
 		</section>
 		
 		<section class="hidden" id="accounts">
@@ -37,6 +38,7 @@
 		
 		<section class="hidden" id="account">
 			<div class="accClass"></div><br>
+			
 			<div id = wdt>
 			<input id="textW" type="text">
 			<button  id = "accountW">Withdraw</button>
@@ -48,6 +50,8 @@
 			<button id = "accountT">Transfer</button>
 			
 			</div>
+			
+			<button id="updateAccount">Update Account</button>
 			
 		</section>
 		
@@ -61,19 +65,44 @@
 		
 		</section>
 		
+		<section id="updateCustForm">
+		
+			<form>
+				First Name<input id="fNameUpdate" type="text">
+				Last Name<input id="lNameUpdate" type="text">
+				<input id="submitUpdateC" type="submit">Update this BITCH</input>
+			</form>
+		
+		</section>
+		
 		<section id="addAccountForm">
 		
 			<form>
-				Type of Account<input id="Type" type="text">
-				Balance<input id="Balance" type="text">
+				Type of Account<input id="TypeAdd" type="text">
+				Balance<input id="BalanceAdd" type="text">
 				<input id="submitAddA" type="submit">Add this BITCH</input>
+				
 			</form>
 		
+		</section>
+		
+		<section id="updateAccountForm">
+		
+			
+			<form>
+				Type of Account<input id="TypeUpdate" type="text">
+				Balance<input id="BalanceUpdate" type="text">
+				<input id="submitUpdateA" type="submit">Update this BITCH</input>
+	
+			</form>
+
 		</section>
 		
 		
 		<script src="/jquery-3.1.0.min.js"></script>
 		<script type="text/javascript">
+			var cusID = null;
+			var accID = null;
 			$(document).ready(function()
 			{
 				$.getJSON("ssa-bank/customers",customers);
@@ -91,16 +120,25 @@
 				$('#customer-list').show()
 				$('#customer').hide()
 				$('#accounts').hide()
-				$('#wdt').hide()
+				$('#account').hide()
 				$('#addCustForm').hide()
+				$('#updateCustForm').hide()
 				$('#addAccountForm').hide()
+				$('#updateAccountForm').hide()
 				
 				
 			}
 			
+			function customersClear()
+			{
+				$('#ul-c').empty()
+			}
+			
+			
 			$('#ul-c').click(function(evt)
 			{
-				console.log(evt.target.id)
+				cusID = evt.target.id
+				console.log(cusID)
 				$('.custClass').empty()
 				$.getJSON("ssa-bank/customers/" + $(evt.target).attr('id'), customer)
 				
@@ -132,6 +170,7 @@
 				
 			});
 			
+		
 			function sendAdd() 
 			{
 				
@@ -148,6 +187,43 @@
 		 
 				
 			}
+			
+			$('#updateCust').click(function(evt)
+			{
+				$('#updateCustForm').show()
+				$('#addCustForm').hide()
+				$('#customer-list').hide()
+				$('#customer').hide()
+				$('#accounts').hide()
+				$('#wdt').hide()
+				$('#account').hide()	
+				
+				console.log(cusID)
+				
+				
+			});
+			
+			$('#submitUpdateC').click(function(evt)
+					{
+						
+						sendUpdate();
+						$("ul-c").empty();
+					});
+					
+				
+					function sendUpdate()
+					{	
+				        $.ajax
+				        ({
+				            type: "PUT",
+				            url: "ssa-bank/customers/" + cusID,
+				            dataType: "json",
+				            data: {"firstName": document.getElementById("fNameUpdate").value, "lastName": document.getElementById("lNameUpdate").value}
+				        })
+						
+					}
+			
+			
 			
 			$('#show-accounts').click(function(evt)
 			{
@@ -174,7 +250,8 @@
 			
 			$('#ul-a').click(function(evt)
 			{
-				console.log(evt.target.id)
+				accID = evt.target.id
+				console.log(accID)
 				console.log(document.getElementsByClassName('custClass')[0].id)
 				$('.accClass').empty()
 				$.getJSON("ssa-bank/customers/" + document.getElementsByClassName('custClass')[0].id  + "/accounts/" + $(evt.target).attr('id') + "/detail", account)
@@ -187,7 +264,7 @@
 
 				$('#accounts').hide()
 				$('#account').show()
-				$('#wdt').show()
+
 			}
 			
 			$('#addAccount').click(function(evt)
@@ -197,27 +274,67 @@
 			
 			
 			$('#submitAddA').click(function(evt)
-					{
+			{
 						
-						sendAddAccount();
+				sendAddAccount();
 						
-					});
+			});
 					
-					function sendAddAccount() 
-					{
-						console.log(document.getElementsByClassName('custClass')[0].id)
-						console.log(document.getElementById("Type").value)
-						console.log(document.getElementById("Balance").value)
+			function sendAddAccount() 
+			{
+				console.log(document.getElementsByClassName('custClass')[0].id)
+				console.log(document.getElementById("TypeAdd").value)
+				console.log(document.getElementById("BalanceAdd").value)
 						
 						
-				        $.ajax
-				        ({
-				            type: "POST",
-				            url: "ssa-bank/customers/accounts/add",
-				            dataType: "json",
-				            data: {"custID": document.getElementsByClassName('custClass')[0].id, "Type": document.getElementById("Type").value , "Balance" : document.getElementById("Balance")}
-				        })
-					}
+		         $.ajax
+	      		({
+          			 type: "POST",
+           			 url: "ssa-bank/customers/accounts",
+		           	 dataType: "json",
+		       		 data: {"custID": document.getElementsByClassName('custClass')[0].id, "Type": document.getElementById("TypeAdd").value, "Balance": document.getElementById("BalanceAdd").value}
+		   		})
+		        		
+	     		customersClear()
+        		customers()
+				}
+					
+			$('#updateAccount').click(function(evt)
+			{
+					$('#updateAccountForm').show()
+					$('#wdt').hide()
+					$('#updateAccount').hide()
+					
+					
+											
+					
+			});
+			
+			
+							
+			$('#submitUpdateA').click(function(evt)
+			{
+										
+				sendUpdateAccount();
+				
+				
+			});
+									
+			function sendUpdateAccount() 
+			{
+				
+										
+										
+		        $.ajax
+	       		({
+     				type: "PUT",
+     				url: "ssa-bank/customers/" + cusID + "/accounts/" + accID,
+					dataType: "json",
+					data: {"Type": document.getElementById("TypeUpdate").value, "Balance": document.getElementById("BalanceUpdate").value}
+				})
+						        		
+
+			}
 			
 			//$('#accountW').click(function(evt)
 			//{

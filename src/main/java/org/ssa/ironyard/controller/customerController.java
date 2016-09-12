@@ -66,10 +66,26 @@ public class CustomerController
     @ResponseBody
     public ResponseEntity<Customer> addCustomer(HttpServletRequest request)
     {
+        LOGGER.info("hello");
         String fName = request.getParameter("firstName");
         String lName = request.getParameter("lastName");
 
         Customer c = aService.insertCustomer(fName, lName);
+        return ResponseEntity.ok().header("SSA_Bank Customer", "Customer").body(c);
+        
+    }
+    
+    @RequestMapping(value = "/customers/{customerID}", method = RequestMethod.PUT )
+    @ResponseBody
+    public ResponseEntity<Customer> updateCustomer(@PathVariable int customerID, HttpServletRequest request)
+    {
+        LOGGER.info("hello");
+        int cusID = customerID;
+        String fName = request.getParameter("firstName");
+        String lName = request.getParameter("lastName");
+
+        Customer c = new Customer(cusID, fName,lName);
+        aService.updateCustomer(c);
         return ResponseEntity.ok().header("SSA_Bank Customer", "Customer").body(c);
         
     }

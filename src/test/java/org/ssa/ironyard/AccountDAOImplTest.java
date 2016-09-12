@@ -32,7 +32,7 @@ public class AccountDAOImplTest
     AccountDAOImpl accounts;
     CustomerDAO cus;
     
-    //@Before
+    @Before
     public void setup()
     {
         
@@ -40,20 +40,20 @@ public class AccountDAOImplTest
         mysqlDataSource.setURL(URL);
         accounts = new AccountDAOImpl(mysqlDataSource);
         cus = new CustomerDAOImpl(mysqlDataSource);
-        cus.deleteAll();
+       // cus.deleteAll();
         
-        assertTrue(true);
-        mikePatrick = new Customer("Mike","Patrick");
-        travisAdams = new Customer("Travis","Adams");
-        mikePatrick = cus.insert(mikePatrick);
-        travisAdams = cus.insert(travisAdams);
-        
-        mikePatrickCH = new Account(mikePatrick, Type.CHECKING, BigDecimal.valueOf(1000.00));
-        mikePatrickSA = new Account(mikePatrick, Type.SAVINGS, BigDecimal.valueOf(400.00));
-        travisAdamsSA = new Account(travisAdams,Type.SAVINGS, BigDecimal.valueOf(500.00));
-        travisAdamsCH = new Account(travisAdams,Type.CHECKING, BigDecimal.valueOf(-700.00));
-        
-        accounts.clear();
+//        assertTrue(true);
+//        mikePatrick = new Customer("Mike","Patrick");
+//        travisAdams = new Customer("Travis","Adams");
+//        mikePatrick = cus.insert(mikePatrick);
+//        travisAdams = cus.insert(travisAdams);
+//        
+//        mikePatrickCH = new Account(mikePatrick, Type.CHECKING, BigDecimal.valueOf(1000.00));
+//        mikePatrickSA = new Account(mikePatrick, Type.SAVINGS, BigDecimal.valueOf(400.00));
+//        travisAdamsSA = new Account(travisAdams,Type.SAVINGS, BigDecimal.valueOf(500.00));
+//        travisAdamsCH = new Account(travisAdams,Type.CHECKING, BigDecimal.valueOf(-700.00));
+//        
+//        accounts.clear();
         
     }
     
@@ -201,6 +201,13 @@ public class AccountDAOImplTest
         
         
     }
+    
+    //@Test
+    public void testU()
+    {
+        cus.update(new Customer(5171,"dom","doe"));
+    }
+    
     
 
     

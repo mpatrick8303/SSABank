@@ -129,6 +129,12 @@ public class CustomerDAOImplTest
         
     }
     
+    //@Test
+    public void testU()
+    {
+        customers.update(new Customer(5171,"dom","doe"));
+    }
+    
     //@After
     public void tearDown()
     {

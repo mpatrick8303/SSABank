@@ -52,6 +52,66 @@ public class AccountController {
         return ResponseEntity.ok().body(service.getAccount(accId));
     }
     
+    @RequestMapping(produces = "application/json", value = "/accounts", method = RequestMethod.POST)//add account
+    @ResponseBody
+    public ResponseEntity<Account> accountAdd(HttpServletRequest request)
+    {
+
+        int cusID = Integer.parseInt(request.getParameter("custID"));
+        Type type = null;
+        if(request.getParameter("Type").toLowerCase().equals("ch") || request.getParameter("Type").toLowerCase().equals("checking"))
+        {
+            type = Type.CHECKING;
+        }
+        if(request.getParameter("Type").toLowerCase().equals("sa") || request.getParameter("Type").toLowerCase().equals("savings"))
+        {
+            type = Type.SAVINGS;
+        }
+        BigDecimal balance = new BigDecimal(request.getParameter("Balance"));
+        
+
+        Account a = aService.insertAccount(new Customer(cusID,null,null),type,balance);
+        
+        ResponseEntity.status(HttpStatus.CREATED);      
+        return ResponseEntity.ok().header("SSA_Bank Customer", "Customer").body(a);
+    }
+    
+    @RequestMapping(produces = "application/json", value = "{customerID}/accounts/{accId}", method = RequestMethod.PUT)//update account
+    @ResponseBody
+    public ResponseEntity<Account> accountUpdate(@PathVariable int customerID,@PathVariable int accId, HttpServletRequest request)
+    {
+        
+        
+        
+        int accountID = accId;
+        int cusID = customerID;
+        Type type = null;
+        if(request.getParameter("Type").toLowerCase().equals("ch") || request.getParameter("Type").toLowerCase().equals("checking"))
+        {
+            type = Type.CHECKING;
+        }
+        if(request.getParameter("Type").toLowerCase().equals("sa") || request.getParameter("Type").toLowerCase().equals("savings"))
+        {
+            type = Type.SAVINGS;
+        }
+        LOGGER.info("Balance " + request.getParameter("Balance"));
+
+        
+        BigDecimal balance = new BigDecimal(request.getParameter("Balance"));
+        
+        LOGGER.info("accId" + accId);
+        LOGGER.info("cusID" + cusID);
+        LOGGER.info("Type" +type);
+        LOGGER.info("Balance" + balance);
+        
+        
+        Account a = new Account(accountID, new Customer(cusID,null,null),type,balance);
+        aService.updateAccount(a);
+        
+        ResponseEntity.status(HttpStatus.CREATED);      
+        return ResponseEntity.ok().header("SSA_Bank Customer", "Account").body(a);
+    }
+    
     @RequestMapping(produces = "application/json", value = "/accounts/{accId}/withdraw/{amt}", method = RequestMethod.GET)
     @ResponseBody
     public ResponseEntity<Account> accountWithdraw(@PathVariable int id, @PathVariable int accId, @PathVariable BigDecimal amt)
@@ -76,33 +136,7 @@ public class AccountController {
         return ResponseEntity.ok().body(service.Transfer(accId, accId2, amt));
     }
     
-    @RequestMapping(produces = "application/json", value = "/accounts/add", method = RequestMethod.POST)
-    @ResponseBody
-    public ResponseEntity<Account> accountAdd(HttpServletRequest request)
-    {
-        LOGGER.debug("hello");
-        
-        int cusID = Integer.parseInt(request.getParameter("custID"));
-        Type type = null;
-        if(request.getParameter("Type").toLowerCase().equals("ch") || request.getParameter("Type").toLowerCase().equals("checking"))
-        {
-            type = Type.CHECKING;
-        }
-        if(request.getParameter("Type").toLowerCase().equals("sa") || request.getParameter("Type").toLowerCase().equals("savings"))
-        {
-            type = Type.SAVINGS;
-        }
-        BigDecimal balance = new BigDecimal(request.getParameter("Balance"));
-        
-        LOGGER.debug(cusID);
-        LOGGER.debug(type);
-        LOGGER.debug(balance);
-        
-        Account a = aService.insertAccount(new Customer(cusID,null,null),type,balance);
-        
-        ResponseEntity.status(HttpStatus.CREATED);      
-        return ResponseEntity.ok().header("SSA_Bank Customer", "Customer").body(a);
-    }
+  
     
     
 }
