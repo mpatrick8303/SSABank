@@ -9,8 +9,9 @@
 			<h1>SSA-Bank</h1>
 			<menu id="menu">
 				<ul>
-					<li id="addCust">Add Customers</a></li>
-					<li id="addAcc">Add Account</a></li>
+					<li id="addCust">Add Customers</li>
+					<li id="updateCust">Update Customer</li>
+					
 				</ul>
 			</menu>
 		</header>
@@ -31,6 +32,7 @@
 			<ul id="ul-a">
 			
 			</ul>
+			<button id="addAccount">Add Account</button>
 		</section>
 		
 		<section class="hidden" id="account">
@@ -59,6 +61,16 @@
 		
 		</section>
 		
+		<section id="addAccountForm">
+		
+			<form>
+				Type of Account<input id="Type" type="text">
+				Balance<input id="Balance" type="text">
+				<input id="submitAddA" type="submit">Add this BITCH</input>
+			</form>
+		
+		</section>
+		
 		
 		<script src="/jquery-3.1.0.min.js"></script>
 		<script type="text/javascript">
@@ -79,10 +91,9 @@
 				$('#customer-list').show()
 				$('#customer').hide()
 				$('#accounts').hide()
-				$('#account').hide()
-				
 				$('#wdt').hide()
 				$('#addCustForm').hide()
+				$('#addAccountForm').hide()
 				
 				
 			}
@@ -110,9 +121,33 @@
 				$('#customer').hide()
 				$('#accounts').hide()
 				$('#wdt').hide()
-				$('.accClass').hide()
+				$('#account').hide()
 				
 			});
+			
+			$('#submitAddC').click(function(evt)
+			{
+				
+				sendAdd();
+				
+			});
+			
+			function sendAdd() 
+			{
+				
+				console.log(document.getElementById("fNameAdd").value)
+				console.log(document.getElementById("lNameAdd").value)
+				
+		        $.ajax
+		        ({
+		            type: "POST",
+		            url: "ssa-bank/customers",
+		            dataType: "json",
+		            data: {"firstName": document.getElementById("fNameAdd").value, "lastName": document.getElementById("lNameAdd").value}
+		        })
+		 
+				
+			}
 			
 			$('#show-accounts').click(function(evt)
 			{
@@ -154,6 +189,35 @@
 				$('#account').show()
 				$('#wdt').show()
 			}
+			
+			$('#addAccount').click(function(evt)
+			{
+				$('#addAccountForm').show()
+			});
+			
+			
+			$('#submitAddA').click(function(evt)
+					{
+						
+						sendAddAccount();
+						
+					});
+					
+					function sendAddAccount() 
+					{
+						console.log(document.getElementsByClassName('custClass')[0].id)
+						console.log(document.getElementById("Type").value)
+						console.log(document.getElementById("Balance").value)
+						
+						
+				        $.ajax
+				        ({
+				            type: "POST",
+				            url: "ssa-bank/customers/accounts/add",
+				            dataType: "json",
+				            data: {"custID": document.getElementsByClassName('custClass')[0].id, "Type": document.getElementById("Type").value , "Balance" : document.getElementById("Balance")}
+				        })
+					}
 			
 			//$('#accountW').click(function(evt)
 			//{

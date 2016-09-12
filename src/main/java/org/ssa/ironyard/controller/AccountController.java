@@ -3,6 +3,8 @@ package org.ssa.ironyard.controller;
 import java.math.BigDecimal;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,10 +18,12 @@ import org.springframework.web.bind.annotation.RestController;
 import org.ssa.ironyard.BankStarter;
 import org.ssa.ironyard.model.Account;
 import org.ssa.ironyard.model.Account.Type;
+import org.ssa.ironyard.model.Customer;
+import org.ssa.ironyard.service.BankAccountServicesImpl;
 import org.ssa.ironyard.service.BankTransactionServicesImpl;
 
 @RestController
-@RequestMapping("/ssa-bank/customers/{id}/")
+@RequestMapping("/ssa-bank/customers")
 public class AccountController {
 
     static final Logger LOGGER = LogManager.getLogger(BankStarter.class);
@@ -27,7 +31,10 @@ public class AccountController {
     @Autowired
     BankTransactionServicesImpl service;
     
-    @RequestMapping(produces = "application/json", value ="accounts", method = RequestMethod.GET)
+    @Autowired
+    BankAccountServicesImpl aService;
+    
+    @RequestMapping(produces = "application/json", value ="/{id}/accounts", method = RequestMethod.GET)
     @ResponseBody
     public ResponseEntity<List<Account>> allAccounts(@PathVariable int id)
     {
@@ -37,7 +44,7 @@ public class AccountController {
        return ResponseEntity.ok().header("SSA_Bank Customer", "Account").body(accountList);
     }
     
-    @RequestMapping(produces = "application/json", value = "accounts/{accId}/detail", method = RequestMethod.GET)
+    @RequestMapping(produces = "application/json", value = "/{id}/accounts/{accId}/detail", method = RequestMethod.GET)
     @ResponseBody
     public ResponseEntity<Account> accountDetails(@PathVariable int id, @PathVariable int accId)
     {
@@ -45,7 +52,7 @@ public class AccountController {
         return ResponseEntity.ok().body(service.getAccount(accId));
     }
     
-    @RequestMapping(produces = "application/json", value = "accounts/{accId}/withdraw/{amt}", method = RequestMethod.GET)
+    @RequestMapping(produces = "application/json", value = "/accounts/{accId}/withdraw/{amt}", method = RequestMethod.GET)
     @ResponseBody
     public ResponseEntity<Account> accountWithdraw(@PathVariable int id, @PathVariable int accId, @PathVariable BigDecimal amt)
     {
@@ -53,7 +60,7 @@ public class AccountController {
         return ResponseEntity.ok().body(service.Withdrawl(accId, amt));
     }
     
-    @RequestMapping(produces = "application/json", value = "accounts/{accId}/deposit/{amt}", method = RequestMethod.GET)
+    @RequestMapping(produces = "application/json", value = "/accounts/{accId}/deposit/{amt}", method = RequestMethod.GET)
     @ResponseBody
     public ResponseEntity<Account> accountDeposit(@PathVariable int id, @PathVariable int accId, @PathVariable BigDecimal amt)
     {
@@ -61,7 +68,7 @@ public class AccountController {
         return ResponseEntity.ok().body(service.Deposit(accId, amt));
     }
     
-    @RequestMapping(produces = "application/json", value = "accounts/{accId}/transfer/{accId2}/{amt}", method = RequestMethod.GET)
+    @RequestMapping(produces = "application/json", value = "/accounts/{accId}/transfer/{accId2}/{amt}", method = RequestMethod.GET)
     @ResponseBody
     public ResponseEntity<Account> accountTransfer(@PathVariable int id, @PathVariable int accId, @PathVariable int accId2, @PathVariable BigDecimal amt)
     {
@@ -69,12 +76,32 @@ public class AccountController {
         return ResponseEntity.ok().body(service.Transfer(accId, accId2, amt));
     }
     
-    @RequestMapping(produces = "application/json", value = "accounts/add/{accId}/{type}/{balance}", method = RequestMethod.GET)
+    @RequestMapping(produces = "application/json", value = "/accounts/add", method = RequestMethod.POST)
     @ResponseBody
-    public ResponseEntity<Account> accountAdd(@PathVariable int id, @PathVariable int accId, @PathVariable Type type, @PathVariable BigDecimal balance)
+    public ResponseEntity<Account> accountAdd(HttpServletRequest request)
     {
+        LOGGER.debug("hello");
+        
+        int cusID = Integer.parseInt(request.getParameter("custID"));
+        Type type = null;
+        if(request.getParameter("Type").toLowerCase().equals("ch") || request.getParameter("Type").toLowerCase().equals("checking"))
+        {
+            type = Type.CHECKING;
+        }
+        if(request.getParameter("Type").toLowerCase().equals("sa") || request.getParameter("Type").toLowerCase().equals("savings"))
+        {
+            type = Type.SAVINGS;
+        }
+        BigDecimal balance = new BigDecimal(request.getParameter("Balance"));
+        
+        LOGGER.debug(cusID);
+        LOGGER.debug(type);
+        LOGGER.debug(balance);
+        
+        Account a = aService.insertAccount(new Customer(cusID,null,null),type,balance);
+        
         ResponseEntity.status(HttpStatus.CREATED);      
-        return ResponseEntity.ok().body(service.addAccount(new Account(accId, service.getCustomer(id), type, balance)));
+        return ResponseEntity.ok().header("SSA_Bank Customer", "Customer").body(a);
     }
     
     

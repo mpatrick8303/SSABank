@@ -77,11 +77,7 @@ public class BankTransactionServicesImpl implements BankTransactionServices
         return accounts.update(wB);
     }
     
-    @Transactional
-    public Account addAccount(Account acct)
-    {
-       return accounts.insert(acct);
-    }
+    
     @Transactional
     public Account getAccount(int id)
     {

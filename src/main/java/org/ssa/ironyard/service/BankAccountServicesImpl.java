@@ -4,19 +4,23 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 import org.ssa.ironyard.dao.AccountDAOImpl;
 import org.ssa.ironyard.dao.CustomerDAOImpl;
 import org.ssa.ironyard.model.Account;
 import org.ssa.ironyard.model.Account.Type;
 import org.ssa.ironyard.model.Customer;
 
+@Component
 public class BankAccountServicesImpl implements BankAccountServices
 {
     
     AccountDAOImpl accounts;
     CustomerDAOImpl customers;
     
-    
+    @Autowired
     public BankAccountServicesImpl(AccountDAOImpl accounts,CustomerDAOImpl customers)
     {
         
@@ -26,6 +30,7 @@ public class BankAccountServicesImpl implements BankAccountServices
     }
     
     @Override
+    @Transactional
     public Customer insertCustomer(String fName, String lName)
     {
         Customer c = new Customer(fName, lName);
@@ -33,6 +38,7 @@ public class BankAccountServicesImpl implements BankAccountServices
     }
     
     @Override
+    @Transactional
     public Account insertAccount(Customer customer, Type type, BigDecimal balance)
     {
         Account a = new Account(customer, type, balance);
@@ -41,6 +47,7 @@ public class BankAccountServicesImpl implements BankAccountServices
 
 
     @Override
+    @Transactional
     public boolean deleteAccount(int id)
     {
         Account a = accounts.read(id);
@@ -52,6 +59,7 @@ public class BankAccountServicesImpl implements BankAccountServices
     }
     
     @Override
+    @Transactional
     public boolean deleteCustomer(int id)
     {
         Customer c = customers.read(id);
@@ -72,6 +80,7 @@ public class BankAccountServicesImpl implements BankAccountServices
     }
 
     @Override
+    @Transactional
     public Customer updateCustomer(Customer customer)
     {        
         if(customers.read(customer.getId()) == null)
@@ -83,6 +92,7 @@ public class BankAccountServicesImpl implements BankAccountServices
     }
 
     @Override
+    @Transactional
     public Account updateAccount(Account account)
     {
         if(accounts.read(account.getId()) == null)
