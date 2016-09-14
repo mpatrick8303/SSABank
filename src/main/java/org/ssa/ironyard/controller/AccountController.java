@@ -134,15 +134,13 @@ public class AccountController {
     @ResponseBody
     public ResponseEntity<Account> accountTransfer(@PathVariable int customerID, @PathVariable int accId, HttpServletRequest request)
     {
-        int cusID = customerID;
-        int accID = accId;
-        int accountOne = Integer.parseInt(request.getParameter("accountOne"));
+        int accountIDOne = accId;
         int accountTwo = Integer.parseInt(request.getParameter("accountTwo"));
         BigDecimal amount = new BigDecimal(request.getParameter("transferAmount"));
         
         
         ResponseEntity.status(HttpStatus.CREATED);      
-        return ResponseEntity.ok().header("SSA_Bank Customer", "Account").body(service.Transfer(accountOne, accountTwo, amount));
+        return ResponseEntity.ok().header("SSA_Bank Customer", "Account").body(service.Transfer(accountIDOne, accountTwo, amount));
     }
     
     @RequestMapping(produces = "application/json", value = "{customerID}/accounts/{accId}/transferFromAccount", method = RequestMethod.PUT)
@@ -151,12 +149,16 @@ public class AccountController {
     {
         int cusID = customerID;
         int accountOne = accId;
-        int accountTwo = Integer.parseInt(request.getParameter("accountTwo"));
-        BigDecimal amount = new BigDecimal(request.getParameter("transferAmount"));
+        int accountTwo = Integer.parseInt(request.getParameter("accountTwoFA"));
+        BigDecimal amount = new BigDecimal(request.getParameter("transferAmountF"));
         
         
-        ResponseEntity.status(HttpStatus.CREATED);      
+        ResponseEntity.status(HttpStatus.CREATED); 
+        
+        
         return ResponseEntity.ok().header("SSA_Bank Customer", "Account").body(service.Transfer(accountOne, accountTwo, amount));
+        
+        
     }
     
   
