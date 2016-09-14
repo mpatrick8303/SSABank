@@ -235,7 +235,7 @@
 				}
 				if(response.success)
 				{
-					$('.custClass').attr('id',response.id).text(response.id + " " + response.firstName + " " + response.lastName)
+					$('.custClass').attr('id',response.success.id).text(response.success.id + " " + response.success.firstName + " " + response.success.lastName)
 
 					$('#customer-list').hide()
 					$('#customer').show()
@@ -245,7 +245,8 @@
 			
 			$('#closeError').click(function()
 			{
-				$('#errorMessage').hide()
+				
+				location.reload()
 			});
 			
 			$('#addCust').click(function(evt)
@@ -262,7 +263,6 @@
 			$('#submitAddC').click(function(evt)
 			{
 				$('#addCustForm').hide()
-				$('#customer-list').show()
 				sendAdd();
 				
 			});
@@ -289,7 +289,10 @@
 			
 			function toDetail(response)
 			{
-				customer(response)
+				$('.custClass').attr('id',response.id).text(response.id + " " + response.firstName + " " + response.lastName)
+
+				$('#customer-list').hide()
+				$('#customer').show()
 			}
 			
 			$('#updateCust').click(function(evt)
@@ -346,10 +349,7 @@
 				
 				console.log(response.length)
 				console.log(response[0].id)
-				
-				
-				
-				
+
 				for(let i = 0; i<response.length;i++)
 				{
 				
@@ -592,6 +592,20 @@
 														        		
 
 			}	
+			
+			function validate() {
+			    if (document == "") {
+			        alert("Enter a name");
+			        document.myForm.name.focus();
+			        return false;
+			    }
+			    if (!/^[a-zA-Z]*$/g.test(document.myForm.name.value)) {
+			        alert("Invalid characters");
+			        document.myForm.name.focus();
+			        return false;
+			    }
+			}
+			
 
 					
 			
