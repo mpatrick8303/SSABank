@@ -1,7 +1,10 @@
 package org.ssa.ironyard.controller;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -36,27 +39,53 @@ public class AccountController {
     
     @RequestMapping(produces = "application/json", value ="/{id}/accounts", method = RequestMethod.GET)
     @ResponseBody
-    public ResponseEntity<List<Account>> allAccounts(@PathVariable int id)
+    public ResponseEntity<HashMap<String,List<Account>>> allAccounts(@PathVariable int id)
     {
        ResponseEntity.status(HttpStatus.CREATED);
-       
+       HashMap<String ,List<Account>> map = new HashMap<String, List<Account>>();
        List<Account> accountList = service.readAccounts(id);
-       return ResponseEntity.ok().header("SSA_Bank Customer", "Account").body(accountList);
+       
+       if(accountList.size() == 0)
+       {
+           map.put("error", accountList);
+           return ResponseEntity.ok().header("SSA_Bank Customer", "Account").body(map);
+       }
+       else
+       {
+           map.put("success", accountList);
+           return ResponseEntity.ok().header("SSA_Bank Customer", "Account").body(map);
+       }
+       
+       
     }
     
     @RequestMapping(produces = "application/json", value = "/{id}/accounts/{accId}/detail", method = RequestMethod.GET)
     @ResponseBody
-    public ResponseEntity<Account> accountDetails(@PathVariable int id, @PathVariable int accId)
+    public ResponseEntity<Map<String,Account>> accountDetails(@PathVariable int id, @PathVariable int accId)
     {
-        ResponseEntity.status(HttpStatus.CREATED);      
-        return ResponseEntity.ok().body(service.getAccount(accId));
+        ResponseEntity.status(HttpStatus.CREATED);   
+        
+        Map<String, Account> map = new HashMap<>();
+        Account a = service.getAccount(accId);
+        
+        if(a == null)
+        {
+            map.put("error", a);
+            return ResponseEntity.ok().body(map);
+        }
+        else
+        {
+            map.put("success", a);
+            return ResponseEntity.ok().body(map);
+        }
+        
     }
     
     @RequestMapping(produces = "application/json", value = "/accounts", method = RequestMethod.POST)//add account
     @ResponseBody
-    public ResponseEntity<Account> accountAdd(HttpServletRequest request)
+    public ResponseEntity<Map<String,Account>> accountAdd(HttpServletRequest request)
     {
-
+        Map<String,Account> map = new HashMap<>();
         int cusID = Integer.parseInt(request.getParameter("custID"));
         Type type = null;
         if(request.getParameter("Type").toLowerCase().equals("ch") || request.getParameter("Type").toLowerCase().equals("checking"))
@@ -68,18 +97,29 @@ public class AccountController {
             type = Type.SAVINGS;
         }
         BigDecimal balance = new BigDecimal(request.getParameter("Balance"));
-        
-
         Account a = aService.insertAccount(new Customer(cusID,null,null),type,balance);
         
-        ResponseEntity.status(HttpStatus.CREATED);      
-        return ResponseEntity.ok().header("SSA_Bank Customer", "Customer").body(a);
+        ResponseEntity.status(HttpStatus.CREATED);
+        if(a == null)
+        {
+            map.put("error", a);
+            return ResponseEntity.ok().header("SSA_Bank Customer", "Customer").body(map);
+        }
+        else
+        {
+            map.put("success", a);
+            return ResponseEntity.ok().header("SSA_Bank Customer", "Customer").body(map);
+        }
+        
+            
+        
     }
     
     @RequestMapping(produces = "application/json", value = "{customerID}/accounts/{accId}", method = RequestMethod.PUT)//update account
     @ResponseBody
-    public ResponseEntity<Account> accountUpdate(@PathVariable int customerID,@PathVariable int accId, HttpServletRequest request)
+    public ResponseEntity<Map<String,Account>> accountUpdate(@PathVariable int customerID,@PathVariable int accId, HttpServletRequest request)
     {
+        Map<String,Account> map = new HashMap<>();
         int cusID;
         if(customerID != Integer.parseInt(request.getParameter("Customer")))
         {   
@@ -100,15 +140,25 @@ public class AccountController {
         }
               
         BigDecimal balance = new BigDecimal(request.getParameter("Balance"));
-        
+        ResponseEntity.status(HttpStatus.CREATED); 
        
         
         
         Account a = new Account(accountID, new Customer(cusID,null,null),type,balance);
-        aService.updateAccount(a);
+        Account aU = aService.updateAccount(a);
         
-        ResponseEntity.status(HttpStatus.CREATED);      
-        return ResponseEntity.ok().header("SSA_Bank Customer", "Account").body(a);
+        if(aU == null)
+        {
+            map.put("error", aU);
+            return ResponseEntity.ok().header("SSA_Bank Customer", "Customer").body(map);
+        }
+        else
+        {
+            map.put("success", aU);
+            return ResponseEntity.ok().header("SSA_Bank Customer", "Customer").body(map);
+        }
+        
+
     }
     
     @RequestMapping(produces = "application/json", value = "{customerID}/accounts/{accId}/withdraw", method = RequestMethod.PUT)

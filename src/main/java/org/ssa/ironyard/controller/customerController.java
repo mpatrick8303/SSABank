@@ -78,30 +78,49 @@ public class CustomerController
     
     @RequestMapping(value = "/customers", method = RequestMethod.POST )
     @ResponseBody
-    public ResponseEntity<Customer> addCustomer(HttpServletRequest request)
+    public ResponseEntity<Map<String,Customer>> addCustomer(HttpServletRequest request)
     {
-        LOGGER.info("hello");
         String fName = request.getParameter("firstName");
         String lName = request.getParameter("lastName");
-
-        Customer c = aService.insertCustomer(fName, lName);
-        return ResponseEntity.ok().header("SSA_Bank Customer", "Customer").body(c);
+        Customer c = aService.insertCustomer(fName,lName);
         
+        Map<String,Customer> map = new HashMap<>();
+        
+        if(c == null)
+        {
+            map.put("error", c);
+            return ResponseEntity.ok().header("SSA_Bank Customer", "Customer").body(map);
+        }
+        else
+        {
+            map.put("success", c);
+            return ResponseEntity.ok().header("SSA_Bank Customer", "Customer").body(map);
+        }
+
     }
     
     @RequestMapping(value = "/customers/{customerID}", method = RequestMethod.PUT )
     @ResponseBody
-    public ResponseEntity<Customer> updateCustomer(@PathVariable int customerID, HttpServletRequest request)
+    public ResponseEntity<Map<String,Customer>> updateCustomer(@PathVariable int customerID, HttpServletRequest request)
     {
-        LOGGER.info("hello");
         int cusID = customerID;
         String fName = request.getParameter("firstName");
         String lName = request.getParameter("lastName");
 
+        Map<String,Customer> map = new HashMap<>();
         Customer c = new Customer(cusID, fName,lName);
-        aService.updateCustomer(c);
-        return ResponseEntity.ok().header("SSA_Bank Customer", "Customer").body(c);
+        Customer cU = aService.updateCustomer(c);
         
+        if(cU == null)
+        {
+            map.put("error", cU);
+            return ResponseEntity.ok().header("SSA_Bank Customer", "Customer").body(map);
+        }
+        else
+        {
+            map.put("success", c);
+            return ResponseEntity.ok().header("SSA_Bank Customer", "Customer").body(map);
+        }
     }
     
 

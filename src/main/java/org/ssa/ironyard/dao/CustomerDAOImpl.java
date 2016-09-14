@@ -42,10 +42,16 @@ public class CustomerDAOImpl  extends AbstractDAO<Customer> implements CustomerD
             prepareStatement.setString(2, customer.getLastName());      
             prepareStatement.executeUpdate();
             ResultSet generatedKeys = prepareStatement.getGeneratedKeys();
-            generatedKeys.next();
-            c = new Customer(generatedKeys.getInt(1),customer.getFirstName(),customer.getLastName());
+            
+            if(generatedKeys.next())
+            {
+                c = new Customer(generatedKeys.getInt(1),customer.getFirstName(),customer.getLastName());
+                
+                
+            }
             close(connection);
             return c;
+            
         }
         catch (SQLException e)
         {
@@ -92,7 +98,8 @@ public class CustomerDAOImpl  extends AbstractDAO<Customer> implements CustomerD
             if(prepareStatement.executeUpdate() > 0)
             {
                  close(connection);
-                 return customerUpdate;            }
+                 return customerUpdate;            
+            }
             else
                 return c;
         }
