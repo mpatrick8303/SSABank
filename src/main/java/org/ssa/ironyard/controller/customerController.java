@@ -1,6 +1,8 @@
 package org.ssa.ironyard.controller;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -53,12 +55,24 @@ public class CustomerController
     
     @RequestMapping(value = "/customers/{customerID}", method = RequestMethod.GET)
     @ResponseBody
-    public ResponseEntity<Customer> customer(@PathVariable String customerID)
+    public ResponseEntity<Map<String, Object>> customer(@PathVariable String customerID)
     {
+        Map<String,Object> map = new HashMap<>();
         int id = Integer.parseInt(customerID);
         Customer cus = service.readCustomer(id);
         
-        return ResponseEntity.ok().header("SSA_Bank Customer", "Customer").body(cus);
+        if(cus == null)
+        {
+            map.put("error", new Customer());
+            return ResponseEntity.ok().header("SSA_Bank Customer", "Customer").body(map);
+            
+        }
+        else
+        {
+            map.put("success", cus);
+            return ResponseEntity.ok().header("SSA_Bank Customer", "Customer").body(map);
+        }
+            
         
     }
     

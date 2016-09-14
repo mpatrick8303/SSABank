@@ -3,19 +3,28 @@
 	<head>
 	<meta charset="ISO-8859-1">
 	<title>SSA Bank</title>
+	<style type="text/css">
+		
+		#errorMessage{position: fixed; margin-left:25%; margin-right:25%; top: 20%; z-index: 1000; width: 50%; background-color: red; font-size: 2em;border: 1em; border-color: yellow}
+		#error{z-index: 10000}
+		#closeError{position: absolute; top: 0;bottom: 0; right:0}
+		
+	</style>
 	</head>
 	<body>
 		<header>
 			<h1>SSA-Bank</h1>
 			<menu id="menu">
 				<ul>
+					<li id="homelist">Customer List</li>
+					<li id="accountList">Account List</li>
 					<li id="addCust">Add Customers</li>
 					
 					
 				</ul>
 			</menu>
 		</header>
-		<section class="hidden" id="customer-list">
+		<section id="customer-list">
 			<ul id ="ul-c">
 			
 			</ul>
@@ -23,17 +32,19 @@
 			
 		</section>	
 		
-		<section class="hidden" id="customer">
+		<section  id="customer">
 			<div class="custClass"></div>
 			<button id="show-accounts">Show Accounts</button>
 			<button id="updateCust">Update Customer</button>
 		</section>
 		
-		<section class="hidden" id="accounts">
+		<section id="accounts">
 			<ul id="ul-a">
 			
 			</ul>
 			<button id="addAccount">Add Account</button>
+			<button id = "accountT">Transfer</button>
+			
 		</section>
 		
 		<section class="hidden" id="account">
@@ -46,8 +57,8 @@
 			<input id="textD" type="text">
 			<button id = "accountD">Deposit</button>
 			
-			<input id="textT" type="text">
-			<button id = "accountT">Transfer</button>
+			
+			<button id = "accountTransferFromAccount">Transfer</button>
 			
 			</div>
 			
@@ -60,8 +71,10 @@
 			<form>
 				First Name<input id="fNameAdd" type="text">
 				Last Name<input id="lNameAdd" type="text">
-				<input id="submitAddC" type="submit">Add this BITCH</input>
+				
 			</form>
+			
+			<button id="submitAddC">Add Customer</button>
 		
 		</section>
 		
@@ -70,9 +83,10 @@
 			<form>
 				First Name<input id="fNameUpdate" type="text">
 				Last Name<input id="lNameUpdate" type="text">
-				<input id="submitUpdateC" type="submit">Update this BITCH</input>
+				
 			</form>
-		
+			
+				<button id="submitUpdateC">Update Customer</button>
 		</section>
 		
 		<section id="addAccountForm">
@@ -80,9 +94,11 @@
 			<form>
 				Type of Account<input id="TypeAdd" type="text">
 				Balance<input id="BalanceAdd" type="text">
-				<input id="submitAddA" type="submit">Add this BITCH</input>
+				
 				
 			</form>
+			
+				<button id="submitAddA">Add Account</button>
 		
 		</section>
 		
@@ -90,12 +106,42 @@
 		
 			
 			<form>
-				Type of Account<input id="TypeUpdate" type="text">
-				Balance<input id="BalanceUpdate" type="text">
-				<input id="submitUpdateA" type="submit">Update this BITCH</input>
+				Customer ID<input id="CustomerUpdate" type="text">
+				Type of Account<input id="TypeUpdate" type="text">				
+				
 	
 			</form>
+			
+				<button id="submitUpdateA">Update Account</button>
 
+		</section>
+		
+		<section id="transfer">
+			<form>
+				Account ID #1<input id="accountOne" type="text">
+				Transfer Amount<input id="tAmount" type="text">
+				Account ID #2<input id="accountTwo" type="text">
+			</form>
+			
+			<button id="submitTransfer">Transfer</button>
+			
+		</section>
+		
+		<section id="transferFromAccount">
+			<p id = "accountOneF">
+			<form>
+				<input id="tAmountF" type="text">
+				<p id = "accountTwoF"> to </p>
+				Account ID #2<input id="accountTwoFA" type="text">
+			</form>
+			
+			<button id="submitTransferFromAccount">Transfer</button>
+			
+		</section>
+		
+		<section id= "errorMessage">
+			<span id="error"></span>
+			<button id = "closeError"> X</button>
 		</section>
 		
 		
@@ -103,7 +149,8 @@
 		<script type="text/javascript">
 			var cusID = null;
 			var accID = null;
-			$(document).ready(function()
+			var accBalance = null;
+			$(document).ready(function()//This is started on the load of the page
 			{
 				$.getJSON("ssa-bank/customers",customers);
 				
@@ -125,6 +172,39 @@
 				$('#updateCustForm').hide()
 				$('#addAccountForm').hide()
 				$('#updateAccountForm').hide()
+				$('#transfer').hide()
+				$('#transferFromAccount').hide()
+				$('#accountList').hide()
+				$('#errorMessage').hide()
+				
+				
+			}
+			
+			$('#homelist').click(function(evt)
+			{
+				location.reload()
+			});
+			
+			$('#accountList').click(function()
+			{
+				$.getJSON("ssa-bank/customers/"+ document.getElementsByClassName('custClass')[0].id + "/accounts" , accountsHomeList)
+			});
+			
+			function accountsHomeList(response)
+			{
+				
+				console.log(response.length)
+				console.log(response[0].id)
+				
+				
+				
+				
+				for(let i = 0; i<response.length;i++)
+				{
+				
+					$('#ul-a').append('<li id=\''+response[i].id+'\'>' + response[i].id + " " + response[i].customer.id + " " + response[i].type + " " + response[i].balance  + '</li>')
+					
+				}
 				
 				
 			}
@@ -132,6 +212,7 @@
 			function customersClear()
 			{
 				$('#ul-c').empty()
+				$('#accountList').hide()
 			}
 			
 			
@@ -146,11 +227,27 @@
 			});
 			function customer(response)
 			{
-				$('.custClass').attr('id',response.id).text(response.id + " " + response.firstName + " " + response.lastName)
+				if(response.error)
+				{
+					$('#errorMessage').show()
+					$('#error').text("This customer does not exist")
+					
+				}
+				if(response.success)
+				{
+					$('.custClass').attr('id',response.success.id).text(response.success.id + " " + response.success.firstName + " " + response.success.lastName)
 
-				$('#customer-list').hide()
-				$('#customer').show()
+					$('#customer-list').hide()
+					$('#customer').show()
+				}
+				
 			}
+			
+			$('#closeError').click(function()
+			{
+				
+				location.reload()
+			});
 			
 			$('#addCust').click(function(evt)
 			{
@@ -165,7 +262,10 @@
 			
 			$('#submitAddC').click(function(evt)
 			{
-				
+				$('#addCustForm').hide()
+				console.log(getElementById("fNameAdd");
+				validate("fNameAdd")
+				validate("lNameAdd")
 				sendAdd();
 				
 			});
@@ -183,9 +283,19 @@
 		            url: "ssa-bank/customers",
 		            dataType: "json",
 		            data: {"firstName": document.getElementById("fNameAdd").value, "lastName": document.getElementById("lNameAdd").value}
+		        	//success:toDetail;
 		        })
-		 
+
+		 		.done(toDetail);
 				
+			}
+			
+			function toDetail(response)
+			{
+				$('.custClass').attr('id',response.id).text(response.id + " " + response.firstName + " " + response.lastName)
+
+				$('#customer-list').hide()
+				$('#customer').show()
 			}
 			
 			$('#updateCust').click(function(evt)
@@ -207,7 +317,7 @@
 					{
 						
 						sendUpdate();
-						$("ul-c").empty();
+						
 					});
 					
 				
@@ -221,12 +331,17 @@
 				            data: {"firstName": document.getElementById("fNameUpdate").value, "lastName": document.getElementById("lNameUpdate").value}
 				        })
 						
+				        .done(toDetail);
 					}
 			
 			
 			
 			$('#show-accounts').click(function(evt)
 			{
+				$('#customer').hide()
+				$('#accountList').show()
+				$('#accounts').show()
+				$('#acounts')
 				console.log(document.getElementsByClassName('custClass')[0].id)
 				$.getJSON("ssa-bank/customers/"+ document.getElementsByClassName('custClass')[0].id + "/accounts" , accounts)
 						
@@ -234,18 +349,18 @@
 			});
 			function accounts(response)
 			{
-				$('#customer').hide()
+				
 				console.log(response.length)
 				console.log(response[0].id)
-				
-				
+
 				for(let i = 0; i<response.length;i++)
 				{
+				
 					$('#ul-a').append('<li id=\''+response[i].id+'\'>' + response[i].id + " " + response[i].customer.id + " " + response[i].type + " " + response[i].balance  + '</li>')
 					
 				}
 				
-				$('#accounts').show()
+				
 			}
 			
 			$('#ul-a').click(function(evt)
@@ -260,10 +375,14 @@
 			});
 			function account(response)
 			{
+				accBalance = response.balance
 				$('.accClass').attr('id',response.id).text(response.id + " " + response.customer.id + " " + response.type + " " + response.balance)
 
 				$('#accounts').hide()
 				$('#account').show()
+				$('#addAccountForm').hide()
+				$('#transfer').hide()
+				$('#transferFromAccount').hide()
 
 			}
 			
@@ -277,6 +396,7 @@
 			{
 						
 				sendAddAccount();
+				
 						
 			});
 					
@@ -295,9 +415,13 @@
 		       		 data: {"custID": document.getElementsByClassName('custClass')[0].id, "Type": document.getElementById("TypeAdd").value, "Balance": document.getElementById("BalanceAdd").value}
 		   		})
 		        		
-	     		customersClear()
-        		customers()
-				}
+	     		.done(toDetailAccount)
+			}
+			
+			function toDetailAccount(response)
+			{
+				account(response)
+			}
 					
 			$('#updateAccount').click(function(evt)
 			{
@@ -318,6 +442,7 @@
 				sendUpdateAccount();
 				
 				
+				
 			});
 									
 			function sendUpdateAccount() 
@@ -330,30 +455,166 @@
      				type: "PUT",
      				url: "ssa-bank/customers/" + cusID + "/accounts/" + accID,
 					dataType: "json",
-					data: {"Type": document.getElementById("TypeUpdate").value, "Balance": document.getElementById("BalanceUpdate").value}
+					data: {"Customer": document.getElementById("CustomerUpdate").value, "Type": document.getElementById("TypeUpdate").value, "Balance": accBalance }
 				})
+				
+				.done(toDetailAccount)
 						        		
 
 			}
 			
-			//$('#accountW').click(function(evt)
-			//{
-			//	console.log(document.getElementsByClassName('custClass')[0].id)
-			//	console.log(document.getElementsByClassName('accClass')[0].id)
-			//	console.log(document.getElementById('textW').value)
-			//	
-			//	$.getJSON("ssa-bank/customers/" + document.getElementsByClassName('custClass')[0].id + "/accounts/" + document.getElementsByClassName('accClass')[0].id + "/withdraw/" + document.getElementById('textW').value, withdraw)
-			//
-			//	
-			//})
+			function toDetailAccounts(response)
+			{
+				accounts(response)
+			}
 			
-			//function withdraw(response)
-			//{
-			//	$('.accClass').attr('id',response.id).text(response.id + " " + response.customer.id + " " + response.type + " " + response.balance)
-//
-	//			
-		//	}
 			
+			
+			$('#accountW').click(function(evt)
+					{
+												
+						withdrawAccount();
+						
+						
+						
+					});
+											
+					function withdrawAccount() 
+					{
+						
+												
+												
+				        $.ajax
+			       		({
+		     				type: "PUT",
+		     				url: "ssa-bank/customers/" + cusID + "/accounts/" + accID + "/withdraw",
+							dataType: "json",
+							data: {"withdraw": document.getElementById("textW").value}
+						})
+						
+						.done(toDetailAccount)
+								        		
+
+					}
+					
+			$('#accountD').click(function(evt)
+			{
+														
+				depositAccount();
+				
+								
+								
+			});
+													
+			function depositAccount() 
+			{
+								
+														
+														
+		        $.ajax
+	       		({
+					type: "PUT",
+					url: "ssa-bank/customers/" + cusID + "/accounts/" + accID + "/deposit",
+					dataType: "json",
+					data: {"deposit": document.getElementById("textD").value}
+				})
+				
+				.done(toDetailAccount)
+										        		
+
+			}
+			
+			$('#accountT').click(function(evt)
+			{
+				$('#accounts').hide()
+				$('#transfer').show()
+			});
+			
+			$('#submitTransfer').click(function(evt)
+			{
+																
+				transferAccount();
+				
+										
+										
+			});
+			
+			
+															
+			function transferAccount() 
+			{
+				
+										
+																
+																
+	  	    	$.ajax
+	        	({
+					type: "PUT",
+					url: "ssa-bank/customers/" + cusID + "/accounts/" + document.getElementById("accountOne").value + "/transfer",
+					dataType: "json",
+					data: {"accountOne": document.getElementById("accountOne").value, "transferAmount": document.getElementById("tAmount").value, "accountTwo": document.getElementById("accountTwo").value }
+			 	 })
+			 	 
+			 	 .done(toDetailAccount)
+												        		
+
+			}	
+			
+			$('#accountTransferFromAccount').click(function(evt)
+			{
+						$('#account').hide()
+						$('#transferFromAccount').show()
+						
+						$('#accountOneF').append("How Much Would you like to transfer from account ID " + accID)	
+			});
+					
+			$('#submitTransferFromAccount').click(function(evt)
+			{
+																		
+				transferAccountF()
+							
+												
+			});
+			
+												
+			function transferAccountF() 
+			{
+						
+				console.log()
+																		
+																		
+				$.ajax
+			    ({
+					type: "PUT",
+					url: "ssa-bank/customers/" + cusID + "/accounts/" + accID + "/transferFromAccount",
+					dataType: "json",
+					data: {"transferAmountF": document.getElementById("tAmountF").value, "accountTwoFA": document.getElementById("accountTwoFA").value }
+				})
+				
+				.done(toDetailAccount)
+														        		
+
+			}	
+			
+			function validate(name) 
+			{
+				console.log("hello")
+			    if (document.getElementById(name) == "") 
+				{
+			        alert("Enter a name");
+			        document.getElementById(name).focus();
+			        return false;
+			    }
+			    if (!/^[a-zA-Z]*$/g.test(document.getElementById(name).value)) 
+				{
+			        alert("Invalid characters");
+			        document.getElementById(name).focus();
+			        return false;
+			    }
+			}
+			
+
+					
 			
 	
 		
