@@ -1,7 +1,6 @@
-<<<<<<< HEAD
-header{ }
-button{
-=======
+
+
+
 *{margin:0;
 padding:0;
 }
@@ -28,7 +27,7 @@ header h1{
 	text-decoration:none;
 	list-style: none; 
 	font-size: 1em;	color: navy;
-	margin-right: -1em;
+	margin-right: 1em;
 }
 
 #content{
@@ -50,8 +49,8 @@ header h1{
 
 
 #customer-List{width: 10em}
->>>>>>> origin
 
+ button{
   	padding:.5em;
   	background-color: #dcdcdc;
   	border: .5em solid #666;
