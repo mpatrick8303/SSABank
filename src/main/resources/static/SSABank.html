@@ -1,166 +1,171 @@
 <!DOCTYPE html>
 <html>
-	<head>
-	<meta charset="ISO-8859-1">
-	<title>SSA Bank</title>
+<head>
+<meta charset="ISO-8859-1">
+<title>SSA Bank</title>
 
-		<link rel ="stylesheet" type="text/css" href ="styles.css">
-	
-	</head>
-	<body>
-		<header>
-			<h1>SSA-Bank</h1>
-			<menu id="menu">
-				<ul>
-					<li id="homelist">Customer List</li>
-					<li id="accountList">Account List</li>
-					<li id="addCust">Add Customers</li>
-					
-					
-				</ul>
-			</menu>
-		</header>
-		
-		<section id="content">
-		
-			<section id = "subnav">
-				<ul>
-					<li id = "sub1">1</h4>
-					<li>&gt</li>
-					<li id = "sub2">2</h4>
-					<li>&gt</li>
-					<li id = "sub3">3</h4>
-				</ul>
-			</section>
-			
-			<section id="customer-list">
-			<ul id ="ul-c">
-			
+<link rel="stylesheet" type="text/css" href="styles.css">
+
+</head>
+<body>
+	<header>
+		<h1>SSA-Bank</h1>
+		<section id="menu">
+			<ul class="mainNav">
+				<li id="homelist">Customer List</li>
+				<li id="accountList">Account List</li>
+				<li id="addCust">Add Customers</li>
+
+
 			</ul>
-			
-			
-			</section>	
-		
-			<section  id="customer">
-				<div class="custClass"></div>
-				<button id="show-accounts">Show Accounts</button>
-				<button id="updateCust">Update Customer</button>
-			</section>
-		
-			<section id="accounts">
-				<ul id="ul-a">
-			
-				</ul>
-				<button id="addAccount">Add Account</button>
-				<button id = "accountT">Transfer</button>
-				
-			</section>
-		
-			<section class="hidden" id="account">
-				<div class="accClass"></div><br>
-			
-				<div id = wdt>
-					<input id="textW" type="text">
-					<button  id = "accountW">Withdraw</button>
-				
-					<input id="textD" type="text">
-					<button id = "accountD">Deposit</button>
-			
-			
-					<button id = "accountTransferFromAccount">Transfer</button>
-			
-				</div>
-			
-				<button id="updateAccount">Update Account</button>
-			
-			</section>
-		
-			<section id="addCustForm">
-			
-				<form>
-					First Name<input id="fNameAdd" type="text">
-					Last Name<input id="lNameAdd" type="text">
-				
-				</form>
-			
-				<button id="submitAddC">Add Customer</button>
-		
-			</section>
-		
-			<section id="updateCustForm">
-		
-				<form>
-					First Name<input id="fNameUpdate" type="text">
-					Last Name<input id="lNameUpdate" type="text">
-					
-				</form>
-			
-				<button id="submitUpdateC">Update Customer</button>
-			</section>
-		
-			<section id="addAccountForm">
-		
-			<form>
-				Type of Account<input id="TypeAdd" type="text">
-				Balance<input id="BalanceAdd" type="text">
-				
-				
-			</form>
-			
-				<button id="submitAddA">Add Account</button>
-		
-			</section>
-		
-			<section id="updateAccountForm">
-		
-			
-			<form>
-				Customer ID<input id="CustomerUpdate" type="text">
-				Type of Account<input id="TypeUpdate" type="text">				
-				
-	
-			</form>
-			
-				<button id="submitUpdateA">Update Account</button>
-
-			</section>
-			
-			<section id="transfer">
-				<form>
-					Account ID #1<input id="accountOne" type="text">
-					Transfer Amount<input id="tAmount" type="text">
-					Account ID #2<input id="accountTwo" type="text">
-				</form>
-			
-				<button id="submitTransfer">Transfer</button>
-			
-			</section>
-		
-			<section id="transferFromAccount">
-			<p id = "accountOneF">
-				<form>
-					<input id="tAmountF" type="text">
-					<p id = "accountTwoF"> to </p>
-					Account ID #2<input id="accountTwoFA" type="text">
-				</form>
-			
-				<button id="submitTransferFromAccount">Transfer</button>
-			
-			</section>
-		
-			<section id= "errorMessage">
-				<span id="error"></span>
-				<button id = "closeError"> X</button>
-			</section>
-		
-			<section id= "successMessage">
-				<span id="success"></span>
-			</section>
-		
-		
 		</section>
-		<script src="/jquery-3.1.0.min.js"></script>
-		<script type="text/javascript">			
+	</header>
+
+	<section id="content">
+
+		<section id="subnav">
+			<ul>
+				<li id="sub1">1
+					</h4>
+				<li>&gt</li>
+				<li id="sub2">2
+					</h4>
+				<li>&gt</li>
+				<li id="sub3">3
+					</h4>
+			</ul>
+		</section>
+
+		<section id="customer-list" class="customer">
+			<ul id="ul-c">
+
+			</ul>
+
+
+		</section>
+
+		<section id="customer" class="customer">
+			<div class="custClass"></div>
+			<button id="show-accounts">Show Accounts</button>
+			<button id="updateCust">Update Customer</button>
+		</section>
+
+		<section id="accounts" class="accounts">
+			<ul id="ul-a">
+
+			</ul>
+			<br>
+			<button id="addAccount">Add Account</button>
+			<button id="accountT">Transfer</button>
+
+		</section>
+
+		<section id="account" class="accounts">
+			<div class="accClass"></div>
+		
+
+			<div id=wdt>
+				<input id="textW" type="text">
+				<button id="accountW">Withdraw</button>
+
+				<input id="textD" type="text">
+				<button id="accountD">Deposit</button>
+
+
+				<button id="accountTransferFromAccount">Transfer</button>
+
+			</div>
+
+			<button id="updateAccount">Update Account</button>
+
+		</section>
+
+		<section id="addCustForm" class="customer">
+
+			<form>
+				<label>First Name</label><input id="fNameAdd" type="text"> <label>Last
+					Name</label><input id="lNameAdd" type="text">
+
+			</form>
+			<br>
+			<button id="submitAddC">Add Customer</button>
+
+		</section>
+
+		<section id="updateCustForm" class="customer">
+
+			<form>
+				<label>First Name</label><input id="fNameUpdate" type="text">
+				<label>Last Name</label><input id="lNameUpdate" type="text">
+
+			</form>
+			<br>
+			<button id="submitUpdateC">Update Customer</button>
+		</section>
+
+		<section id="addAccountForm" class="accounts">
+
+			<form>
+				Type of Account<input id="TypeAdd" type="text"> Balance<input
+					id="BalanceAdd" type="text">
+
+
+			</form>
+
+			<button id="submitAddA">Add Account</button>
+
+		</section>
+
+		<section id="updateAccountForm" class="accounts">
+
+
+			<form>
+				Customer ID<input id="CustomerUpdate" type="text"> Type of
+				Account<input id="TypeUpdate" type="text">
+
+
+			</form>
+
+			<button id="submitUpdateA">Update Account</button>
+
+		</section>
+
+		<section id="transfer" class="accounts">
+			<form>
+				Account ID #1<input id="accountOne" type="text"> Transfer
+				Amount<input id="tAmount" type="text"> Account ID #2<input
+					id="accountTwo" type="text">
+			</form>
+
+			<button id="submitTransfer">Transfer</button>
+
+		</section>
+
+		<section id="transferFromAccount" class="accounts">
+			<p id="accountOneF">
+			<form>
+				<input id="tAmountF" type="text">
+				<p id="accountTwoF">to</p>
+				Account ID #2<input id="accountTwoFA" type="text">
+			</form>
+
+			<button id="submitTransferFromAccount">Transfer</button>
+
+		</section>
+
+		<section id="errorMessage">
+			<span id="error"></span>
+			<button id="closeError">X</button>
+		</section>
+
+		<section id="successMessage">
+			<span id="success"></span>
+		</section>
+
+
+	</section>
+	<script src="/jquery-3.1.0.min.js"></script>
+	<script type="text/javascript">			
 		    var cusID = null;
 			var accID = null;
 			var accBalance = null;
@@ -272,11 +277,20 @@
 			$('#addCust').click(function(evt)
 			{
 				$('#addCustForm').show()
-				$('#customer-list').hide()
 				$('#customer').hide()
 				$('#accounts').hide()
-				$('#wdt').hide()
 				$('#account').hide()
+				$('#ul-c').hide()
+				$('#ul-a').hide()
+				$('#updateCustForm').hide()
+				$('#addAccountForm').hide()
+				$('#updateAccountForm').hide()
+				$('#transfer').hide()
+				$('#transferFromAccount').hide()
+				$('#accountList').hide()
+				$('#errorMessage').hide()
+				$('#successMessage').hide()
+				
 				
 			});
 			
@@ -396,7 +410,7 @@
 				$('#customer').hide()
 				$('#accountList').show()
 				$('#accounts').show()
-				$('#acounts')
+				$('#ul-a').empty()
 				console.log(document.getElementsByClassName('custClass')[0].id)
 				$.getJSON("ssa-bank/customers/"+ document.getElementsByClassName('custClass')[0].id + "/accounts" , accounts)
 						
@@ -423,9 +437,6 @@
 	
 						}
 					}
-				
-				
-				
 			}
 			
 			$('#ul-a').click(function(evt)
@@ -456,14 +467,13 @@
 					$('#transfer').hide()
 					$('#transferFromAccount').hide()
 				}
-				
-
 			}
 			
 			$('#addAccount').click(function(evt)
 			{
 				$('#errorMessage').hide()
 				$('#addAccountForm').show()
+				$('#accounts').hide()
 			});
 			
 			
@@ -514,35 +524,27 @@
 			
 			function toDetailAccount(response)
 			{
-				$('.accClass').attr('id',response.success.id).text(response.id + " " + response.success.customer.id + " " + response.success.type + " " + response.success.balance)
+				$('.accClass').attr('id',response.success.id).text(response.success.id + " " + response.success.customer.id + " " + response.success.type + " " + response.success.balance)
 			}
-					
+			
+			function toDetailAccountNS(response)
+			{
+				$('.accClass').attr('id',response.id).text(response.id + " " + response.customer.id + " " + response.type + " " + response.balance)
+			}		
 			$('#updateAccount').click(function(evt)
 			{
 					$('#updateAccountForm').show()
 					$('#wdt').hide()
-					$('#updateAccount').hide()
-					
-					
-											
-					
+					$('#updateAccount').hide()						
 			});
-			
-			
-							
+
 			$('#submitUpdateA').click(function(evt)
-			{
-										
+			{								
 				sendUpdateAccount();
-				
-				
-				
 			});
 									
 			function sendUpdateAccount() 
 			{
-					
-				
 		        $.ajax
 	       		({
      				type: "PUT",
@@ -574,23 +576,15 @@
 		        	alert("Something went wrong the Account was not updated");
 		       	}
 			}
-			
-			
-			
+
 			$('#accountW').click(function(evt)
-			{
-												
+			{												
 				withdrawAccount();
-						
-						
-						
 			});
 											
 			function withdrawAccount() 
 			{
 						
-												
-												
 				$.ajax
 			  	({
 		     		type: "PUT",
@@ -599,25 +593,18 @@
 					data: {"withdraw": document.getElementById("textW").value}
 				})
 						
-				.done(toDetailAccount)
-								        		
-
+				.done(toDetailAccountNS)
 			}
 					
 			$('#accountD').click(function(evt)
-			{
-														
+			{										
 				depositAccount();
-				
-								
 								
 			});
 													
 			function depositAccount() 
 			{
-								
-														
-														
+										
 		        $.ajax
 	       		({
 					type: "PUT",
@@ -626,9 +613,7 @@
 					data: {"deposit": document.getElementById("textD").value}
 				})
 				
-				.done(toDetailAccount)
-										        		
-
+				.done(toDetailAccountNS)
 			}
 			
 			$('#accountT').click(function(evt)
@@ -641,14 +626,9 @@
 			{
 				$('#transfer').hide()
 				$('#ul-a').empty()												
-				transferAccount();
-				
-										
-										
+				transferAccount();						
 			});
-			
-			
-															
+											
 			function transferAccount() 
 			{
 											
@@ -662,7 +642,6 @@
 			 	 
 			 	 .done(toAccounts)
 												        		
-
 			}	
 			
 			$('#accountTransferFromAccount').click(function(evt)
@@ -739,5 +718,5 @@
 	
 		
 		</script>
-	</body>
+</body>
 </html>
