@@ -1,5 +1,8 @@
+#customer-List{width: 10em}
+
 ul {
   list-style-type: none;
+  width: 10em;
 
   margin: 0;
   padding: 0;
@@ -18,7 +21,7 @@ li{
   text-decoration: none;
   color: #000;
   display: block;
-  width: 15%;
+  width: 10em;
  
   -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
   -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
@@ -29,7 +32,8 @@ li{
  
 li:hover {
   font-size: 30px;
-  background: #f6f6f6;
+  background: red;
+  cursor: crosshair; 
 }
 
 #errorMessage {

@@ -4,5 +4,4 @@
 
 *.jar
 /target/
-
 *.log
