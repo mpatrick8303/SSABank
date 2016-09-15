@@ -1,27 +1,40 @@
-#customer-List{width: 10em}
+header{ }
+button{
 
-ul {
+  	padding:.5em;
+  	background-color: #dcdcdc;
+  	border: .5em solid #666;
+  	color:#000;
+  	text-decoration:none;
+}
+
+button:hover{background-color: blue}
+.menu{position:relative;}
+
+#customer-List{width: 40%; position:abosulte; top:8em}
+
+.customer ul {
   list-style-type: none;
-  width: 10em;
 
-  margin: 0;
+  
   padding: 0;
+  float: left;
 }
  
-li {
+.customer li {
   font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
   border-bottom: 1px solid #ccc;
 }
  
-li:last-child {
+.customer li:last-child {
   border: none;
 }
  
-li{
+.customer li{
   text-decoration: none;
   color: #000;
   display: block;
-  width: 10em;
+  width: auto;
  
   -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
   -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
@@ -30,11 +43,13 @@ li{
   transition: font-size 0.3s ease, background-color 0.3s ease;
 }
  
-li:hover {
+.customer li:hover {
   font-size: 30px;
-  background: red;
+  background: grey;
   cursor: crosshair; 
 }
+
+.customer #custClass{position: relative}
 
 #errorMessage {
 	position: fixed;
