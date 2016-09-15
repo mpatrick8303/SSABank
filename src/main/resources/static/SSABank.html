@@ -9,6 +9,10 @@
 		#error{z-index: 10000}
 		#closeError{position: absolute; top: 0;bottom: 0; right:0}
 		
+		#successMessage{position: fixed; margin-left:25%; margin-right:25%; top: 20%; z-index: 1000; width: 25%;height: 10%; background-color: green; font-size: 2em;border: 1em; border-color: yellow}
+		#success{z-index: 10000}
+	
+		
 	</style>
 	</head>
 	<body>
@@ -144,6 +148,11 @@
 			<button id = "closeError"> X</button>
 		</section>
 		
+		<section id= "successMessage">
+			<span id="success"></span>
+		</section>
+		
+		
 		
 		<script src="/jquery-3.1.0.min.js"></script>
 		<script type="text/javascript">
@@ -176,6 +185,8 @@
 				$('#transferFromAccount').hide()
 				$('#accountList').hide()
 				$('#errorMessage').hide()
+				$('#successMessage').hide()
+				
 				
 				
 			}
@@ -262,21 +273,17 @@
 			
 			$('#submitAddC').click(function(evt)
 			{
-				$('#addCustForm').hide()
-				console.log(getElementById("fNameAdd");
-				validate("fNameAdd")
-				validate("lNameAdd")
-				sendAdd();
+				if(validateLetter(fNameAdd) && validateLetter(lNameAdd))
+					sendAdd();
+			
+				
 				
 			});
 			
 		
 			function sendAdd() 
 			{
-				
-				console.log(document.getElementById("fNameAdd").value)
-				console.log(document.getElementById("lNameAdd").value)
-				
+
 		        $.ajax
 		        ({
 		            type: "POST",
@@ -285,14 +292,35 @@
 		            data: {"firstName": document.getElementById("fNameAdd").value, "lastName": document.getElementById("lNameAdd").value}
 		        	//success:toDetail;
 		        })
-
-		 		.done(toDetail);
+		        
+		        .done(addToDetail)
+		        
+		 		
 				
 			}
 			
+			function addToDetail(response)
+	        {
+
+	        	if(response.success)
+		        {
+		        	$('#addCustForm').hide()
+		        	toDetail(response)
+		        	$('#successMessage').show()
+		        	$('#success').text("Adding the Customer was Successful")
+		        	$('#successMessage').fadeOut(1600, "linear")
+		        	
+		       	}
+		        if(response.error)
+		       	{
+		        	alert("Something went wrong the Customer was not added");
+		       	}
+
+	        }
+			
 			function toDetail(response)
 			{
-				$('.custClass').attr('id',response.id).text(response.id + " " + response.firstName + " " + response.lastName)
+				$('.custClass').attr('id',response.success.id).text(response.success.id + " " + response.success.firstName + " " + response.success.lastName)
 
 				$('#customer-list').hide()
 				$('#customer').show()
@@ -314,25 +342,44 @@
 			});
 			
 			$('#submitUpdateC').click(function(evt)
-					{
+			{
+				//if(validateLetter("fNameUpdate") && validateLetter("lNameUpdate"))
+				sendUpdate();
 						
-						sendUpdate();
-						
-					});
+			});
 					
 				
-					function sendUpdate()
-					{	
-				        $.ajax
-				        ({
-				            type: "PUT",
-				            url: "ssa-bank/customers/" + cusID,
-				            dataType: "json",
-				            data: {"firstName": document.getElementById("fNameUpdate").value, "lastName": document.getElementById("lNameUpdate").value}
-				        })
-						
-				        .done(toDetail);
-					}
+			function sendUpdate()
+			{
+				console.log("hello")
+				$.ajax
+			  	({
+			  		type: "PUT",
+			  		url: "ssa-bank/customers/" + cusID,
+				    dataType: "json",
+				    data: {"firstName": document.getElementById("fNameUpdate").value, "lastName": document.getElementById("lNameUpdate").value}
+				})
+				.done(updateToDetail);
+			}
+			
+			function updateToDetail(response)
+	        {
+
+	        	if(response.success)
+		        {
+		        	$('#updateCustForm').hide()
+		        	toDetail(response)
+		        	$('#successMessage').show()
+		        	$('#success').text("Updating the Customer was Successful")
+		        	$('#successMessage').fadeOut(1600, "linear")
+		        	
+		       	}
+		        if(response.error)
+		       	{
+		        	alert("Something went wrong the Customer was not updated");
+		       	}
+
+	        }
 			
 			
 			
@@ -349,16 +396,26 @@
 			});
 			function accounts(response)
 			{
-				
-				console.log(response.length)
-				console.log(response[0].id)
-
-				for(let i = 0; i<response.length;i++)
-				{
-				
-					$('#ul-a').append('<li id=\''+response[i].id+'\'>' + response[i].id + " " + response[i].customer.id + " " + response[i].type + " " + response[i].balance  + '</li>')
 					
-				}
+					$('#accounts').show()
+					
+					if(response.error)
+					{
+						$('#errorMessage').show()
+						$('#error').text("")
+						$('#error').text("This customer has no accounts. Go ahead and add one")
+					
+					}
+					if(response.success)
+					{
+
+						for(let i = 0; i<response.success.length;i++)
+						{
+							$('#ul-a').append('<li id=\''+response.success[i].id+'\'>' + response.success[i].id + " " + response.success[i].customer.id + " " + response.success[i].type + " " + response.success[i].balance  + '</li>')
+	
+						}
+					}
+				
 				
 				
 			}
@@ -375,39 +432,44 @@
 			});
 			function account(response)
 			{
-				accBalance = response.balance
-				$('.accClass').attr('id',response.id).text(response.id + " " + response.customer.id + " " + response.type + " " + response.balance)
+				if(response.error)
+				{
+					$('#errorMessage').show()
+					$('#error').text("")
+					$('#error').text("This account does not exist")
+				}
+				if(response.success)
+				{
+					$('.accClass').attr('id',response.success.id).text(response.success.id + " " + response.success.customer.id + " " + response.success.type + " " + response.success.balance)
 
-				$('#accounts').hide()
-				$('#account').show()
-				$('#addAccountForm').hide()
-				$('#transfer').hide()
-				$('#transferFromAccount').hide()
+					$('#accounts').hide()
+					$('#account').show()
+					$('#addAccountForm').hide()
+					$('#transfer').hide()
+					$('#transferFromAccount').hide()
+				}
+				
 
 			}
 			
 			$('#addAccount').click(function(evt)
 			{
+				$('#errorMessage').hide()
 				$('#addAccountForm').show()
 			});
 			
 			
 			$('#submitAddA').click(function(evt)
 			{
-						
-				sendAddAccount();
+				
+				sendAddAccount();				
 				
 						
 			});
 					
 			function sendAddAccount() 
 			{
-				console.log(document.getElementsByClassName('custClass')[0].id)
-				console.log(document.getElementById("TypeAdd").value)
-				console.log(document.getElementById("BalanceAdd").value)
-						
-						
-		         $.ajax
+		        $.ajax
 	      		({
           			 type: "POST",
            			 url: "ssa-bank/customers/accounts",
@@ -415,12 +477,36 @@
 		       		 data: {"custID": document.getElementsByClassName('custClass')[0].id, "Type": document.getElementById("TypeAdd").value, "Balance": document.getElementById("BalanceAdd").value}
 		   		})
 		        		
-	     		.done(toDetailAccount)
+	     		.done(addToAccounts)
+			}
+			
+			function addToAccounts(response)
+			{
+				if(response.success)
+		        {
+		        	$('#addAccountForm').hide()
+		        	$('#ul-a').empty()
+		        	toAccounts(response)
+		        	
+		        	$('#successMessage').show()
+		        	$('#success').text("Creating the Account was Successful")
+		        	$('#successMessage').fadeOut(1600, "linear")
+		        	
+		       	}
+		        if(response.error)
+		       	{
+		        	alert("Something went wrong the Account was not created");
+		       	}
+			}
+			
+			function toAccounts(response)
+			{
+				$.getJSON("ssa-bank/customers/"+ document.getElementsByClassName('custClass')[0].id + "/accounts" , accounts)
 			}
 			
 			function toDetailAccount(response)
 			{
-				account(response)
+				$('.accClass').attr('id',response.success.id).text(response.id + " " + response.success.customer.id + " " + response.success.type + " " + response.success.balance)
 			}
 					
 			$('#updateAccount').click(function(evt)
@@ -456,46 +542,60 @@
      				url: "ssa-bank/customers/" + cusID + "/accounts/" + accID,
 					dataType: "json",
 					data: {"Customer": document.getElementById("CustomerUpdate").value, "Type": document.getElementById("TypeUpdate").value, "Balance": accBalance }
-				})
+				});
 				
-				.done(toDetailAccount)
+				.done(updateToAccounts)
 						        		
 
 			}
 			
-			function toDetailAccounts(response)
+			function updateToAccounts(response)
 			{
-				accounts(response)
+				if(response.success)
+		        {
+		        	$('#updateAccountForm').hide()
+		        	$('#ul-a').empty()
+		        	toAccounts(response)
+		        	
+		        	$('#successMessage').show()
+		        	$('#success').text("Updating the Account was Successful")
+		        	$('#successMessage').fadeOut(1600, "linear")
+		        	
+		       	}
+		        if(response.error)
+		       	{
+		        	alert("Something went wrong the Account was not updated");
+		       	}
 			}
 			
 			
 			
 			$('#accountW').click(function(evt)
-					{
+			{
 												
-						withdrawAccount();
+				withdrawAccount();
 						
 						
 						
-					});
+			});
 											
-					function withdrawAccount() 
-					{
+			function withdrawAccount() 
+			{
 						
 												
 												
-				        $.ajax
-			       		({
-		     				type: "PUT",
-		     				url: "ssa-bank/customers/" + cusID + "/accounts/" + accID + "/withdraw",
-							dataType: "json",
-							data: {"withdraw": document.getElementById("textW").value}
-						})
+				$.ajax
+			  	({
+		     		type: "PUT",
+		     		url: "ssa-bank/customers/" + cusID + "/accounts/" + accID + "/withdraw",
+					dataType: "json",
+					data: {"withdraw": document.getElementById("textW").value}
+				})
 						
-						.done(toDetailAccount)
+				.done(toDetailAccount)
 								        		
 
-					}
+			}
 					
 			$('#accountD').click(function(evt)
 			{
@@ -532,7 +632,8 @@
 			
 			$('#submitTransfer').click(function(evt)
 			{
-																
+				$('#transfer').hide()
+				$('#ul-a').empty()												
 				transferAccount();
 				
 										
@@ -543,10 +644,7 @@
 															
 			function transferAccount() 
 			{
-				
-										
-																
-																
+											
 	  	    	$.ajax
 	        	({
 					type: "PUT",
@@ -555,7 +653,7 @@
 					data: {"accountOne": document.getElementById("accountOne").value, "transferAmount": document.getElementById("tAmount").value, "accountTwo": document.getElementById("accountTwo").value }
 			 	 })
 			 	 
-			 	 .done(toDetailAccount)
+			 	 .done(toAccounts)
 												        		
 
 			}	
@@ -570,7 +668,8 @@
 					
 			$('#submitTransferFromAccount').click(function(evt)
 			{
-																		
+				$('#transferFromAccount').hide()
+				$('#ul-a').empty()
 				transferAccountF()
 							
 												
@@ -579,10 +678,7 @@
 												
 			function transferAccountF() 
 			{
-						
-				console.log()
-																		
-																		
+													
 				$.ajax
 			    ({
 					type: "PUT",
@@ -591,27 +687,44 @@
 					data: {"transferAmountF": document.getElementById("tAmountF").value, "accountTwoFA": document.getElementById("accountTwoFA").value }
 				})
 				
-				.done(toDetailAccount)
+				.done(toAccounts)
 														        		
 
 			}	
 			
-			function validate(name) 
+			function validateLetter(name) 
 			{
-				console.log("hello")
 			    if (document.getElementById(name) == "") 
 				{
-			        alert("Enter a name");
+			        alert("Please Enter Something");
 			        document.getElementById(name).focus();
 			        return false;
 			    }
 			    if (!/^[a-zA-Z]*$/g.test(document.getElementById(name).value)) 
 				{
-			        alert("Invalid characters");
+			        alert("Only letters Can Be Entered");
 			        document.getElementById(name).focus();
 			        return false;
 			    }
 			}
+			
+			function validateNumber(name)
+			{
+				if (document.getElementById(name) == "") 
+				{
+			        alert("Please Enter Something");
+			        document.getElementById(name).focus();
+			        return false;
+			    }
+				if (!/^[0-9]+$/.test(document.getElementById(name).value)) 
+				{
+			        alert("Please Enter a Number For the Balance");
+			        document.getElementById(name).focus();
+			        return false;
+			    }
+				
+			}
+			
 			
 
 					
