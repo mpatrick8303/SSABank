@@ -4,11 +4,8 @@
 	<meta charset="ISO-8859-1">
 	<title>SSA Bank</title>
 
-		
 		<link rel ="stylesheet" type="text/css" href ="styles.css">
 	
-		
-
 	</head>
 	<body>
 		<header>
@@ -18,7 +15,8 @@
 					<li id="homelist">Customer List</li>
 					<li id="accountList">Account List</li>
 					<li id="addCust">Add Customers</li>
-		
+					
+					
 				</ul>
 			</menu>
 		</header>
@@ -196,23 +194,27 @@
 				$.getJSON("ssa-bank/customers/"+ document.getElementsByClassName('custClass')[0].id + "/accounts" , accountsHomeList)
 			});
 			
-			function accountsHomeList(response)
+			function accountsHomeList()
 			{
+				$('#customer').hide()
+				$('#accounts').hide()
+				$('#account').hide()
+				$('#addCustForm').hide()
+				$('#updateCustForm').hide()
+				$('#addAccountForm').hide()
+				$('#updateAccountForm').hide()
+				$('#transfer').hide()
+				$('#transferFromAccount').hide()
+				$('#accountList').hide()
+				$('#errorMessage').hide()
+				$('#successMessage').hide()
+				$('#accountList').show()
+				$('#accounts').show()	
 				
-				console.log(response.length)
-				console.log(response[0].id)
+				$('#ul-a').empty()
 				
-				
-				
-				
-				for(let i = 0; i<response.length;i++)
-				{
-				
-					$('#ul-a').append('<li id=\''+response[i].id+'\'>' + response[i].id + " " + response[i].customer.id + " " + response[i].type + " " + response[i].balance  + '</li>')
-					
-				}
-				
-				
+				$.getJSON("ssa-bank/customers/"+ document.getElementsByClassName('custClass')[0].id + "/accounts" , accounts)
+
 			}
 			
 			function customersClear()
@@ -346,7 +348,6 @@
 				
 			function sendUpdate()
 			{
-				console.log("hello")
 				$.ajax
 			  	({
 			  		type: "PUT",
@@ -436,7 +437,7 @@
 				if(response.success)
 				{
 					$('.accClass').attr('id',response.success.id).text(response.success.id + " " + response.success.customer.id + " " + response.success.type + " " + response.success.balance)
-
+					accBalance = response.success.balance
 					$('#accounts').hide()
 					$('#account').show()
 					$('#addAccountForm').hide()
@@ -528,9 +529,8 @@
 									
 			function sendUpdateAccount() 
 			{
+					
 				
-										
-										
 		        $.ajax
 	       		({
      				type: "PUT",
@@ -540,8 +540,6 @@
 				})
 				
 				.done(updateToAccounts)
-						        		
-
 			}
 			
 			function updateToAccounts(response)
@@ -550,8 +548,10 @@
 		        {
 		        	$('#updateAccountForm').hide()
 		        	$('#ul-a').empty()
+		        	$('#account')
 		        	toAccounts(response)
 		        	
+		        	$('#account').hide()
 		        	$('#successMessage').show()
 		        	$('#success').text("Updating the Account was Successful")
 		        	$('#successMessage').fadeOut(1600, "linear")
