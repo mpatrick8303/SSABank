@@ -3,17 +3,12 @@
 	<head>
 	<meta charset="ISO-8859-1">
 	<title>SSA Bank</title>
-	<style type="text/css">
+
 		
-		#errorMessage{position: fixed; margin-left:25%; margin-right:25%; top: 20%; z-index: 1000; width: 50%; background-color: red; font-size: 2em;border: 1em; border-color: yellow}
-		#error{z-index: 10000}
-		#closeError{position: absolute; top: 0;bottom: 0; right:0}
-		
-		#successMessage{position: fixed; margin-left:25%; margin-right:25%; top: 20%; z-index: 1000; width: 25%;height: 10%; background-color: green; font-size: 2em;border: 1em; border-color: yellow}
-		#success{z-index: 10000}
+		<link rel ="stylesheet" type="text/css" href ="styles.css">
 	
 		
-	</style>
+
 	</head>
 	<body>
 		<header>
@@ -23,11 +18,11 @@
 					<li id="homelist">Customer List</li>
 					<li id="accountList">Account List</li>
 					<li id="addCust">Add Customers</li>
-					
-					
+		
 				</ul>
 			</menu>
 		</header>
+		<section id="content">
 		<section id="customer-list">
 			<ul id ="ul-c">
 			
@@ -153,7 +148,7 @@
 		</section>
 		
 		
-		
+		</section>
 		<script src="/jquery-3.1.0.min.js"></script>
 		<script type="text/javascript">
 			var cusID = null;
@@ -542,7 +537,7 @@
      				url: "ssa-bank/customers/" + cusID + "/accounts/" + accID,
 					dataType: "json",
 					data: {"Customer": document.getElementById("CustomerUpdate").value, "Type": document.getElementById("TypeUpdate").value, "Balance": accBalance }
-				});
+				})
 				
 				.done(updateToAccounts)
 						        		

@@ -1,0 +1,92 @@
+
+body{
+	background-color:grey;
+}
+
+#content{
+	
+	margin-left: 25%;
+	margin-right: 25%;
+	top: 20%;
+	background-color:white;
+	border:thick,outset,navy;
+	border-style:double;
+	borders-radius:  3em 3em 3em 3em
+	padding: 
+	
+}
+
+#errorMessage {
+	position: fixed;
+	margin-left: 25%;
+	margin-right: 25%;
+	top: 20%;
+	z-index: 1000;
+	width: 50%;
+	background-color: red;
+	font-size: 2em;
+	border: 1em;
+	border-color: yellow
+}
+
+#error {
+	z-index: 10000
+}
+
+#closeError {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0
+}
+
+#successMessage {
+	position: fixed;
+	margin-left: 25%;
+	margin-right: 25%;
+	top: 20%;
+	z-index: 1000;
+	width: 25%;
+	height: 10%;
+	background-color: green;
+	font-size: 2em;
+	border: 1em;
+	border-color: yellow
+}
+
+#success {
+	z-index: 10000
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+ 
+li {
+  font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
+  border-bottom: 1px solid #ccc;
+}
+ 
+li:last-child {
+  border: none;
+}
+ 
+li a {
+  text-decoration: none;
+  color: #000;
+  display: block;
+  width: 200px;
+ 
+  -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -o-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -ms-transition: font-size 0.3s ease, background-color 0.3s ease;
+  transition: font-size 0.3s ease, background-color 0.3s ease;
+}
+ 
+li a:hover {
+  font-size: 30px;
+  background: #f6f6f6;
+}
