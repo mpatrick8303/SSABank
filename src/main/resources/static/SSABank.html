@@ -25,11 +25,11 @@
 		
 			<section id = "subnav">
 				<ul>
-					<li id = "sub1">1</h4>
-					<li>&gt</li>
-					<li id = "sub2">2</h4>
-					<li>&gt</li>
-					<li id = "sub3">3</h4>
+					<li id = "sub1"></h4>
+					<li id = "sna1">&gt</li>
+					<li id = "sub2"></h4>
+					<li id= "sna2">&gt</li>
+					<li id = "sub3"></h4>
 				</ul>
 			</section>
 			
@@ -169,6 +169,8 @@
 				$.getJSON("ssa-bank/customers",customers);
 				
 			});
+			
+		
 			function customers(response)
 			{
 				for(let i = 0; i<response.length;i++)
@@ -177,6 +179,11 @@
 					
 					
 				}
+				
+				$('#sub1').text("Home")
+				
+				$('#sna1').hide()
+				$('#sna2').hide()
 				
 				$('#customer-list').show()
 				$('#customer').hide()
@@ -196,10 +203,18 @@
 				
 			}
 			
-			$('#homelist').click(function(evt)
+			$('#homelist').click(
+					reload
+			);
+			
+			$('#sub1').click(
+					reload
+			);
+			
+			function reload(evt)
 			{
 				location.reload()
-			});
+			}
 			
 			$('#accountList').click(function()
 			{
@@ -208,6 +223,8 @@
 			
 			function accountsHomeList()
 			{
+				
+				
 				$('#customer').hide()
 				$('#accounts').hide()
 				$('#account').hide()
@@ -236,15 +253,17 @@
 			}
 			
 			
-			$('#ul-c').click(function(evt)
+			$('#ul-c').click(showCustomers);
+				
+			function showCustomers(evt)
 			{
+				$('#sna1').show()
+				$('#sub2').text("Customer")
 				cusID = evt.target.id
 				console.log(cusID)
 				$('.custClass').empty()
 				$.getJSON("ssa-bank/customers/" + $(evt.target).attr('id'), customer)
-				
-
-			});
+			}
 			function customer(response)
 			{
 				if(response.error)
@@ -268,6 +287,8 @@
 				
 				location.reload()
 			});
+			
+			$('#sna1').click() = $('#closeError').click()
 			
 			$('#addCust').click(function(evt)
 			{
@@ -326,7 +347,6 @@
 		       	}
 
 	        }
-			
 			function toDetail(response)
 			{
 				$('.custClass').attr('id',response.success.id).text(response.success.id + " " + response.success.firstName + " " + response.success.lastName)
@@ -393,6 +413,8 @@
 			
 			$('#show-accounts').click(function(evt)
 			{
+				$('#sna2').show()
+				$('#sub3').text("Accounts")
 				$('#customer').hide()
 				$('#accountList').show()
 				$('#accounts').show()
@@ -406,6 +428,7 @@
 			{
 					
 					$('#accounts').show()
+
 					
 					if(response.error)
 					{
