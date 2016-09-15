@@ -1,26 +1,66 @@
-<<<<<<< HEAD
-header{ }
-button{
-=======
+
+
+
+
 *{margin:0;
 padding:0;
 }
 
+
+
 body{
-	background-color:navy;
+	background: linear-gradient(#c0d6fe, white);
+    height: 100%;
+   margin: 0;
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+}
+
+
+header{
+	position: relative;
 }
 
 header h1{
+	
 	margin:0;
 	padding:.2em;
 
 	text-align:center;
 	font-size: 6em;
 	font-style:italic;
-	background-color:white;
+	color:white;
+	background-color:navy;
 
 }
 
+.mainNav {
+	background-color: #ffffcc;
+	border-top: 1px solid;
+	border-right: 1px solid;
+	border-color: navy;
+	list-style: none;
+	text-align: center;
+	width: 15%;
+}
+
+.mainNav li {
+	font-size: 16px;
+	position: relative;
+	border-bottom: 1px solid;
+	padding: 13px 1.03em 10px;
+	display: block;
+	color: #767676;
+	-webkit-transition: all 0.3s ease-out;
+	-moz-transition: all 0.3s ease-out;
+	-o-transition: all 0.3s ease-out;
+	transition: all 0.3s ease-out;
+}
+
+.mainNav li:hover {
+	background-color: #fba89b;
+	color: #fff;
+}
 
 #subnav li{
 	
@@ -36,186 +76,162 @@ header h1{
 	
 	margin-left: 20%;
 	margin-right: 25%;
-	top: 20%;
-	bottom: 20%;
+	top: 10em;
 	background-color:white;
 	border-radius: 2em;
 	border:thick,outset,navy, ;
 	border-style:double;
-	width: 70em;
+	height: 60%;
+	width: 60%;
 	padding: 2em;
+	overflow: auto;
 	
 }
 
 
-#customer-List{width: 10em}
->>>>>>> origin
 
+
+button{
+	
   	padding:.5em;
   	background-color: #dcdcdc;
   	border: .5em solid #666;
   	color:#000;
   	text-decoration:none;
+  	margin-top: 5em;
+	width: 12em;
+	height:4em;
 }
 
-button:hover{background-color: blue}
-.menu{position:relative;}
+button:hover{background-color: navy;color:white}
 
-#customer-List{width: 40%; position:abosulte; top:8em}
-
-.customer ul {
-  list-style-type: none;
-
-  
-  padding: 0;
-  float: left;
+ul {
+	overflow: auto;
+  	list-style-type: none;
+  	padding: 0;
+  	width:auto; 	
 }
- 
-.customer li {
-  font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
-  border-bottom: 1px solid #ccc;
-}
- 
-.customer li:last-child {
+li:last-child {
   border: none;
 }
+li{
+	font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
+  	border-bottom: 1px solid #ccc;
+  	text-decoration: none;
+  	color: #000;
+  	display: block;
+  	width: auto;
  
-.customer li{
-  text-decoration: none;
-  color: #000;
-  display: block;
-  width: auto;
- 
-  -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
-  -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
-  -o-transition: font-size 0.3s ease, background-color 0.3s ease;
-  -ms-transition: font-size 0.3s ease, background-color 0.3s ease;
-  transition: font-size 0.3s ease, background-color 0.3s ease;
+  	-webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
+  	-moz-transition: font-size 0.3s ease, background-color 0.3s ease;
+  	-o-transition: font-size 0.3s ease, background-color 0.3s ease;
+  	-ms-transition: font-size 0.3s ease, background-color 0.3s ease;
+  	transition: font-size 0.3s ease, background-color 0.3s ease;
 }
- 
-.customer li:hover {
+li:hover {
   font-size: 30px;
   background: grey;
   cursor: crosshair; 
 }
-
-.customer #custClass{position: relative}
-
-#errorMessage {
-	position: fixed;
-	margin-left: 25%;
-	margin-right: 25%;
-	top: 20%;
-	z-index: 1000;
-	width: 50%;
-	background-color: red;
-	font-size: 2em;
-	border: 1em;
-	border-color: yellow
+form{	
+	padding-top: 2em;
+	width: 10em;
+	height: 5em;	
+	
 }
-
-#error {
-	z-index: 10000
+label{
+	
+	display:block;
+	width:15em;
+	font-size: 1.5em;
 }
-
-#closeError {
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	right: 0
-}
-
-#successMessage {
-	position: fixed;
-	margin-left: 25%;
-	margin-right: 25%;
-	top: 20%;
-	z-index: 1000;
-	width: 25%;
-	height: 10%;
-	background-color: green;
-	font-size: 2em;
-	border: 1em;
-	border-color: yellow
-}
-
-#success {
-	z-index: 10000
-}
-
-
-
-#errorMessage {
-	position: fixed;
-	margin-left: 25%;
-	margin-right: 25%;
-	top: 20%;
-	z-index: 1000;
-	width: 50%;
-	background-color: red;
-	font-size: 2em;
-	border: 1em;
-	border-color: yellow
-}
-
-#error {
-	z-index: 10000
-}
-
-#closeError {
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	right: 0
-}
-
-#successMessage {
-	position: fixed;
-	margin-left: 25%;
-	margin-right: 25%;
-	top: 20%;
-	z-index: 1000;
-	width: 25%;
-	height: 10%;
-	background-color: green;
-	font-size: 2em;
-	border: 1em;
-	border-color: yellow
-}
-
-#success {
-	z-index: 10000
-}
-
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
- 
-li {
-  font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
-  border-bottom: 1px solid #ccc;
-}
- 
-li:last-child {
-  border: none;
-}
- 
-li a {
-  text-decoration: none;
-  color: #000;
+input {
   display: block;
-  width: 200px;
+  padding: 5px;
+  background-color: #e8eee9 ;
+  color: black;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+  border-radius: 5px;
+  margin: 5px 0 10px 0;
+  font-size: 15px;
+  /* border-color: rgba(0, 0, 0, 0.03); */
+ }
+input:focus {
+   /* border:2px solid #ffa54d ; */
+   background-color: #ffff99 ;
+   border-radius: 5px;
+   outline:none
+ }
+ .menu{position:relative;}
  
-  -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
-  -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
-  -o-transition: font-size 0.3s ease, background-color 0.3s ease;
-  -ms-transition: font-size 0.3s ease, background-color 0.3s ease;
-  transition: font-size 0.3s ease, background-color 0.3s ease;
-}
+ #customer-list{width: 30%; position:abosulte; top:8em}
  
-li a:hover {
-  font-size: 30px;
-  background: #f6f6f6;
+ .custClass{
+	
+	padding-top:1em;
+	font-size: 2em;
+	
+	}
+
+#accounts{width: 30%; position:abosulte; top:8em}
+
+#submitTransfer{margin-top: 8.5em}
+
+.accClass {padding-top: 1em; font-size: 2em}
+#account input
+{
+	display: inline;
 }
+#account button{
+	height: 2.5em;
+
+}
+
+#transferFromAccount{
+	
+	font-size: 1.5em;
+}
+
+#errorMessage {
+	position: fixed;
+	left: 25%;
+	right: 50%;
+	bottom: 20%;
+	z-index: 1000;
+	width: 50%;
+	height:10%;
+	background-color: red;
+	font-size: 1.5em;
+	border: 1em;
+	border-color: yellow
+}
+
+#error {
+	z-index: 10000
+	float:left;
+}
+
+#closeError {
+	float:right;
+}
+
+#successMessage {
+	position: fixed;
+	margin-left: 25%;
+	margin-right: 25%;
+	top: 20%;
+	z-index: 1000;
+	width: 25%;
+	height: 10%;
+	background-color: green;
+	font-size: 2em;
+	border: 1em;
+	border-color: yellow
+}
+
+#success {
+	z-index: 10000
+}
+
+
+
