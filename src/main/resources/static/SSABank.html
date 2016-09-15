@@ -3,17 +3,9 @@
 	<head>
 	<meta charset="ISO-8859-1">
 	<title>SSA Bank</title>
-	<style type="text/css">
-		
-		#errorMessage{position: fixed; margin-left:25%; margin-right:25%; top: 20%; z-index: 1000; width: 50%; background-color: red; font-size: 2em;border: 1em; border-color: yellow}
-		#error{z-index: 10000}
-		#closeError{position: absolute; top: 0;bottom: 0; right:0}
-		
-		#successMessage{position: fixed; margin-left:25%; margin-right:25%; top: 20%; z-index: 1000; width: 25%;height: 10%; background-color: green; font-size: 2em;border: 1em; border-color: yellow}
-		#success{z-index: 10000}
 	
-		
-	</style>
+	<link rel ="stylesheet" type:="style/css"  href ="styles.css">
+
 	</head>
 	<body>
 		<header>
@@ -201,23 +193,27 @@
 				$.getJSON("ssa-bank/customers/"+ document.getElementsByClassName('custClass')[0].id + "/accounts" , accountsHomeList)
 			});
 			
-			function accountsHomeList(response)
+			function accountsHomeList()
 			{
+				$('#customer').hide()
+				$('#accounts').hide()
+				$('#account').hide()
+				$('#addCustForm').hide()
+				$('#updateCustForm').hide()
+				$('#addAccountForm').hide()
+				$('#updateAccountForm').hide()
+				$('#transfer').hide()
+				$('#transferFromAccount').hide()
+				$('#accountList').hide()
+				$('#errorMessage').hide()
+				$('#successMessage').hide()
+				$('#accountList').show()
+				$('#accounts').show()	
 				
-				console.log(response.length)
-				console.log(response[0].id)
+				$('#ul-a').empty()
 				
-				
-				
-				
-				for(let i = 0; i<response.length;i++)
-				{
-				
-					$('#ul-a').append('<li id=\''+response[i].id+'\'>' + response[i].id + " " + response[i].customer.id + " " + response[i].type + " " + response[i].balance  + '</li>')
-					
-				}
-				
-				
+				$.getJSON("ssa-bank/customers/"+ document.getElementsByClassName('custClass')[0].id + "/accounts" , accounts)
+
 			}
 			
 			function customersClear()
@@ -351,7 +347,6 @@
 				
 			function sendUpdate()
 			{
-				console.log("hello")
 				$.ajax
 			  	({
 			  		type: "PUT",
@@ -441,7 +436,7 @@
 				if(response.success)
 				{
 					$('.accClass').attr('id',response.success.id).text(response.success.id + " " + response.success.customer.id + " " + response.success.type + " " + response.success.balance)
-
+					accBalance = response.success.balance
 					$('#accounts').hide()
 					$('#account').show()
 					$('#addAccountForm').hide()
@@ -533,20 +528,17 @@
 									
 			function sendUpdateAccount() 
 			{
+					
 				
-										
-										
 		        $.ajax
 	       		({
      				type: "PUT",
      				url: "ssa-bank/customers/" + cusID + "/accounts/" + accID,
 					dataType: "json",
 					data: {"Customer": document.getElementById("CustomerUpdate").value, "Type": document.getElementById("TypeUpdate").value, "Balance": accBalance }
-				});
+				})
 				
 				.done(updateToAccounts)
-						        		
-
 			}
 			
 			function updateToAccounts(response)
@@ -555,8 +547,10 @@
 		        {
 		        	$('#updateAccountForm').hide()
 		        	$('#ul-a').empty()
+		        	$('#account')
 		        	toAccounts(response)
 		        	
+		        	$('#account').hide()
 		        	$('#successMessage').show()
 		        	$('#success').text("Updating the Account was Successful")
 		        	$('#successMessage').fadeOut(1600, "linear")
