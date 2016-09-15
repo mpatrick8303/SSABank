@@ -1,3 +1,49 @@
+*{margin:0;
+padding:0;
+}
+
+body{
+	background-color:navy;
+}
+
+header h1{
+	margin:0;
+	padding:.2em;
+
+	text-align:center;
+	font-size: 6em;
+	font-style:italic;
+	background-color:white;
+
+}
+
+
+#subnav li{
+	
+	display: inline-flex; 
+	list-style: none; 
+	font-size: 1em;	color: navy;
+	margin-right: -1em;
+}
+
+#content{
+	
+	position:fixed;
+	
+	margin-left: 20%;
+	margin-right: 25%;
+	top: 20%;
+	bottom: 20%;
+	background-color:white;
+	border-radius: 2em;
+	border:thick,outset,navy, ;
+	border-style:double;
+	width: 70em;
+	padding: 2em;
+	
+}
+
+
 #customer-List{width: 10em}
 
 ul {
@@ -79,22 +125,6 @@ li:hover {
 }
 
 
-body{
-	background-color:grey;
-}
-
-#content{
-	
-	margin-left: 25%;
-	margin-right: 25%;
-	top: 20%;
-	background-color:white;
-	border:thick,outset,navy;
-	border-style:double;
-	borders-radius:  5em;
-	padding: 2em;
-	
-}
 
 #errorMessage {
 	position: fixed;
