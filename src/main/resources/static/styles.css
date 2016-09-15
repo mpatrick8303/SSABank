@@ -98,7 +98,7 @@ button{
   	border: .5em solid #666;
   	color:#000;
   	text-decoration:none;
-  	margin-top: 5em;
+  	margin-top: 1em;
 	width: 12em;
 	height:4em;
 }
@@ -132,11 +132,12 @@ li:hover {
   font-size: 30px;
   background: grey;
   cursor: crosshair; 
+  
 }
 form{	
 	padding-top: 2em;
 	width: 10em;
-	height: 5em;	
+	height: 10em;	
 	
 }
 label{
@@ -199,7 +200,7 @@ input:focus {
 	bottom: 20%;
 	z-index: 1000;
 	width: 50%;
-	height:10%;
+	height:5%;
 	background-color: red;
 	font-size: 1.5em;
 	border: 1em;
@@ -207,19 +208,26 @@ input:focus {
 }
 
 #error {
-	z-index: 10000
+	z-index: 10000;
 	float:left;
+	
 }
 
 #closeError {
-	float:right;
+	position:absolute;
+	bottom:0;
+	right:0;
+	height:100%;
+	width:5%;
+
+	
 }
 
 #successMessage {
 	position: fixed;
 	margin-left: 25%;
 	margin-right: 25%;
-	top: 20%;
+	bottom: 20%;
 	z-index: 1000;
 	width: 25%;
 	height: 10%;

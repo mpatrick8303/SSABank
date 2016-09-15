@@ -83,8 +83,8 @@
 		<section id="addCustForm" class="customer">
 
 			<form>
-				<label>First Name</label><input id="fNameAdd" type="text"> <label>Last
-					Name</label><input id="lNameAdd" type="text">
+				<label>First Name</label><input id="fNameAdd" type="text"> 
+				<label>Last Name</label><input id="lNameAdd" type="text">
 
 			</form>
 			<br>
@@ -296,7 +296,7 @@
 			
 			$('#submitAddC').click(function(evt)
 			{
-				if(validateLetter(fNameAdd) && validateLetter(lNameAdd))
+				
 					sendAdd();
 			
 				
@@ -620,12 +620,14 @@
 			{
 				$('#accounts').hide()
 				$('#transfer').show()
+				$('#errorMessage').hide()
 			});
 			
 			$('#submitTransfer').click(function(evt)
 			{
 				$('#transfer').hide()
-				$('#ul-a').empty()												
+				$('#ul-a').empty()			
+				
 				transferAccount();						
 			});
 											
@@ -647,6 +649,7 @@
 			$('#accountTransferFromAccount').click(function(evt)
 			{
 						$('#account').hide()
+						$('#errorMessage').hide()
 						$('#transferFromAccount').show()
 						
 						$('#accountOneF').append("How Much Would you like to transfer from account ID " + accID)	
