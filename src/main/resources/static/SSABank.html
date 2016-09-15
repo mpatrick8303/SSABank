@@ -23,72 +23,72 @@
 			</menu>
 		</header>
 		<section id="content">
-		<section id="customer-list">
+			<section id="customer-list">
 			<ul id ="ul-c">
 			
 			</ul>
 			
 			
-		</section>	
+			</section>	
 		
-		<section  id="customer">
-			<div class="custClass"></div>
-			<button id="show-accounts">Show Accounts</button>
-			<button id="updateCust">Update Customer</button>
-		</section>
+			<section  id="customer">
+				<div class="custClass"></div>
+				<button id="show-accounts">Show Accounts</button>
+				<button id="updateCust">Update Customer</button>
+			</section>
 		
-		<section id="accounts">
-			<ul id="ul-a">
+			<section id="accounts">
+				<ul id="ul-a">
 			
-			</ul>
-			<button id="addAccount">Add Account</button>
-			<button id = "accountT">Transfer</button>
-			
-		</section>
-		
-		<section class="hidden" id="account">
-			<div class="accClass"></div><br>
-			
-			<div id = wdt>
-			<input id="textW" type="text">
-			<button  id = "accountW">Withdraw</button>
-			
-			<input id="textD" type="text">
-			<button id = "accountD">Deposit</button>
-			
-			
-			<button id = "accountTransferFromAccount">Transfer</button>
-			
-			</div>
-			
-			<button id="updateAccount">Update Account</button>
-			
-		</section>
-		
-		<section id="addCustForm">
-		
-			<form>
-				First Name<input id="fNameAdd" type="text">
-				Last Name<input id="lNameAdd" type="text">
+				</ul>
+				<button id="addAccount">Add Account</button>
+				<button id = "accountT">Transfer</button>
 				
-			</form>
+			</section>
+		
+			<section class="hidden" id="account">
+				<div class="accClass"></div><br>
 			
-			<button id="submitAddC">Add Customer</button>
-		
-		</section>
-		
-		<section id="updateCustForm">
-		
-			<form>
-				First Name<input id="fNameUpdate" type="text">
-				Last Name<input id="lNameUpdate" type="text">
+				<div id = wdt>
+					<input id="textW" type="text">
+					<button  id = "accountW">Withdraw</button>
 				
-			</form>
+					<input id="textD" type="text">
+					<button id = "accountD">Deposit</button>
+			
+			
+					<button id = "accountTransferFromAccount">Transfer</button>
+			
+				</div>
+			
+				<button id="updateAccount">Update Account</button>
+			
+			</section>
+		
+			<section id="addCustForm">
+			
+				<form>
+					First Name<input id="fNameAdd" type="text">
+					Last Name<input id="lNameAdd" type="text">
+				
+				</form>
+			
+				<button id="submitAddC">Add Customer</button>
+		
+			</section>
+		
+			<section id="updateCustForm">
+		
+				<form>
+					First Name<input id="fNameUpdate" type="text">
+					Last Name<input id="lNameUpdate" type="text">
+					
+				</form>
 			
 				<button id="submitUpdateC">Update Customer</button>
-		</section>
+			</section>
 		
-		<section id="addAccountForm">
+			<section id="addAccountForm">
 		
 			<form>
 				Type of Account<input id="TypeAdd" type="text">
@@ -99,9 +99,9 @@
 			
 				<button id="submitAddA">Add Account</button>
 		
-		</section>
+			</section>
 		
-		<section id="updateAccountForm">
+			<section id="updateAccountForm">
 		
 			
 			<form>
@@ -113,45 +113,45 @@
 			
 				<button id="submitUpdateA">Update Account</button>
 
-		</section>
-		
-		<section id="transfer">
-			<form>
-				Account ID #1<input id="accountOne" type="text">
-				Transfer Amount<input id="tAmount" type="text">
-				Account ID #2<input id="accountTwo" type="text">
-			</form>
+			</section>
 			
-			<button id="submitTransfer">Transfer</button>
+			<section id="transfer">
+				<form>
+					Account ID #1<input id="accountOne" type="text">
+					Transfer Amount<input id="tAmount" type="text">
+					Account ID #2<input id="accountTwo" type="text">
+				</form>
 			
-		</section>
+				<button id="submitTransfer">Transfer</button>
+			
+			</section>
 		
-		<section id="transferFromAccount">
+			<section id="transferFromAccount">
 			<p id = "accountOneF">
-			<form>
-				<input id="tAmountF" type="text">
-				<p id = "accountTwoF"> to </p>
-				Account ID #2<input id="accountTwoFA" type="text">
-			</form>
+				<form>
+					<input id="tAmountF" type="text">
+					<p id = "accountTwoF"> to </p>
+					Account ID #2<input id="accountTwoFA" type="text">
+				</form>
 			
-			<button id="submitTransferFromAccount">Transfer</button>
+				<button id="submitTransferFromAccount">Transfer</button>
 			
-		</section>
+			</section>
 		
-		<section id= "errorMessage">
-			<span id="error"></span>
-			<button id = "closeError"> X</button>
-		</section>
+			<section id= "errorMessage">
+				<span id="error"></span>
+				<button id = "closeError"> X</button>
+			</section>
 		
-		<section id= "successMessage">
-			<span id="success"></span>
-		</section>
+			<section id= "successMessage">
+				<span id="success"></span>
+			</section>
 		
 		
 		</section>
 		<script src="/jquery-3.1.0.min.js"></script>
-		<script type="text/javascript">
-			var cusID = null;
+		<script type="text/javascript">			
+		    var cusID = null;
 			var accID = null;
 			var accBalance = null;
 			$(document).ready(function()//This is started on the load of the page
