@@ -39,14 +39,15 @@
 
 		<section id="subnav">
 			<ul>
-				<li id="sub1">1
-					</h4>
-				<li>&gt</li>
-				<li id="sub2">2
-					</h4>
-				<li>&gt</li>
-				<li id="sub3">3
-					</h4>
+					<li id = "sub1"></li>
+					<li id = "sna1">&gt</li>
+					<li id = "sub2"></li>
+					<li id= "sna2">&gt</li>
+					<li id = "sub3" class="accounts"></li>
+					<li id="sna3">&gt</li>
+					<li id="sub4" class="accounts"></li>
+					<li id="sna4">&gt</li>
+					<li id="sub5"></li>
 			</ul>
 		</section>
 
@@ -202,6 +203,14 @@
 					
 				}
 				
+				
+				$('#sub1').text("Home")
+				
+				$('#sna1').hide()
+				$('#sna2').hide()
+				$('#sna3').hide()
+				$('#sna4').hide()
+				
 				$('#customer-list').show()
 				$('#customer').hide()
 				$('#accounts').hide()
@@ -216,6 +225,8 @@
 				$('#errorMessage').hide()
 				$('#successMessage').hide()
 				$('#errorMessageC').hide()
+				$('#wdt').hide()
+				
 				$('#searchAcc').hide()
 				
 				
@@ -223,10 +234,18 @@
 				
 			}
 			
-			$('#homelist').click(function(evt)
+			$('#homelist').click(
+					reload
+			);
+			
+			$('#sub1').click(
+					reload
+			);
+			
+			function reload(evt)
 			{
 				location.reload()
-			});
+			}
 			
 			$('#accountList').click(function()
 			{
@@ -264,15 +283,49 @@
 			}
 			
 			
-			$('#ul-c').click(function(evt)
+			$('#ul-c').click(showCustomers);
+			
+			$('#sub2').click(showCustomersNav);
+				
+			function customerNavView()
 			{
-				cusID = evt.target.id
+				$('#sna1').show()
+				$('#sub2').text("Customer")
+				$('#sna2').hide()
+				$('#sub3').hide()
+				$('#sna3').hide()
+				$('#sub4').hide()
+				$('#sna4').hide()
+				$('#sub5').hide()
+				$('#accountList').hide()
+				$('#accounts').hide()
+				$('#account').hide()
+				$('#transfer').hide()
+				$('#updateAccountForm').hide()
+				$('#addAccountForm').hide()
+				$('#addCustForm').hide()
+				$('#updateCustForm').hide()
+				$('#wdt').hide()
+			
+			}
+			
+			function showCustomers(evt)
+			{
+				
+				customerNavView()
+				cusID = evt.target.id 
 				console.log(cusID)
 				$('.custClass').empty()
 				$.getJSON("ssa-bank/customers/" + $(evt.target).attr('id'), customer)
-				
-
-			});
+			}
+			
+			function showCustomersNav()
+			{			
+				customerNavView()
+				console.log(cusID)
+				$('.custClass').empty()
+				$.getJSON("ssa-bank/customers/" + cusID, customer)
+			}
 			function customer(response)
 			{
 				if(response.error)
