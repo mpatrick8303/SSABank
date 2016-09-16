@@ -10,7 +10,7 @@
 	<body>
 		<header>
 			<h1>SSA-Bank</h1>
-			<menu id="menu">
+			<section id="menu">
 				<ul>
 					<li id="homelist">Customer List</li>
 					<li id="accountList">Account List</li>
@@ -18,7 +18,7 @@
 					
 					
 				</ul>
-			</menu>
+			</section>
 		</header>
 		
 		<section id="content">
@@ -51,12 +51,13 @@
 				<ul id="ul-a">
 			
 				</ul>
+				<br>
 				<button id="addAccount">Add Account</button>
 				<button id = "accountT">Transfer</button>
 				
 			</section>
 		
-			<section class="hidden" id="account">
+			<section id="account" class="accounts">
 				<div class="accClass"></div><br>
 			
 				<div id = wdt>
@@ -78,59 +79,60 @@
 			<section id="addCustForm" class="customer">
 			
 				<form>
-					First Name<input id="fNameAdd" type="text">
-					Last Name<input id="lNameAdd" type="text">
+					<label>First Name</label><input id="fNameAdd" type="text">
+					<label>Last Name</label><input id="lNameAdd" type="text">
 				
 				</form>
-			
+				<br>
 				<button id="submitAddC">Add Customer</button>
-		
+				
+			</section>
 			</section>
 		
-			<section id="updateCustForm">
+			<section id="updateCustForm" class="customer">
 		
 				<form>
-					First Name<input id="fNameUpdate" type="text">
-					Last Name<input id="lNameUpdate" type="text">
+					<label>First Name</label><input id="fNameUpdate" type="text">
+					<label>Last Name</label><input id="lNameUpdate" type="text">
 					
 				</form>
-			
+				<br>
 				<button id="submitUpdateC">Update Customer</button>
 			</section>
 		
-			<section id="addAccountForm">
+			<section id="addAccountForm" class="accounts">
 		
 			<form>
-				Type of Account<input id="TypeAdd" type="text">
-				Balance<input id="BalanceAdd" type="text">
-				
-				
+				Type of Account<input id="TypeAdd" type="text"> Balance<input
+					id="BalanceAdd" type="text">
+
+
 			</form>
 			
 				<button id="submitAddA">Add Account</button>
 		
 			</section>
 		
-			<section id="updateAccountForm">
+			<section id="updateAccountForm" class="accounts">
 		
 			
 			<form>
-				Customer ID<input id="CustomerUpdate" type="text">
-				Type of Account<input id="TypeUpdate" type="text">				
-				
-	
+				Customer ID<input id="CustomerUpdate" type="text"> Type of
+				Account<input id="TypeUpdate" type="text">
+
+
 			</form>
 			
 				<button id="submitUpdateA">Update Account</button>
 
 			</section>
 			
-			<section id="transfer">
-				<form>
-					Account ID #1<input id="accountOne" type="text">
-					Transfer Amount<input id="tAmount" type="text">
-					Account ID #2<input id="accountTwo" type="text">
-				</form>
+			<section id="transfer" class="accounts'>
+			<form>
+				Account ID #1<input id="accountOne" type="text"> Transfer
+				Amount<input id="tAmount" type="text"> Account ID #2<input
+					id="accountTwo" type="text">
+			</form>
 			
 				<button id="submitTransfer">Transfer</button>
 			
