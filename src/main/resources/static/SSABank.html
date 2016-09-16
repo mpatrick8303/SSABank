@@ -63,6 +63,7 @@
 			<div class="custClass"></div>
 			<button id="show-accounts">Show Accounts</button>
 			<button id="updateCust">Update Customer</button>
+			<button id="deleteCust">Delete Customer</button>
 		</section>
 
 		<section id="accounts" class="accounts">
@@ -88,18 +89,20 @@
 
 
 				<button id="accountTransferFromAccount">Transfer</button>
+				
 
 			</div>
 
 			<button id="updateAccount">Update Account</button>
+			<button id="deleteAccount">Delete Account</button>
 
 		</section>
 
 		<section id="addCustForm" class="customer">
 
 			<form>
-				<label>First Name</label><input id="fNameAdd" type="text"> 
-				<label>Last Name</label><input id="lNameAdd" type="text">
+				<label>First Name</label><input id="fNameAdd" type="text" name="addFC"> 
+				<label>Last Name</label><input id="lNameAdd" type="text" name="addLC">
 
 			</form>
 			<br>
@@ -249,6 +252,7 @@
 			
 			$('#accountList').click(function()
 			{
+				$("#sub4").hide()
 				$.getJSON("ssa-bank/customers/"+ document.getElementsByClassName('custClass')[0].id + "/accounts" , accountsHomeList)
 			});
 			
@@ -377,26 +381,28 @@
 				$('#errorMessage').hide()
 				$('#successMessage').hide()
 				$('#searchAcc').hide()
-				
+				$('#sub5').hide()
+				$('#sub4').hide()
+				$('#sub3').hide()
+				$('#sub2').text("Add Customer");
+		
 				
 				
 			});
 			
 			$('#submitAddC').click(function(evt)
 			{
+				$('#sub2').text("Customer")
 				if(validateLetter("fNameAdd") && validateLetter("lNameAdd"))
 				{
 					sendAdd();	
 				}
 				else
 				{
-					alert("Please enter a valid first and last name")
+					
+					
 				}
-					
-					
-			
-				
-				
+
 			});
 			
 		
@@ -446,8 +452,16 @@
 				$('#searchAcc').hide()
 			}
 			
-			$('#updateCust').click(function(evt)
+			$('#updateCust').click(updateView)
+		
+			
+			function updateView()
 			{
+				$('#sna2').show()
+				$('#sub3').show()
+				$('#sub3').text("Update Customer")
+
+				$('#sub3').attr('class', 'customer')
 				$('#updateCustForm').show()
 				$('#addCustForm').hide()
 				$('#customer-list').hide()
@@ -455,17 +469,12 @@
 				$('#accounts').hide()
 				$('#wdt').hide()
 				$('#account').hide()	
-				$('#searchAcc').hide()
-				
-				console.log(cusID)
-				
-				
-			});
+			}
 			
 			$('#submitUpdateC').click(function(evt)
 			{
-				//if(validateLetter("fNameUpdate") && validateLetter("lNameUpdate"))
-				sendUpdate();
+				if(validateLetter("fNameUpdate") && validateLetter("lNameUpdate"))
+					sendUpdate();
 						
 			});
 					
@@ -503,10 +512,32 @@
 			
 			
 			
+		$('#deleteCust').click(function()
+		{
+			
+			$.ajax
+			({
+				url: 'ssa-bank/customers/' + cusID,
+				type: 'DELETE', 
+			});
+				
+			checkDelete()
+		});
+			
+		function checkDelete()
+		{
+				if(response = true)
+				{
+					$('#ul-c').empty()
+					$.getJSON("ssa-bank/customers",customers);
+					$('#searchCust').show()
+				}	
+				else
+					alert("Something went wrong the person was not deleted")	
+		}
+				
+	
 
-			$('#show-accounts').click(
-				showAccounts	
-			)
 			
 		$('#sub3').click(function(){
 			
@@ -519,7 +550,8 @@
 				{updateView()}
 		})
 		
-
+		$('#show-accounts').click(showAccounts)
+				
 		function showAccountsView()
 		{
 			$('#sna2').show()
@@ -584,9 +616,15 @@
 				
 				
 			}
-			$('#ul-a').click(function(evt)
+			$('#ul-a').click(accountDetailShow)
+					
+			function accountDetailShow(evt)
 			{
 				$('#wdt').show()
+				$('#sub4').show()
+				$('#sna3').show()
+				$('#sub4').text("Account")
+				$('#sub4').attr('class', 'accounts')
 				accID = evt.target.id
 				console.log(accID)
 				console.log(document.getElementsByClassName('custClass')[0].id)
@@ -594,7 +632,23 @@
 				$.getJSON("ssa-bank/customers/" + document.getElementsByClassName('custClass')[0].id  + "/accounts/" + $(evt.target).attr('id') + "/detail", account)
 						
 
-			});
+			}
+			
+			function subAccountDetailShow(evt)
+			{
+				$('#wdt').show()
+				$('#sub4').show()
+				$('#sna3').show()
+				$('#sub4').text("Account")
+				$('#sub4').attr('class', 'accounts')
+			
+				console.log(accID)
+				console.log(document.getElementsByClassName('custClass')[0].id)
+				$('.accClass').empty()
+				$.getJSON("ssa-bank/customers/" + document.getElementsByClassName('custClass')[0].id  + "/accounts/" + accID + "/detail", account)
+						
+
+			}
 			function account(response)
 			{
 				if(response.error)
@@ -615,6 +669,16 @@
 				}
 			}
 			
+			$('#sub4').click(function()
+			{
+				console.log("hello")
+				subAccountDetailShow()
+				$('#sub5').hide()
+				$('#updateAccountForm').hide()
+				$('#updateAccount').show()
+				
+			});
+			
 			$('#addAccount').click(function(evt)
 			{
 				$('#errorMessage').hide()
@@ -626,8 +690,9 @@
 			
 			$('#submitAddA').click(function(evt)
 			{
-					
-				sendAddAccount();
+				
+				if(validateNumber("BalanceAdd"))	
+					sendAddAccount();
 						
 			});
 					
@@ -681,12 +746,17 @@
 			{
 					$('#updateAccountForm').show()
 					$('#wdt').hide()
-					$('#updateAccount').hide()						
+					$('#updateAccount').hide()	
+					$('#sub5').show()
+					$('#sub5').text("Update Account")
+					$('#sna4').show()
+					
 			});
 
 			$('#submitUpdateA').click(function(evt)
-			{								
-				sendUpdateAccount();
+			{		
+				if(validateNumber("CustomerUpdate"))
+					sendUpdateAccount();
 			});
 									
 			function sendUpdateAccount() 
@@ -795,13 +865,16 @@
 			
 			$('#accountTransferFromAccount').click(function(evt)
 			{
-						$('#account').hide()
-						$('#errorMessage').hide()
-						$('#searchAcc').hide()
-						$('#transferFromAccount').show()
-						$('#accountOneF').empty()
+				$('#sub5').show()
+				$('#sub5').text("Transfer")
+				$('#sub5').attr('class', 'Account')
+				$('#account').hide()
+				$('#errorMessage').hide()
+				$('#searchAcc').hide()
+				$('#transferFromAccount').show()
+				$('#accountOneF').empty()
 						
-						$('#accountOneF').append("How Much Would you like to transfer from account ID " + accID)	
+				$('#accountOneF').append("How Much Would you like to transfer from account ID " + accID)	
 			});
 					
 			$('#submitTransferFromAccount').click(function(evt)
@@ -862,36 +935,71 @@
 			
 			function validateLetter(name) 
 			{
-			    if (document.getElementById(name) == "") 
+				var check = true;
+			    if (document.getElementById(name).value == "") 
 				{
-			        alert("Please Enter Something");
+			    	
+			    	$('#errorMessage').show()
+					$('#error').text("")
+					$('#error').text("You Have a empty input field ")
 			        document.getElementById(name).focus();
+			        
 			        return false;
 			    }
-			    if (!/^[a-zA-Z]*$/g.test(document.getElementById(name).value)) 
+			    else
+			    {
+			    	check = true;	
+			   	}
+
+			    if (!isNaN(document.getElementById(name).value)) 
 				{
-			        alert("Only letters Can Be Entered");
+			        $('#errorMessage').show()
+					$('#error').text("")
+					$('#error').text("Only Letters Can be Entered")
 			        document.getElementById(name).focus();
-			        return false;
+			        return false
 			    }
+			    else
+			    {
+			   		check = true; 	
+			   	}
+				
+			    return check;
+				 
 			}
 			
 			function validateNumber(name)
 			{
-				if (document.getElementById(name) == "") 
+				var check = true;
+				if (document.getElementById(name).value == "") 
 				{
-			        alert("Please Enter Something");
+					$('#errorMessage').show()
+					$('#error').text("")
+					$('#error').text("You Have a empty input field ")
 			        document.getElementById(name).focus();
 			        return false;
 			    }
-				if (!/^[0-9]+$/.test(document.getElementById(name).value)) 
+				else
+			    {
+			   		check = true; 	
+			   	}
+				if (isNaN(document.getElementById(name).value)) 
 				{
-			        alert("Please Enter a Number For the Balance");
-			        document.getElementById(name).focus();
+					$('#errorMessage').show()
+					$('#error').text("")
+					$('#error').text("Only Numbers can be entered here")
+					document.getElementById(name).focus();
 			        return false;
 			    }
+				else
+			    {
+			   		check = true; 	
+			   	}
 				
+				return check;
 			}
+			
+
 			
 			
 

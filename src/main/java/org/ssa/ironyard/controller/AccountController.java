@@ -37,6 +37,12 @@ public class AccountController {
     @Autowired
     BankAccountServicesImpl aService;
     
+    public AccountController(BankAccountServicesImpl aservice2, BankTransactionServicesImpl tservice)
+    {
+        aService = aservice2;
+        service = tservice;
+    }
+
     @RequestMapping(produces = "application/json", value ="/{id}/accounts", method = RequestMethod.GET)
     @ResponseBody
     public ResponseEntity<HashMap<String,List<Account>>> allAccounts(@PathVariable int id)

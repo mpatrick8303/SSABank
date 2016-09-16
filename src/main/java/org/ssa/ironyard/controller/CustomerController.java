@@ -31,6 +31,12 @@ public class CustomerController
     @Autowired
     BankAccountServicesImpl aService;
     
+    public CustomerController(BankAccountServicesImpl bs, BankTransactionServicesImpl bts)
+    {
+        aService = bs;
+        service = bts;
+    }
+    
     static final Logger LOGGER = LogManager.getLogger(BankStarter.class);
     
     @RequestMapping(value = "")
@@ -121,6 +127,17 @@ public class CustomerController
             map.put("success", c);
             return ResponseEntity.ok().header("SSA_Bank Customer", "Customer").body(map);
         }
+    }
+    
+    @RequestMapping(value = "/customers/{cusID}", method = RequestMethod.DELETE)
+    @ResponseBody
+    public boolean deleteCustomer(@PathVariable int cusID)
+    {
+        int id = cusID;
+        if(aService.deleteCustomer(id))
+            return true;
+        else
+            return false;
     }
     
 
