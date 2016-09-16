@@ -19,6 +19,7 @@ body{
 
 header{
 	position: relative;
+	height: 150px;
 }
 
 header h1{
@@ -33,6 +34,8 @@ header h1{
 	background-color:navy;
 
 }
+
+#search {}
 
 .mainNav {
 	background-color: #ffffcc;

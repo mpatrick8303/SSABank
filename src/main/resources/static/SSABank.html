@@ -19,6 +19,20 @@
 
 			</ul>
 		</section>
+		<section id="search">
+			<section id = "searchCust">
+				<label>Search Customer</label><input id="searchCInput" type="text"></input>
+				<button id="submitCSearch">Search</button>
+				<button id="resetC">Reset</button>
+			</section>
+			<section id = "searchAcc">
+				<label>Search Account</label><input id="searchAInput" type="text"></input>
+				<button id="submitASearch">Search</button>
+				<button id="resetA">Reset</button>
+			</section>
+			
+			
+		</section>
 	</header>
 
 	<section id="content">
@@ -157,6 +171,11 @@
 			<span id="error"></span>
 			<button id="closeError">X</button>
 		</section>
+		
+		<section id="errorMessageC">
+			<span id="errorC"></span>
+			<button id="closeErrorC">X</button>
+		</section>
 
 		<section id="successMessage">
 			<span id="success"></span>
@@ -178,7 +197,7 @@
 			{
 				for(let i = 0; i<response.length;i++)
 				{
-					$('#ul-c').append('<li id=\''+response[i].id+'\'>' + response[i].id + " " + response[i].firstName + " " + response[i].lastName  + '</li>')
+					$('#ul-c').append('<li id=\''+response[i].id+'\' class="clist">' + response[i].id + " " + response[i].firstName + " " + response[i].lastName  + '</li>')
 					
 					
 				}
@@ -196,6 +215,9 @@
 				$('#accountList').hide()
 				$('#errorMessage').hide()
 				$('#successMessage').hide()
+				$('#errorMessageC').hide()
+				$('#searchAcc').hide()
+				
 				
 				
 				
@@ -225,6 +247,7 @@
 				$('#accountList').hide()
 				$('#errorMessage').hide()
 				$('#successMessage').hide()
+				
 				$('#accountList').show()
 				$('#accounts').show()	
 				
@@ -254,8 +277,8 @@
 			{
 				if(response.error)
 				{
-					$('#errorMessage').show()
-					$('#error').text("This customer does not exist")
+					$('#errorMessageC').show()
+					$('#errorC').text("This customer does not exist")
 					
 				}
 				if(response.success)
@@ -263,12 +286,20 @@
 					$('.custClass').attr('id',response.success.id).text(response.success.id + " " + response.success.firstName + " " + response.success.lastName)
 
 					$('#customer-list').hide()
+					$('#searchCust').hide()
+					$('#reset').hide()
 					$('#customer').show()
 				}
 				
 			}
 			
 			$('#closeError').click(function()
+			{
+				
+				$('#errorMessage').hide()
+			});
+			
+			$('#closeErrorC').click(function()
 			{
 				
 				location.reload()
@@ -290,6 +321,8 @@
 				$('#accountList').hide()
 				$('#errorMessage').hide()
 				$('#successMessage').hide()
+				$('#searchAcc').hide()
+				
 				
 				
 			});
@@ -347,6 +380,7 @@
 
 				$('#customer-list').hide()
 				$('#customer').show()
+				$('#searchAcc').hide()
 			}
 			
 			$('#updateCust').click(function(evt)
@@ -358,6 +392,7 @@
 				$('#accounts').hide()
 				$('#wdt').hide()
 				$('#account').hide()	
+				$('#searchAcc').hide()
 				
 				console.log(cusID)
 				
@@ -411,6 +446,8 @@
 				$('#accountList').show()
 				$('#accounts').show()
 				$('#ul-a').empty()
+				$('#searchAcc').show()
+				$('#reset').show()
 				console.log(document.getElementsByClassName('custClass')[0].id)
 				$.getJSON("ssa-bank/customers/"+ document.getElementsByClassName('custClass')[0].id + "/accounts" , accounts)
 						
@@ -433,7 +470,7 @@
 
 						for(let i = 0; i<response.success.length;i++)
 						{
-							$('#ul-a').append('<li id=\''+response.success[i].id+'\'>' + response.success[i].id + " " + response.success[i].customer.id + " " + response.success[i].type + " " + response.success[i].balance  + '</li>')
+							$('#ul-a').append('<li id=\''+response.success[i].id+'\' class="alist">' + response.success[i].id + " " + response.success[i].customer.id + " " + response.success[i].type + " " + response.success[i].balance  + '</li>')
 	
 						}
 					}
@@ -474,6 +511,7 @@
 				$('#errorMessage').hide()
 				$('#addAccountForm').show()
 				$('#accounts').hide()
+				$('#searchAcc').hide()
 			});
 			
 			
@@ -621,6 +659,7 @@
 				$('#accounts').hide()
 				$('#transfer').show()
 				$('#errorMessage').hide()
+				$('#searchAcc').hide()
 			});
 			
 			$('#submitTransfer').click(function(evt)
@@ -650,6 +689,7 @@
 			{
 						$('#account').hide()
 						$('#errorMessage').hide()
+						$('#searchAcc').hide()
 						$('#transferFromAccount').show()
 						
 						$('#accountOneF').append("How Much Would you like to transfer from account ID " + accID)	
@@ -679,7 +719,38 @@
 				.done(toAccounts)
 														        		
 
-			}	
+			}
+			
+			$('#submitCSearch').click(function()
+			{
+				
+				var filterByC = document.getElementById("searchCInput").value;
+				
+				$('.clist').hide()
+				$('.clist:contains(' + filterByC + ')').show()
+
+			});
+			
+			$('#resetC').click(function()
+			{
+				$('.clist').show()
+			});
+			
+			$('#submitASearch').click(function()
+			{
+				var filterByA = document.getElementById("searchAInput").value;
+					
+						
+	
+				$('.alist').hide()
+				$('.alist:contains(' + filterByA + ')').show()
+
+			});
+			
+			$('#resetA').click(function()
+			{
+				$('.alist').show()
+			});
 			
 			function validateLetter(name) 
 			{
