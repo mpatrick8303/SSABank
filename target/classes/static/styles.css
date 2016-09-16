@@ -103,8 +103,8 @@ button{
 	width: 12em;
 	height:4em;
 }
-button:hover{background-color: navy;color:white}
 
+button:hover{background-color: navy;color:white}
 
 ul {
 	overflow: auto;
@@ -121,8 +121,8 @@ li{
   	text-decoration: none;
   	color: #000;
   	display: block;
+  	width: auto;
 
- 
   -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
   -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
   -o-transition: font-size 0.3s ease, background-color 0.3s ease;
@@ -174,7 +174,7 @@ input:focus {
 	
 	}
 
-#accounts{width: 30%; position:abosulte; top:8em}
+#accounts{width: 30%; position:absolute; top:8em}
 
 #submitTransfer{margin-top: 8.5em}
 
