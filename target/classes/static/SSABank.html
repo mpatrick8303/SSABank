@@ -29,7 +29,11 @@
 					<li id = "sna1">&gt</li>
 					<li id = "sub2"></li>
 					<li id= "sna2">&gt</li>
-					<li id = "sub3" class = "accounts"></li>
+					<li id = "sub3" class="accounts"></li>
+					<li id="sna3">&gt</li>
+					<li id="sub4" class="accounts"></li>
+					<li id="sna4">&gt</li>
+					<li id="sub5"></li>
 				</ul>
 			</section>
 			
@@ -186,6 +190,8 @@
 				
 				$('#sna1').hide()
 				$('#sna2').hide()
+				$('#sna3').hide()
+				$('#sna4').hide()
 				
 				$('#customer-list').show()
 				$('#customer').hide()
@@ -266,8 +272,14 @@
 				$('#sub2').text("Customer")
 				$('#sna2').hide()
 				$('#sub3').hide()
+				$('#sna3').hide()
+				$('#sub4').hide()
+				$('#sna4').hide()
+				$('#sub5').hide()
 				$('#accountList').hide()
 				$('#accounts').hide()
+				$('#account').hide()
+				$('#transfer').hide()
 				$('#updateAccountForm').hide()
 				$('#addAccountForm').hide()
 				$('#addCustForm').hide()
@@ -383,8 +395,15 @@
 				$('#customer').show()
 			}
 			
-			$('#updateCust').click(function(evt)
-			{
+			$('#updateCust').click(updateView)
+	
+			
+			function updateView(){
+				
+				$('#sna2').show()
+				$('#sub3').show()
+				$('#sub3').text("Update Customer")
+
 				$('#updateCustForm').show()
 				$('#addCustForm').hide()
 				$('#customer-list').hide()
@@ -394,9 +413,7 @@
 				$('#account').hide()	
 				
 				console.log(cusID)
-				
-				
-			});
+			}
 			
 			$('#submitUpdateC').click(function(evt)
 			{
@@ -447,6 +464,9 @@
 			console.log($('#sub3').hasClass("accounts"))
 			if($('#sub3').hasClass("accounts"))	
 			{showAccounts()}	
+			
+			if($('#sub3').hasClass("customer"))
+				{updateView()}
 		})
 		
 
@@ -455,6 +475,10 @@
 			$('#sna2').show()
 			$('#sub3').show()
 			$('#sub3').text("Accounts")
+			$('#sna3').hide()
+			$('#sub4').hide()
+			$('#sna4').hide()
+			$('#sub5').hide()
 			$('#customer').hide()
 			$('#accountList').show()
 			$('#accounts').show()
@@ -542,12 +566,26 @@
 
 			}
 			
-			$('#addAccount').click(function(evt)
-			{
+			$('#addAccount').click(addAccountView)
+			
+			$('#sub4').click(function()
+					{
+						if($('#sub4').hasClass("accounts")){
+							addAccountView
+						}
+					})
+			
+			function addAccountView(){
+				$('#sub4').attr('class','accounts')
+				$('#sna3').show()
+				$('#sub4').text("Add Account")
+				$('#sub4').show()
+				
 				$('#errorMessage').hide()
 				$('#addAccountForm').show()
-			});
-			
+				$('#transfer').hide()
+				$('#transferFromAccount').hide()
+			}
 			
 			$('#submitAddA').click(function(evt)
 			{
@@ -713,12 +751,34 @@
 
 			}
 			
-			$('#accountT').click(function(evt)
-			{
+			$('#accountT').click(transAccView)
+		
+			
+			$('#sub4').click(function()
+					{
+						if($('#sub4').hasClass("accounts")){
+							addAccountView
+						}
+						
+						if(('$#sub4').hasClass("transferAcc")){
+							transAccView
+						}
+					})
+			
+			function transAccView(){
+				$('#addAccountForm').hide()
+				$('#sub4').attr('class','transferAcc')
+				$('#sna3').show()
+				$('#sub4').text("Transfer")
+				$('#sub4').show()
+				
+	
 				$('#accounts').hide()
 				$('#transfer').show()
-			});
-			
+				
+				
+			}
+		
 			$('#submitTransfer').click(function(evt)
 			{
 				$('#transfer').hide()
