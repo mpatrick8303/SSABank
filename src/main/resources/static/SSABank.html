@@ -160,8 +160,8 @@
 			<p id="accountOneF">
 			<form>
 				<input id="tAmountF" type="text">
-				<p id="accountTwoF">to</p>
-				Account ID #2<input id="accountTwoFA" type="text">
+				<p id="accountTwoF">to Account ID #2</p>
+				<input id="accountTwoFA" type="text">
 			</form>
 
 			<button id="submitTransferFromAccount">Transfer</button>
@@ -306,6 +306,7 @@
 				$('#addCustForm').hide()
 				$('#updateCustForm').hide()
 				$('#wdt').hide()
+				$('#transferFromAccount').hide()
 			
 			}
 			
@@ -320,7 +321,8 @@
 			}
 			
 			function showCustomersNav()
-			{			
+			{
+				
 				customerNavView()
 				console.log(cusID)
 				$('.custClass').empty()
@@ -382,8 +384,16 @@
 			
 			$('#submitAddC').click(function(evt)
 			{
-				
-					sendAdd();
+				if(validateLetter("fNameAdd") && validateLetter("lNameAdd"))
+				{
+					sendAdd();	
+				}
+				else
+				{
+					alert("Please enter a valid first and last name")
+				}
+					
+					
 			
 				
 				
@@ -493,23 +503,66 @@
 			
 			
 			
-			$('#show-accounts').click(function(evt)
+
+			$('#show-accounts').click(
+				showAccounts	
+			)
+			
+		$('#sub3').click(function(){
+			
+			console.log($('#sub3').attr('class'))	
+			console.log($('#sub3').hasClass("accounts"))
+			if($('#sub3').hasClass("accounts"))	
+			{showAccounts()}	
+			
+			if($('#sub3').hasClass("customer"))
+				{updateView()}
+		})
+		
+
+		function showAccountsView()
+		{
+			$('#sna2').show()
+			$('#sub3').show()
+			$('#sub3').text("Accounts")
+			$('#sna3').hide()
+			$('#sub4').hide()
+			$('#sna4').hide()
+			$('#sub5').hide()
+			$('#customer').hide()
+			$('#accountList').show()
+			$('#accounts').show()
+			$('#wdt').hide()
+			$('#account').hide()
+			$('#addCustForm').hide()
+			$('#updateCustForm').hide()
+			$('#addAccountForm').hide()
+			$('#updateAccountForm').hide()
+			$('#transfer').hide()
+			$('#transferFromAccount').hide()
+		
+			$('#errorMessage').hide()
+			$('#successMessage').hide()
+		}
+		
+			function showAccounts()
 			{
-				$('#customer').hide()
-				$('#accountList').show()
-				$('#accounts').show()
+				showAccountsView()
 				$('#ul-a').empty()
-				$('#searchAcc').show()
-				$('#reset').show()
+				$('#sub3').attr('class','accounts')
+				console.log($('#sub3').attr('class'))
+
+			
 				console.log(document.getElementsByClassName('custClass')[0].id)
 				$.getJSON("ssa-bank/customers/"+ document.getElementsByClassName('custClass')[0].id + "/accounts" , accounts)
-						
-
-			});
+			}
+			
 			function accounts(response)
 			{
 					
 					$('#accounts').show()
+					$('#searchAcc').show()
+
 					
 					if(response.error)
 					{
@@ -527,10 +580,13 @@
 	
 						}
 					}
+				
+				
+				
 			}
-			
 			$('#ul-a').click(function(evt)
 			{
+				$('#wdt').show()
 				accID = evt.target.id
 				console.log(accID)
 				console.log(document.getElementsByClassName('custClass')[0].id)
@@ -570,9 +626,8 @@
 			
 			$('#submitAddA').click(function(evt)
 			{
-				
-				sendAddAccount();				
-				
+					
+				sendAddAccount();
 						
 			});
 					
@@ -744,6 +799,7 @@
 						$('#errorMessage').hide()
 						$('#searchAcc').hide()
 						$('#transferFromAccount').show()
+						$('#accountOneF').empty()
 						
 						$('#accountOneF').append("How Much Would you like to transfer from account ID " + accID)	
 			});
@@ -791,10 +847,9 @@
 			
 			$('#submitASearch').click(function()
 			{
+				console.log("hello")
 				var filterByA = document.getElementById("searchAInput").value;
 					
-						
-	
 				$('.alist').hide()
 				$('.alist:contains(' + filterByA + ')').show()
 

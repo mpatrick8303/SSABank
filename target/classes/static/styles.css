@@ -1,19 +1,4 @@
-Skip to content
-This repository
-Search
-Pull requests
-Issues
-Gist
- @ajvernet
- Unwatch 3
-  Star 0
- Fork 0 mpatrick8303/SSABank
- Code  Issues 0  Pull requests 0  Projects 0  Wiki  Pulse  Graphs
-Branch: master Find file Copy pathSSABank/src/main/resources/static/styles.css
-eb0ef4f  an hour ago
-@ajvernet ajvernet m
-2 contributors @ajvernet @mpatrick8303
-RawBlameHistory     239 lines (188 sloc)  3.49 KB
+
 
 
 
@@ -197,6 +182,8 @@ input:focus {
 #accounts{width: 30%; position:absolute; top:8em}
 
 #submitTransfer{margin-top: 8.5em}
+
+
 
 .accClass {padding-top: 1em; font-size: 2em}
 #account input
